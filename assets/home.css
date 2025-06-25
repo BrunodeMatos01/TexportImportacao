@@ -1,0 +1,51 @@
+/* HEADER E NAV */
+#cabecalho {
+    width: 100%;
+    height: auto;
+    background-color: rgb(153, 139, 139);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 0.7%;
+    padding-bottom: 0.7%;
+}
+#navegacao {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+}
+#navegacao ul { 
+    list-style-type: none; 
+    margin: 0;             
+    padding: 0;
+    display: flex;         
+    gap: 2rem;             
+}
+/* ================= */
+
+/* Main - Slogan e chamada */
+#Container-inicialHome{
+    width: 100%;
+    height: 500px;
+    background-image: url('../img/Produtos Textil de fundo Texport.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.textoChamtivo {
+    width: 40%;
+}
+.SobreNós {
+    width: 40%;
+}
+/* ================= */
+
