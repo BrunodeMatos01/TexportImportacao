@@ -1,51 +1,165 @@
-/* HEADER E NAV */
-#cabecalho {
-    width: 100%;
-    height: auto;
-    background-color: rgb(153, 139, 139);
+p {
+  margin: 0;
+  padding: 0;
+}
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 0.7%;
-    padding-bottom: 0.7%;
+/* HEADER E NAV */
+
+#cabecalho {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+  padding: 1.3rem 0rem;
 }
 #navegacao {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-around;
-   align-items: center;
+  width: 15%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #bd7e21;
 }
-#navegacao ul { 
-    list-style-type: none; 
-    margin: 0;             
-    padding: 0;
-    display: flex;         
-    gap: 2rem;             
+
+#navegacao ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0;
+  gap: 4rem;
+}
+
+.home:hover,
+.catalogos:hover,
+.contato:hover {
+  transform: translateY(1px);
+}
+
+#Btn-section {
+  width: 10%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  border: solid #a47e43 1px;
+  border-radius: 23px;
+}
+#Btn-section:hover {
+  transform: translateY(1px);
+}
+
+.btn-watts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-watts img {
+  width: 15%;
+}
+
+#LogoTexport {
+  width: 47%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.logo img {
+  width: 40%;
 }
 /* ================= */
 
 /* Main - Slogan e chamada */
-#Container-inicialHome{
-    width: 100%;
-    height: 500px;
-    background-image: url('../img/Produtos Textil de fundo Texport.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+#Container-inicialHome {
+  width: 100%;
+  height: 650px;
+  background-image: url("../img/Produtos Textil de fundo Texport.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .textoChamtivo {
-    width: 40%;
-}
-.SobreNós {
-    width: 40%;
-}
-/* ================= */
+  width: 30%;
+  height: auto;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.textoH1 {
+  width: 100%;
+  height: auto;
+}
+
+.textoH1 h1 {
+  font-size: 4.9em;
+  color: white;
+}
+.textoH1 p {
+  font-size: 2em;
+  color: white;
+}
+.textoH5 {
+  width: 100%;
+  height: auto;
+
+  font-size: 1.2em;
+  color: white;
+}
+
+.btn-vejaProdutos {
+  display: inline-block;
+  padding: 12px 28px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  margin: 1rem;
+
+  background-color: #a47e43;
+  color: white;
+  border: 2px solid #a47e43;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-vejaProdutos:hover {
+  background-color: transparent;
+  color: #a47e43;
+
+  transform: translateY(1px);
+}
+
+/* ================= */

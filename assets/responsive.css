@@ -1,0 +1,151 @@
+/* ========================================= */
+/* ESTILOS RESPONSIVOS - VERSÃO FINAL        */
+/* ========================================= */
+
+
+/* --- TELAS MÉDIAS (TABLETS E LAPTOPS PEQUENOS, abaixo de 992px) --- */
+@media (max-width: 992px) {
+
+    /* --- AJUSTES DO CABEÇALHO E MENU HAMBÚRGUER --- */
+  
+    #cabecalho {
+      justify-content: space-between;
+      padding: 0.5rem 1.5rem;
+      min-height: 65px;
+      box-sizing: border-box;
+    }
+  
+    /* 1. Estilo e posição do menu de navegação móvel */
+    #navegacao {
+      display: block;
+      position: fixed; /* Fixo na tela para não rolar com a página */
+      top: 65px; /* Começa logo abaixo do cabeçalho */
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 65px); /* Ocupa o resto da altura da tela */
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+      
+      /* Animação para o menu deslizar suavemente */
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%); /* Começa escondido para a esquerda */
+      visibility: hidden;
+    }
+  
+    #navegacao ul {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 2rem 0;
+      height: 100%;
+    }
+  
+    #navegacao ul li a {
+      display: block;
+      padding: 1rem 0;
+      font-size: 1.5rem; /* Fonte maior para fácil toque */
+      color: #a47e43;
+      width: 100vw;
+      text-align: center;
+    }
+    
+    /* 2. Mostra o botão hambúrguer */
+    #btn-mobile {
+      display: flex;
+      border: none;
+      background: none;
+      cursor: pointer;
+      z-index: 1100; /* Garante que o botão fique acima do menu */
+    }
+    
+    #icone-menu {
+      color: #a47e43;
+      stroke: #a47e43;
+      width: 28px;
+      height: 28px;
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    /* 3. Lógica de ativação do menu via classe .nav-active */
+    #cabecalho.nav-active #navegacao {
+      transform: translateX(0%); /* Traz o menu para a tela */
+      visibility: visible;
+    }
+    
+    /* Lógica para animar o ícone para um "X" */
+    #cabecalho.nav-active #icone-menu line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, -6px);
+    }
+    #cabecalho.nav-active #icone-menu line:nth-child(2) {
+      opacity: 0;
+    }
+    #cabecalho.nav-active #icone-menu line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, 5px);
+    }
+  
+    /* Esconde o botão do WhatsApp para dar espaço à logo e ao menu */
+    #Btn-section {
+      display: none;
+    }
+  
+    /* --- AJUSTES DO LAYOUT PRINCIPAL --- */
+  
+    /* Transforma o layout principal em uma coluna */
+    #Container-inicialHome {
+      flex-direction: column;
+      justify-content: center;
+      height: auto;
+      min-height: calc(100vh - 65px); /* Ocupa a altura da tela menos o header */
+      padding: 4rem 1rem;
+      text-align: center;
+      background-attachment: scroll; /* Remove o efeito parallax no mobile (melhor performance) */
+    }
+  
+    .textoChamtivo, .Form {
+      width: 90%;
+      max-width: 500px;
+      margin: 0;
+    }
+  
+    .Form {
+      margin-top: 3rem;
+    }
+  
+    /* Ajusta o tamanho da fonte do título principal */
+    .textoH1 h1 {
+      font-size: 3em;
+    }
+    .textoH1 p {
+      font-size: 1.5em;
+    }
+  }
+  
+  
+  /* --- CELULARES (abaixo de 480px) --- */
+  /* Ajustes finos adicionais para telas bem pequenas */
+  @media (max-width: 480px) {
+    .logo img {
+      max-height: 35px;
+    }
+    
+    .textoH1 h1 {
+      font-size: 2.5em;
+    }
+    .textoH1 p {
+      font-size: 1.2em;
+    }
+  
+    .btn-vejaProdutos, .btn-enviar {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  
+  /* --- Regra Geral --- */
+  /* Por padrão, o botão hambúrguer fica escondido em telas grandes (desktop) */
+  #btn-mobile {
+    display: none;
+  }

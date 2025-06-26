@@ -1,7 +1,12 @@
-body {
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+body,html {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; 
     box-sizing: border-box;
+
+    font-family: "Roboto Serif", serif;
 }
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
