@@ -1,170 +1,12 @@
-p {
+p{
   margin: 0;
   padding: 0;
 }
 
-/* HEADER E NAV */
 
-#cabecalho {
-  width: 100%;
-  background-color: white;
-
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-}
-#navPreta {
-  width: 100%;
-  padding: 0.6rem;
-  background-color: #242424;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-#navBranca {
-  width: 100%;
-  padding: 0.6rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-#navegacao {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  color: #bd7e21;
-}
-
-#navegacao ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 0;
-  gap: 4rem;
-}
-
-.home:hover,
-.catalogos:hover,
-.contato:hover {
-  transform: translateY(1px);
-}
-
-#Btn-section {
-  width: 9rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.8rem;
-  color: white;
-
-  text-decoration-line: underline;
-  text-decoration-color: #a47e43;
-  text-decoration-thickness: 2px;
-}
-#Btn-section:hover {
-  transform: translateY(1px);
-  text-decoration: underline wavy #a47e43;
-}
-
-.btn-watts {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.btn-watts img {
-  width: 15%;
-}
-
-.btn-Tel {
-  width: 10%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.9rem;
-  color: white;
-  gap: 3%;
-
-  text-decoration-line: underline;
-  text-decoration-color: #a47e43;
-  text-decoration-thickness: 2px;
-}
-.btn-Tel img {
-  width: 10%;
-}
-
-#LogoTexport {
-  width: 11%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
-.logo img {
-  width: 100%;
-}
-
-.btn-orcamento-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 7px 16px;
-  background-color: #a47e43;
-  color: white;
-  font-family: 'Poppins', 'Helvetica', 'Arial', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid #000000;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.btn-orcamento-link img {
-  height: 24px;
-  width: auto;
-}
-
-.btn-orcamento-link:hover {
-  background-color: #916c36;
-  border-color: #000000;
-  transform: translateY(1px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.btn-orcamento-link:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-/* ================= */
-
-/* Main - Slogan e chamada */
 #Container-inicialHome {
   width: 100%;
-  height: 650px;
+  height: 40.625rem;
   background-image: url("../img/Produtos Textil de fundo Texport.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -177,7 +19,7 @@ p {
 }
 
 .textoChamtivo {
-  width: 30%;
+  width: 30rem;
   height: auto;
 
   display: flex;
@@ -186,8 +28,9 @@ p {
   align-items: center;
   gap: 0.5rem;
 }
+
 .textoH1 {
-  width: 100%;
+  width: 100%; 
   height: auto;
 }
 
@@ -195,12 +38,14 @@ p {
   font-size: 4.9em;
   color: white;
 }
+
 .textoH1 p {
   font-size: 2em;
   color: white;
 }
+
 .textoH5 {
-  width: 100%;
+  width: 100%; 
   height: auto;
 
   font-size: 1.2em;
@@ -209,19 +54,19 @@ p {
 
 .btn-vejaProdutos {
   display: inline-block;
-  padding: 12px 28px;
+  padding: 0.75rem 1.75rem;
   text-align: center;
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
   text-decoration: none;
   margin: 1rem;
 
   background-color: #a47e43;
   color: white;
-  border: 2px solid #a47e43;
-  border-radius: 4px;
+  border: 0.125rem solid #a47e43;
+  border-radius: 0.25rem;
   cursor: pointer;
 
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
@@ -231,7 +76,5 @@ p {
   background-color: transparent;
   color: #a47e43;
 
-  transform: translateY(1px);
+  transform: translateY(0.0625rem);
 }
-
-/* ================= */
