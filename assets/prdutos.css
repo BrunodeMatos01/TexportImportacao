@@ -1,21 +1,94 @@
 #telaProdutos {
-    width: 100%;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}   
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 #textoProduto {
-    font-size: 1.7rem;
-    padding: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.7rem;
+  padding: 3rem;
 }
 
-#Produtos{
+#Produtos {
+  width: 100%;
+  padding: 0;
+}
+
+.grid-produtos {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 60px;
+  column-gap: 40px;
+  max-width: 1200px;
+}
+
+.card-produto {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1rem 0;
+}
+
+.card-produto:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-imagem img {
+  width: 100%;
+  aspect-ratio: 25 / 16;
+  object-fit: cover;
+  display: block;
+}
+
+.card-imagem1 img {
     width: 100%;
-    height: auto;
-    padding: 2rem 1rem;
+    aspect-ratio: 25 / 22;
+    object-fit: cover;
+    display: block;
+  }
+
+.card-conteudo {
+  padding: 24px;
+  text-align: center;
 }
 
+.produto-titulo {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+}
 
+.btn-modal {
+  background: transparent;
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.btn-modal:focus-visible {
+  outline: 3px solid #3675f1;
+  outline-offset: 3px;
+  border-radius: 16px;
+}

@@ -91,5 +91,10 @@ html {
     margin-left: 35px;
     margin-right: 5px;
   }
+  
+  .grid-produtos {
+    /* 4 colunas somente em telas grandes */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
