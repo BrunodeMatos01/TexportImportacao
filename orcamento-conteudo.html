@@ -50,152 +50,179 @@
 
     <script src="https://unpkg.com/htmx.org@1.9.12" defer></script>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="assets/header.css">
-    <link rel="stylesheet" href="assets/home.css">
-    <link rel="stylesheet" href="assets/form.css">
-    <link rel="stylesheet" href="assets/prdutos.css">
-    <link rel="stylesheet" href="assets/orcamento.css">
-    <link rel="stylesheet" href="assets/responsive.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/header.css" />
+    <link rel="stylesheet" href="assets/home.css" />
+    <link rel="stylesheet" href="assets/form.css" />
+    <link rel="stylesheet" href="assets/prdutos.css" />
+    <link rel="stylesheet" href="assets/orcamento.css" />
+    <link rel="stylesheet" href="assets/responsive.css" />
   </head>
 
   <body>
     <header id="cabecalho">
-        <section id="navPreta">
-          <div id="Btn-section">
-            <a
-              class="btn-watts"
-              href="https://wa.me/554788643697?text=Olá,%20gostaria%20de%20mais%20informações"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="img/Icone WhatsApp.png" alt="Icone WhatsApp" />Converse
-              conosco
-            </a>
-          </div>
-          <div class="btn-Tel">
-            <img src="img/Telefone icone.png" alt="Icone de telefone" />47
-            8864-3697
-          </div>
-        </section>
-        <section id="navBranca">
-          <nav id="navegacaoMobile">
-            <div class="menu-container">
-              <div class="menu-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="menu" id="menu">
-                <a href="#">Home</a>
-                <a href="#">Catálogo</a>
-                <a href="#">Contato</a>
-              </div>
+      <section id="navPreta">
+        <div id="Btn-section">
+          <a
+            class="btn-watts"
+            href="https://wa.me/554788643697?text=Olá,%20gostaria%20de%20mais%20informações"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="img/Icone WhatsApp.png" alt="Icone WhatsApp" />Converse
+            conosco
+          </a>
+        </div>
+        <div class="btn-Tel">
+          <img src="img/Telefone icone.png" alt="Icone de telefone" />47
+          8864-3697
+        </div>
+      </section>
+      <section id="navBranca">
+        <nav id="navegacaoMobile">
+          <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-          </nav>
-  
-          <div id="LogoTexport">
-            <a class="logo" href="/">
-              <img
-                src="img/Logo TEXPORT LETREIRO.jpg"
-                alt="Logo Texport Importação"
-              />
-            </a>
+            <div class="menu" id="menu">
+              <a href="#">Home</a>
+              <a href="#">Catálogo</a>
+              <a href="#">Contato</a>
+            </div>
           </div>
-  
-          <nav id="navegacao" aria-label="Navegação Principal">
-            <ul>
-              <li class="home"><a href="/">Home</a></li>
-              <li class="catalogos"><a href="/catalogo/">Catálogo</a></li>
-              <li class="contato"><a href="/contato/">Contato</a></li>
-            </ul>
-          </nav>
-  
-          <section id="Orcamento">
-            <div class="btn-orcamento">
-              <a href="/orcamento.html"
+        </nav>
+
+        <div id="LogoTexport">
+          <a class="logo" href="/">
+            <img
+              src="img/Logo TEXPORT LETREIRO.jpg"
+              alt="Logo Texport Importação"
+            />
+          </a>
+        </div>
+
+        <nav id="navegacao" aria-label="Navegação Principal">
+          <ul>
+            <li class="home"><a href="/">Home</a></li>
+            <li class="catalogos"><a href="/catalogo/">Catálogo</a></li>
+            <li class="contato"><a href="/contato/">Contato</a></li>
+          </ul>
+        </nav>
+
+        <section id="Orcamento">
+          <div class="btn-orcamento">
+            <a
+              href="/orcamento.html"
               hx-get="/orcamento-conteudo.html"
               hx-target="#main"
-              hx-push-url="true" class="btn-orcamento-link">
-                <img
-                  src="img/Prancheta Icone.png"
-                  alt="Icone de prancheta"
-                />Orçamento
-              </a>
-            </div>
-          </section>
+              hx-push-url="true"
+              class="btn-orcamento-link"
+            >
+              <img
+                src="img/Prancheta Icone.png"
+                alt="Icone de prancheta"
+              />Orçamento
+            </a>
+          </div>
         </section>
-      </header>
-   <main>
-    <section id="orcamento-video">
-      <video playsinline autoplay muted loop id="video-background">
-        <source src="img/Maquinas Têxteis.mp4" type="video/mp4">
-      </video>
+      </section>
+    </header>
+    <main>
+      <section id="orcamento-video">
+        <video playsinline autoplay muted loop id="video-background">
+          <source src="img/Maquinas Têxteis.mp4" type="video/mp4" />
+        </video>
 
-      <div id="orcamento-chamada">
-        <header class="orcamento-slogan">
-          <h1>Faça seu orçamento com <br>TEXPORT IMPORTAÇÃO</h1>
-          <p class="sobreEmpresa">
-            Impulsionar a excelência operacional do seu negócio têxtil. Com inovação constante, 
-            atendimento dedicado e compromisso genuíno com seus resultados, queremos ser mais do que um fornecedor 
-            — queremos ser parte essencial do seu sucesso.
+        <div id="orcamento-chamada">
+          <header class="orcamento-slogan">
+            <h1>Faça seu orçamento com <br />TEXPORT IMPORTAÇÃO</h1>
+            <p class="sobreEmpresa">
+              Impulsionar a excelência operacional do seu negócio têxtil. Com
+              inovação constante, atendimento dedicado e compromisso genuíno com
+              seus resultados, queremos ser mais do que um fornecedor — queremos
+              ser parte essencial do seu sucesso.
+            </p>
+          </header>
+        </div>
+      </section>
+
+      <section id="orcamento-div">
+        <div class="Form1">
+          <h2>Solicite seu Orçamento</h2>
+          <p>
+            Preencha o formulário abaixo e nossa equipe de especialistas entrará
+            em contato.
           </p>
-        </header>
-      </div>
 
-      
-    </section>
+          <form action="enviar-email.php" method="POST" class="contact-form">
+            <div class="form-group1">
+              <label for="nome">Nome Completo</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Seu nome"
+                required
+              />
+            </div>
 
-    <section id="orcamento-div">
-      <div class="Form1">
-        <h2>Solicite seu Orçamento</h2>
-        <p>
-          Preencha o formulário abaixo e nossa equipe de especialistas entrará
-          em contato.
-        </p>
+            <div class="form-group1">
+              <label for="email">Seu Melhor E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="seu-email@exemplo.com"
+                required
+              />
+            </div>
 
-        <form action="enviar-email.php" method="POST" class="contact-form">
-          <div class="form-group1">
-            <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
-          </div>
+            <div class="form-group1">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(47) 99999-8888"
+                required
+              />
+            </div>
 
-          <div class="form-group1">
-            <label for="email">Seu Melhor E-mail</label>
-            <input type="email" id="email" name="email" placeholder="seu-email@exemplo.com" required />
-          </div>
+            <div class="form-group1">
+              <label for="mensagem">Descrição Desejada</label>
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                rows="3"
+                placeholder="Descreva oque deseja, por favor!"
+                required
+              ></textarea>
+            </div>
 
-          <div class="form-group1">
-            <label for="telefone">Telefone / WhatsApp</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(47) 99999-8888" required />
-          </div>
+            <div class="honeypot1">
+              <label for="website">Não preencha este campo</label>
+              <input type="text" id="website" name="website" />
+            </div>
 
-          <div class="form-group1">
-            <label for="mensagem">Descrição Desejada</label>
-            <textarea id="mensagem" name="mensagem" rows="3" placeholder="Descreva oque deseja, por favor!"
-              required></textarea>
-          </div>
+            <div class="form-group1">
+              <button type="submit" class="btn-enviar1">Enviar Mensagem</button>
+            </div>
+          </form>
+        </div>
 
-          <div class="honeypot1">
-            <label for="website">Não preencha este campo</label>
-            <input type="text" id="website" name="website" />
-          </div>
-
-          <div class="form-group1">
-            <button type="submit" class="btn-enviar1">Enviar Mensagem</button>
-          </div>
-        </form>
-      </div>
-
-      <div class="orcamento-textoForm">
-        <h2>Sua produção não pode parar.</h2>
-        <p>
-          Sabemos que cada minuto com uma máquina parada representa um custo real para sua operação. Por isso, na
-          Texport, nossa especialidade é agilizar a importação de componentes e peças de reposição de alta durabilidade.
-        </p>
-      </div>
-    </section>
-  </main>
+        <div class="orcamento-textoForm">
+          <h2>Sua produção não pode parar.</h2>
+          <p>
+            Sabemos que cada minuto com uma máquina parada representa um custo
+            real para sua operação. Por isso, na Texport, nossa especialidade é
+            agilizar a importação de componentes e peças de reposição de alta
+            durabilidade.
+          </p>
+        </div>
+      </section>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
