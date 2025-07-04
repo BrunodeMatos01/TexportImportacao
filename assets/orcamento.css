@@ -52,8 +52,7 @@
 /* --- Bloco 1: Chamada Principal --- */
 #orcamento-chamada {
     width: 100%;
-    max-width: 800px; /* Limita a largura para melhor leitura */
-    margin: 0 auto; /* Centraliza o bloco na página */
+    max-width: 800px; 
     padding: 2rem 1rem;
     color: white;
     text-align: center;
@@ -86,7 +85,6 @@
 .slogan-alvo {
     width: 100%;
     max-width: 600px; /* Um pouco mais estreito para dar variedade */
-    margin: 40px auto 0 auto; /* Espaço acima e centralizado */
     padding: 1.5rem;
     color: white;
     z-index: 1;
@@ -179,14 +177,14 @@
 /* --- Título Principal (H2) com Efeitos --- */
 .orcamento-textoForm h2 {
     font-family: 'Poppins', sans-serif; /* Fonte impactante para o título */
-    font-size: 3rem; /* Maior e mais chamativo */
+    font-size: 2.8rem; /* Maior e mais chamativo */
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 2rem;
     position: relative;
     
     /* Cor do texto como um gradiente sutil */
-    background: linear-gradient(45deg, #0d213d, #1a3a69);
+    background: linear-gradient(80deg, #996619, #e69e32);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -205,7 +203,7 @@
     top: 0;
     width: 6px;
     height: 100%;
-    background: linear-gradient(180deg, #007BFF, #00BFFF); /* Gradiente na barra */
+    background: linear-gradient(180deg, #e69e32, #996619); /* Gradiente na barra */
     border-radius: 3px;
     
     /* Animação para a barra 'crescer' */
