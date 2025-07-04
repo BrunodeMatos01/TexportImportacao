@@ -63,7 +63,7 @@ p{
   text-decoration: none;
   margin: 1rem;
 
-  background-color: #a47e43;
+  background: linear-gradient(to right, #916c36, #c0a068);
   color: white;
   border: 0.125rem solid #a47e43;
   border-radius: 0.25rem;
@@ -74,7 +74,6 @@ p{
 
 .btn-vejaProdutos:hover {
   background-color: transparent;
-  color: #a47e43;
 
   transform: translateY(0.0625rem);
 }

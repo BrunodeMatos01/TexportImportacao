@@ -56,7 +56,7 @@
   font-size: 1rem; /* ALTERADO (era 1.1rem) */
   font-weight: bold;
   text-transform: uppercase;
-  background-color: #a47e43;
+  background: linear-gradient(to right, #916c36, #c0a068);
   color: white;
   border: 2px solid #a47e43;
   border-radius: 4px;
@@ -66,7 +66,6 @@
 
 .btn-enviar:hover {
   background-color: transparent;
-  color: #a47e43;
 }
 
 .honeypot {
@@ -134,7 +133,7 @@
   font-size: 1.1rem; /* ALTERADO (era 1.1rem) */
   font-weight: bold;
   text-transform: uppercase;
-  background-color: #a47e43;
+  background: linear-gradient(to right, #916c36, #c0a068);
   color: white;
   border: 2px solid #a47e43;
   border-radius: 4px;
@@ -144,7 +143,6 @@
 
 .btn-enviar1:hover {
   background-color: transparent;
-  color: #a47e43;
 }
 
 .honeypot1 {
