@@ -98,3 +98,27 @@ html {
   }
 }
 
+
+/* ORCAMENTO */
+@media (max-width: 768px) {
+    #orcamento-chamada h1 {
+        font-size: 2.2rem;
+    }
+
+    .sobreEmpresa {
+        font-size: 1rem;
+    }
+}
+
+/* --- Responsividade para os Efeitos --- */
+@media (max-width: 768px) {
+    .orcamento-textoForm h2 {
+        font-size: 2.5rem;
+    }
+    .orcamento-textoForm h2::before {
+        left: -1.5rem; /* Ajusta a posição da barra */
+    }
+    .orcamento-textoForm p {
+        font-size: 1rem;
+    }
+}

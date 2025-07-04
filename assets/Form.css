@@ -72,3 +72,81 @@
 .honeypot {
   display: none;
 }
+
+/* Para a tela de ORCAMENTO*/
+
+.Form1 {
+  max-width: 600px; /* ALTERADO (era 700px) - Principal ajuste de largura */
+  margin: 0; /* ALTERADO (era 4rem) - Menos espaço acima/abaixo */
+  padding: 0.5rem; /* ALTERADO (era 2rem) - Menos espaçamento interno */
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.Form1 h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.Form1 p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem; /* ALTERADO (era 2rem) */
+}
+
+.form-group1 {
+  margin-bottom: 1.5rem; /* ALTERADO (era 1.5rem) - Menos espaço entre os campos */
+}
+
+.form-group1 label {
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #a47e43;
+  margin-bottom: 0.5rem; /* ALTERADO (era 0.5rem) */
+}
+
+.form-group1 input[type="text"],
+.form-group1 input[type="email"],
+.form-group1 input[type="tel"],
+.form-group1 textarea {
+  width: 100%;
+  padding: 12px; /* ALTERADO (era 12px) - Deixa os campos um pouco mais baixos */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem; /* ALTERADO (era 1rem) - Fonte um pouco menor nos campos */
+  font-family: sans-serif;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-group1 input:focus,
+.form-group1 textarea:focus {
+  outline: none;
+  border-color: #a47e43;
+}
+
+.btn-enviar1 {
+  width: 100%;
+  padding: 10px; /* ALTERADO (era 15px) */
+  font-size: 1.1rem; /* ALTERADO (era 1.1rem) */
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #a47e43;
+  color: white;
+  border: 2px solid #a47e43;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-enviar1:hover {
+  background-color: transparent;
+  color: #a47e43;
+}
+
+.honeypot1 {
+  display: none;
+}

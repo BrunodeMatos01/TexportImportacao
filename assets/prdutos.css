@@ -1,5 +1,6 @@
 #telaProdutos {
   width: 100%;
+  background-color: #f0f2f5;
 
   display: flex;
   flex-direction: column;
@@ -18,70 +19,100 @@
 }
 
 #Produtos {
-  width: 100%;
-  padding: 0;
+    width: 100%;
+    padding: 4rem 2rem 7rem 2rem;
+    background-color: #f0f2f5; /* Um fundo para os cards se destacarem */
 }
 
 .grid-produtos {
-  list-style-type: none;
-  padding: 0;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  row-gap: 60px;
-  column-gap: 40px;
-  max-width: 1200px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 60px;
+    column-gap: 40px;
+    max-width: 1200px;
 }
 
+/* --- Estilo Principal do Card (Aprimorado) --- */
 .card-produto {
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
-  overflow: hidden;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 1rem 0;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    padding: 0; 
+    /* Sombra mais suave e complexa para maior profundidade */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 8px 25px rgba(0, 0, 0, 0.05);
+    
+    /* Borda sutil que acenderá em dourado no hover */
+    border: 1px solid transparent;
+    
+    /* Transição suave para todos os efeitos */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
+/* Efeito de hover aprimorado */
 .card-produto:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-12px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--gold-primary); /* Borda dourada aparece no hover */
+}
+
+/* --- Imagem com Efeito de Zoom --- */
+.card-imagem {
+    overflow: hidden; /* Essencial para o efeito de zoom funcionar dentro dos limites */
 }
 
 .card-imagem img {
-  width: 100%;
-  aspect-ratio: 25 / 16;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    aspect-ratio: 16 / 11; /* Um pouco mais alto para um visual imponente */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transição suave para o zoom */
+}
+
+/* O zoom acontece quando o mouse está sobre o CARD inteiro */
+.card-produto:hover .card-imagem img {
+    transform: scale(1.1);
 }
 
 .card-conteudo {
-  padding: 24px;
-  text-align: center;
+    padding: 24px;
+    text-align: center;
+    z-index: 3;
 }
 
 .produto-titulo {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #2d3748;
-  margin: 0;
+    font-family: 'Montserrat', sans-serif; /* Fonte elegante para títulos */
+    font-size: 1.5rem; /* Ajustado para a nova fonte */
+    font-weight: 700;
+    margin: 0;
+
+    /* Efeito de texto com gradiente dourado */
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
 
+/* --- Botão Invisível (Funcionalidade Mantida) --- */
 .btn-modal {
-  background: transparent;
-  border: none;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  z-index: 2;
+    background: transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
 }
 
 .btn-modal:focus-visible {
-  outline: 3px solid #3675f1;
-  outline-offset: 3px;
-  border-radius: 16px;
+    outline: 3px solid var(--gold-primary);
+    outline-offset: 3px;
+    border-radius: 16px;
 }
