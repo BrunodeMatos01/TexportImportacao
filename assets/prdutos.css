@@ -55,13 +55,6 @@
   display: block;
 }
 
-.card-imagem1 img {
-    width: 100%;
-    aspect-ratio: 25 / 22;
-    object-fit: cover;
-    display: block;
-  }
-
 .card-conteudo {
   padding: 24px;
   text-align: center;

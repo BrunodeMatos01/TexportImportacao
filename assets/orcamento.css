@@ -37,32 +37,205 @@
     z-index: -1; 
 }
 
-#orcamento-chamada {
-    width: 40%;
+/* --- Animação de Entrada --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    z-index: 1;
+/* --- Bloco 1: Chamada Principal --- */
+#orcamento-chamada {
+    width: 100%;
+    max-width: 800px; /* Limita a largura para melhor leitura */
+    margin: 0 auto; /* Centraliza o bloco na página */
+    padding: 2rem 1rem;
     color: white;
     text-align: center;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    z-index: 1;
+}
+
+#orcamento-chamada h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0; /* Estado inicial para animação */
+    animation: fadeIn 0.8s ease-out 0.2s forwards;
 }
 
 .sobreEmpresa {
-    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    color: #e0e0e0;
+    opacity: 0; /* Estado inicial para animação */
+    animation: fadeIn 0.8s ease-out 0.5s forwards;
 }
 
+/* --- Bloco 2: 'Nosso Alvo' --- */
 .slogan-alvo {
-    width: 40%;
-
-    z-index: 1;
+    width: 100%;
+    max-width: 600px; /* Um pouco mais estreito para dar variedade */
+    margin: 40px auto 0 auto; /* Espaço acima e centralizado */
+    padding: 1.5rem;
     color: white;
-    text-align: center;
+    z-index: 1;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px; /* Espaço entre a imagem e o texto */
+}
+
+.imagem-alvo img {
+    width: 50px;
+    height: auto;
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,0.4));
+}
+
+.texto-alvo {
+    text-align: center;
+}
+
+.texto-alvo h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.texto-alvo p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    #orcamento-chamada h1 {
+        font-size: 2.2rem;
+    }
+
+    .sobreEmpresa, .texto-alvo p {
+        font-size: 1rem;
+    }
+}
+
+#orcamento-div {
+    width: 100%;
+    padding: 3rem 2rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-evenly;
+    
+}
+
+/* --- 2. Definindo as Animações que usaremos (Keyframes) --- */
+/* Animação para o texto deslizar de baixo para cima e aparecer */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação para a barra decorativa crescer verticalmente */
+@keyframes growInHeight {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+
+
+.orcamento-textoForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Adicionamos overflow: hidden para que a animação não 'vaze' para fora do container */
+    overflow: hidden;
+    padding: 2rem; /* Um pouco de padding para respirar */
+}
+
+/* --- Título Principal (H2) com Efeitos --- */
+.orcamento-textoForm h2 {
+    font-family: 'Poppins', sans-serif; /* Fonte impactante para o título */
+    font-size: 3rem; /* Maior e mais chamativo */
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    position: relative;
+    
+    /* Cor do texto como um gradiente sutil */
+    background: linear-gradient(45deg, #0d213d, #1a3a69);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    /* Aplicando a animação de entrada */
+    opacity: 0; /* Começa invisível */
+    animation: slideInUp 0.8s ease-out 0.3s forwards;
+}
+
+/* --- Detalhe Decorativo Animado --- */
+.orcamento-textoForm h2::before {
+    content: '';
+    position: absolute;
+    left: -2rem; /* Posiciona um pouco à esquerda */
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, #007BFF, #00BFFF); /* Gradiente na barra */
+    border-radius: 3px;
+    
+    /* Animação para a barra 'crescer' */
+    transform-origin: bottom; /* Faz a barra crescer de baixo para cima */
+    animation: growInHeight 0.6s ease-out 0.6s forwards;
+}
+
+
+/* --- Parágrafo de Apoio (P) Animado --- */
+.orcamento-textoForm p {
+    font-family: 'Lato', sans-serif; /* Fonte limpa e legível para o texto */
+    font-size: 1.2rem;
+    color: #4a5568;
+    line-height: 1.8;
+    max-width: 500px; /* Evita que o texto fique muito largo */
+    
+    /* Aplicando a animação de entrada com um pequeno atraso */
+    opacity: 0; /* Começa invisível */
+    animation: slideInUp 0.8s ease-out 0.6s forwards;
+}
+
+/* --- Responsividade para os Efeitos --- */
+@media (max-width: 768px) {
+    .orcamento-textoForm h2 {
+        font-size: 2.5rem;
+    }
+    .orcamento-textoForm h2::before {
+        left: -1.5rem; /* Ajusta a posição da barra */
+    }
+    .orcamento-textoForm p {
+        font-size: 1rem;
+    }
 }

@@ -29,3 +29,10 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+:root {
+    --cinza-medio: #64748b;
+    --dourado: #f59e0b;
+    --dourado-escuro: #d97706;
+}
+
