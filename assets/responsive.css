@@ -19,6 +19,7 @@ html {
     display: none;
   }
 }
+
 @media (min-width: 900px) {
   #navegacaoMobile {
     display: none;
@@ -29,36 +30,48 @@ html {
 /* REGRAS PARA RESPONSIVIDADE           */
 /* ============================================= */
 @media (max-width: 900px) {
+
   /* 1. Altera o container principal para empilhar os itens */
   #Container-inicialHome {
-    flex-direction: column; /* Coloca um item embaixo do outro */
-    justify-content: center; /* Centraliza verticalmente */
-    gap: 2rem; /* Adiciona um espaço entre o texto e o formulário */
-    height: auto; /* Altura se ajusta ao conteúdo */
-    padding: 3rem 0rem; /* Espaçamento interno para não colar nas bordas */
-    background-attachment: scroll; /* Melhora a performance em mobile */
+    flex-direction: column;
+    /* Coloca um item embaixo do outro */
+    justify-content: center;
+    /* Centraliza verticalmente */
+    gap: 2rem;
+    /* Adiciona um espaço entre o texto e o formulário */
+    height: auto;
+    /* Altura se ajusta ao conteúdo */
+    padding: 3rem 0rem;
+    /* Espaçamento interno para não colar nas bordas */
+    background-attachment: scroll;
+    /* Melhora a performance em mobile */
   }
 
   /* 2. Ajusta o container do texto chamativo */
   .textoChamtivo {
-    width: 90%; /* Ocupa toda a largura disponível */
-    max-width: 500px; /* Limita a largura máxima para leitura */
-    text-align: center; /* Centraliza todo o texto e o botão */
+    width: 90%;
+    /* Ocupa toda a largura disponível */
+    max-width: 500px;
+    /* Limita a largura máxima para leitura */
+    text-align: center;
+    /* Centraliza todo o texto e o botão */
   }
 
   /* 3. Ajusta o tamanho da fonte para telas menores */
   .textoH1 h1 {
-    font-size: 3.5em; /* Reduz o tamanho do título principal */
+    font-size: 3.5em;
+    /* Reduz o tamanho do título principal */
   }
 
   .textoH1 p {
-    font-size: 1.5em; /* Reduz o tamanho do subtítulo */
+    font-size: 1.5em;
+    /* Reduz o tamanho do subtítulo */
   }
 
   /* 4. Garante que o formulário ocupe a largura adequada */
   .Form {
-    width: 80%; 
-    max-width: 400px; 
+    width: 80%;
+    max-width: 400px;
     margin: 0;
   }
 
@@ -78,6 +91,7 @@ html {
     box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
   }
+
   .btn-orcamento-link img {
     height: 1.3rem;
     width: auto;
@@ -91,7 +105,7 @@ html {
     margin-left: 35px;
     margin-right: 5px;
   }
-  
+
   .grid-produtos {
     /* 4 colunas somente em telas grandes */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -101,24 +115,97 @@ html {
 
 /* ORCAMENTO */
 @media (max-width: 768px) {
-    #orcamento-chamada h1 {
-        font-size: 2.2rem;
-    }
+  #orcamento-chamada h1 {
+    font-size: 2.2rem;
+  }
 
-    .sobreEmpresa {
-        font-size: 1rem;
-    }
+  .sobreEmpresa {
+    font-size: 1rem;
+  }
 }
 
 /* --- Responsividade para os Efeitos --- */
 @media (max-width: 768px) {
-    .orcamento-textoForm h2 {
-        font-size: 2.5rem;
+  .orcamento-textoForm h2 {
+    font-size: 2.5rem;
+  }
+
+  .orcamento-textoForm h2::before {
+    left: -1.5rem;
+    /* Ajusta a posição da barra */
+  }
+
+  .orcamento-textoForm p {
+    font-size: 1rem;
+  }
+}
+
+/* dialog */
+@media (max-width: 1200px) {
+  .carrossel-wrapper {
+    width: 75%;
+  }
+
+  .carrossel-item {
+    width: calc(33.33% - 14px);
+  }
+}
+
+@media (max-width: 768px) {
+  .carrossel-wrapper {
+    width: 70%;
+  }
+
+  .carrossel-item {
+    width: calc(50% - 10px);
+  }
+
+  .carrossel-btn.prev {
+    left: 1rem;
+  }
+
+  .carrossel-btn.next {
+    right: 1rem;
+  }
+
+  .modal-header {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .carrossel-wrapper {
+    width: 65%;
+  }
+
+  .carrossel-item {
+    width: 100%;
+  }
+
+  .carrossel-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (max-width: 1200px) {
+    .carrossel-item {
+      width: calc(33.33% - 14px);
     }
-    .orcamento-textoForm h2::before {
-        left: -1.5rem; /* Ajusta a posição da barra */
+  }
+
+  @media (max-width: 900px) {
+    .carrossel-item {
+      width: calc(50% - 10px);
     }
-    .orcamento-textoForm p {
-        font-size: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .carrossel-item {
+      width: 100%;
     }
+
+    .carrossel-btn {
+      display: none;
+    }
+  }
 }

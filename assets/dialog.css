@@ -1,5 +1,5 @@
 /* ============================================= */
-/* ESTILOS DO MODAL E CARROSSEL         */
+/* ESTILOS DO MODAL E CARROSSEL - VERSÃO FINAL   */
 /* ============================================= */
 
 .modal-carrossel::backdrop {
@@ -8,8 +8,8 @@
 }
 
 .modal-carrossel {
-  width: 100%;
-  max-width: 100%;
+  width: 90%;
+  max-width: 1300px;
   background-color: transparent;
   border: none;
   box-shadow: none;
@@ -19,52 +19,40 @@
 }
 
 .modal-carrossel[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   animation: fadeIn 0.4s ease-out forwards;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
+/* ===== CABEÇALHO COM ALINHAMENTO CORRETO ===== */
 .modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-  top: 0;
-  left: 0;
   width: 100%;
-  z-index: 20;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1.5rem 3rem;
-  border-bottom: none;
-  margin-bottom: 0;
   text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  /* Retiramos position:absolute para que ele faça parte do bloco */
 }
 
 .modal-header h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin: 0;
   color: white;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-.modal-header::before {
-  content: ""; 
-  flex-basis: 40px; 
-  visibility: hidden; 
-}
-
-
+/* ===== BOTÃO DE FECHAR INDEPENDENTE ===== */
 .modal-fechar {
+  position: fixed; /* Usamos fixed para ser relativo à janela */
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1050; /* Z-index alto para ficar sobre tudo */
   background: none;
   border: none;
   font-size: 2.5rem;
@@ -74,20 +62,16 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   line-height: 1;
   transition: color 0.2s ease, transform 0.2s ease;
-
-  flex-basis: 40px;
 }
 
 .modal-fechar:hover {
-  color: #fff;
   transform: scale(1.1);
 }
 
+/* ===== CONTAINER DO CARROSSEL ===== */
 .carrossel-container {
   position: relative;
   width: 100%;
-  padding-top: 7rem;
-  /* Adiciona espaço no topo para o Header não sobrepor */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,8 +79,7 @@
 
 .carrossel-wrapper {
   overflow: hidden;
-  width: 80%;
-  max-width: 1200px;
+  width: 100%;
 }
 
 .carrossel-track {
@@ -105,35 +88,70 @@
   transition: transform 0.5s ease-in-out;
 }
 
+/* ===== CONTEÚDO DO CARD ===== */
 .carrossel-item {
   flex-shrink: 0;
-  width: calc(25% - 18px);
-  background-color: #f9f9f9;
-  border: 1px solid #eee;
+  width: calc(25% - 15px); /* Espaço para 4 cards */
+  background-color: #fff;
   border-radius: 8px;
-  text-align: center;
-  padding: 1rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  text-align: left;
 }
 
-.carrossel-item img {
+.item-imagem img {
   width: 100%;
-  aspect-ratio: 1/1;
+  display: block;
+  aspect-ratio: 16/10;
   object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
 }
 
-.carrossel-item h3 {
-  font-size: 1rem;
-  margin: 0.5rem 0 0;
+.item-info {
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.item-marca,
+.item-modelo,
+.item-codigo {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.item-marca {
+  text-transform: uppercase;
+  font-weight: bold;
   color: #333;
 }
 
+.item-nome {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin: 8px 0;
+  line-height: 1.3;
+  flex-grow: 1;
+}
+
+.item-codigo {
+  margin-top: auto;
+  padding-top: 8px;
+  color: #888;
+}
+
+/* ===== BOTÕES E PAGINAÇÃO ===== */
 .carrossel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 10;
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #ddd;
   border-radius: 50%;
@@ -143,7 +161,6 @@
   font-weight: bold;
   color: #555;
   cursor: pointer;
-  z-index: 10;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
   display: flex;
@@ -157,85 +174,44 @@
 }
 
 .carrossel-btn.prev {
-  left: 3rem;
+  left: -22.5px;
 }
 
 .carrossel-btn.next {
-  right: 3rem;
+  right: -22.5px;
 }
 
-/* Paginação (Bolinhas) com o novo estilo */
 .carrossel-paginacao {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 1.5rem;
-  padding-bottom: 1rem;
+  margin-top: 2rem;
 }
 
 .paginacao-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 35px;
+  height: 35px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  background-image: url(../img/icone\ dialog.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  padding: 0;
 }
 
 .paginacao-dot:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0.7;
 }
 
 .paginacao-dot._active {
-  background-color: #fff;
-  transform: scale(1.2);
+  
+  transform: scale(1.3);
+  opacity: 1;
 }
 
-/* Estilos para responsividade */
-@media (max-width: 1200px) {
-  .carrossel-wrapper {
-    width: 75%;
-  }
-
-  .carrossel-item {
-    width: calc(33.33% - 14px);
-  }
-}
-
-@media (max-width: 768px) {
-  .carrossel-wrapper {
-    width: 70%;
-  }
-
-  .carrossel-item {
-    width: calc(50% - 10px);
-  }
-
-  .carrossel-btn.prev {
-    left: 1rem;
-  }
-
-  .carrossel-btn.next {
-    right: 1rem;
-  }
-
-  .modal-header {
-    padding: 1rem 1.5rem;
-  }
-}
-
-@media (max-width: 580px) {
-  .carrossel-wrapper {
-    width: 65%;
-  }
-
-  .carrossel-item {
-    width: 100%;
-  }
-
-  .carrossel-btn {
-    width: 40px;
-    height: 40px;
-  }
+.paginacao-dot:focus-visible {
+  outline: 2px solid #c0a068;
+  outline-offset: 2px;
 }

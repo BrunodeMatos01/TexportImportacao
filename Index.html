@@ -171,7 +171,7 @@
                   <h2 class="produto-titulo">Facas</h2>
                 </div>
               </div>
-              <button class="btn-modal" onclick="abrirModal('Facas')" aria-label="Ver mais detalhes sobre Facas">
+              <button class="btn-modal" data-categoria="Facas" aria-label="Ver mais detalhes sobre Facas">
               </button>
           </li>
 
@@ -186,7 +186,7 @@
                   <h2 class="produto-titulo">Lixas</h2>
                 </div>
               </div>
-              <button class="btn-modal" onclick="abrirModal('Lixas')" aria-label="Ver mais detalhes sobre Facas">
+              <button class="btn-modal" data-categoria="Lixas" aria-label="Ver mais detalhes sobre Facas">
               </button>
           </li>
 
@@ -205,7 +205,7 @@
                 </div>
               </div>
 
-              <button class="btn-modal" onclick="abrirModal('Cerdas')" aria-label="Ver mais detalhes sobre Cerdas">
+              <button class="btn-modal" data-categoria="Cerdas" aria-label="Ver mais detalhes sobre Cerdas">
               </button>
 
             </article>
@@ -223,7 +223,7 @@
                 </div>
               </div>
 
-              <button class="btn-modal" onclick="abrirModal('Cartuchos')" aria-label="Ver mais detalhes sobre Facas">
+              <button class="btn-modal" data-categoria="Cartuchos" aria-label="Ver mais detalhes sobre Facas">
               </button>
             </article>
           </li>
@@ -238,7 +238,7 @@
                 </div>
               </div>
 
-              <button class="btn-modal" onclick="abrirModal('Rebolos')" aria-label="Ver mais detalhes sobre Facas">
+              <button class="btn-modal" data-categoria="Rebolos" aria-label="Ver mais detalhes sobre Facas">
               </button>
             </article>
           </li>
@@ -255,7 +255,7 @@
                 </div>
               </div>
 
-              <button class="btn-modal" onclick="abrirModal('Kits')" aria-label="Ver mais detalhes sobre Facas">
+              <button class="btn-modal" data-categoria="Kits" aria-label="Ver mais detalhes sobre Facas">
               </button>
             </article>
           </li>
@@ -264,20 +264,37 @@
     </section>
   </main>
   <dialog class="modal-carrossel" id="modalProdutos">
+
     <div class="modal-header">
       <h2 id="modalTitulo">Carregando...</h2>
-      <button class="modal-fechar" id="modalFecharBtn" aria-label="Fechar modal">×</button>
-    </div>
+      </div>
+
     <div class="carrossel-container">
       <button class="carrossel-btn prev" id="carrosselBtnPrev" aria-label="Anterior">‹</button>
       <div class="carrossel-wrapper">
-        <div class="carrossel-track" id="carrosselTrack"></div>
+        <div class="carrossel-track" id="carrosselTrack">
+            <div class="carrossel-item">
+              <div class="item-imagem">
+                <img src="https://placehold.co/400x300/f0f0f0/333?text=Exemplo" alt="Máquina de Exemplo">
+              </div>
+              <div class="item-info">
+                <p class="item-marca">MARCA</p>
+                <p class="item-modelo">MODELO-12345</p>
+                <h3 class="item-nome">Nome do Produto de Exemplo</h3>
+                <p class="item-codigo">00.123.45678</p>
+              </div>
+            </div>
+        </div>
       </div>
       <button class="carrossel-btn next" id="carrosselBtnNext" aria-label="Próximo">›</button>
     </div>
 
     <div class="carrossel-paginacao" id="carrosselPaginacao"></div>
-  </dialog>
+
+    <button class="modal-fechar" id="modalFecharBtn" aria-label="Fechar modal">×</button>
+
+</dialog>
+
   <script src="script.js"></script>
 </body>
 

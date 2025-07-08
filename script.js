@@ -24,16 +24,22 @@ const menu = document.getElementById('menu');
     });
   });
 
+document.addEventListener('DOMContentLoaded', () => {
 
-  document.addEventListener('DOMContentLoaded', () => {
-
+    // ... (a sua lista de produtosPorCategoria continua a mesma aqui em cima)
     const produtosPorCategoria = {
-        'Facas': [{ nome: 'Faca de Corte Reto', img: 'https://placehold.co/300x300/c0a068/FFF?text=Faca+Reta' }, { nome: 'Faca de Serra', img: 'https://placehold.co/300x300/c0a068/FFF?text=Faca+Serra' }, { nome: 'Faca Circular', img: 'https://placehold.co/300x300/c0a068/FFF?text=Faca+Circular' }, { nome: 'Faca de Precisão', img: 'https://placehold.co/300x300/c0a068/FFF?text=Faca+Precisão' }, { nome: 'Lâmina Especial', img: 'https://placehold.co/300x300/c0a068/FFF?text=Lâmina' }, { nome: 'Faca de Corte Reto', img: 'https://placehold.co/300x300/c0a068/FFF?text=Faca+Reta' }, { nome: 'Faca de Corte Reto', img: 'https://placehold.co/300x300/c0a068/FFF?text=Faca+Reta' }, { nome: 'Faca de Corte Reto', img: 'https://placehold.co/300x300/c0a068/FFF?text=Faca+Reta' }, { nome: 'Faca de Corte Reto', img: 'https://placehold.co/300x300/c0a068/FFF?text=Faca+Reta' }, { nome: 'Faca de Corte Reto', img: 'https://placehold.co/300x300/c0a068/FFF?text=Faca+Reta' }, { nome: 'Faca de Corte Reto', img: 'https://placehold.co/300x300/c0a068/FFF?text=Faca+Reta' } ],
-        'Lixas': [{ nome: 'Lixa Grão Fino', img: 'https://placehold.co/300x300/a47e43/FFF?text=Lixa+Fina' }, { nome: 'Lixa Grão Grosso', img: 'https://placehold.co/300x300/a47e43/FFF?text=Lixa+Grossa' }, { nome: 'Lixa D\'água', img: 'https://placehold.co/300x300/a47e43/FFF?text=Lixa+Dágua' }, ],
-        'Cerdas': [{ nome: 'Cerdas de Nylon', img: 'https://placehold.co/300x300/916c36/FFF?text=Cerdas+Nylon' }, { nome: 'Cerdas de Aço', img: 'https://placehold.co/300x300/916c36/FFF?text=Cerdas+Aço' }, { nome: 'Cerdas Naturais', img: 'https://placehold.co/300x300/916c36/FFF?text=Cerdas+Naturais' }, { nome: 'Cerdas Mistas', img: 'https://placehold.co/300x300/916c36/FFF?text=Cerdas+Mistas' }, ],
-        'Cartuchos': [{ nome: 'Cartucho de Tinta Preta', img: 'https://placehold.co/300x300/333/FFF?text=Tinta+Preta' }, { nome: 'Cartucho Colorido', img: 'https://placehold.co/300x300/333/FFF?text=Tinta+Cor' }, ],
-        'Rebolos': [{ nome: 'Rebolo Cônico', img: 'https://placehold.co/300x300/777/FFF?text=Rebolo+Cônico' }, { nome: 'Rebolo Reto', img: 'https://placehold.co/300x300/777/FFF?text=Rebolo+Reto' }, { nome: 'Disco de Desbaste', img: 'https://placehold.co/300x300/777/FFF?text=Desbaste' }, ],
-        'Kits': [{ nome: 'Kit Iniciante', img: 'https://placehold.co/300x300/8c7e69/FFF?text=Kit+Iniciante' }, { nome: 'Kit Profissional', img: 'https://placehold.co/300x300/8c7e69/FFF?text=Kit+Pro' }, { nome: 'Kit Manutenção', img: 'https://placehold.co/300x300/8c7e69/FFF?text=Kit+Manutenção' }, ]
+        'Facas': [
+            { marca: 'RICHPEACE', modelo: 'RP-KNF1625', nome: 'Faca de Corte Oscilante', codigo: '10.101.001', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+1' },
+            { marca: 'JUKI', modelo: 'JK-T1310', nome: 'Faca de Corte Digital', codigo: '10.101.002', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+2' },
+            { marca: 'RICHPEACE', modelo: 'RP-KNF2030', nome: 'Faca Circular Automática', codigo: '10.101.003', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+3' },
+            { marca: 'JUKI', modelo: 'JK-T1315', nome: 'Faca para Couro', codigo: '10.101.004', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+4' },
+            { marca: 'EXTRA', modelo: 'EXT-005', nome: 'Faca Extra 5', codigo: '10.101.005', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+5' },
+            { marca: 'EXTRA', modelo: 'EXT-006', nome: 'Faca Extra 6', codigo: '10.101.006', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+6' },
+        ],
+        'Lixas': [
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: 'https://placehold.co/400x300/f0eade/333?text=Lixa+1' },
+            { marca: '3M', modelo: 'Cubitron II', nome: 'Lixa de Grão Grosso 80', codigo: '20.201.002', img: 'https://placehold.co/400x300/f0eade/333?text=Lixa+2' },
+        ],
     };
 
     const modal = document.getElementById('modalProdutos');
@@ -47,21 +53,45 @@ const menu = document.getElementById('menu');
 
     let currentIndex = 0;
     let totalItems = 0;
-    let itemsVisiveis = 4; // Lembre-se de ajustar se o CSS mudar
+    let itemsVisiveis = 4; // Valor padrão
+
+    // =============================================
+    // ===== NOVO: FUNÇÃO PARA DEIXAR O JS RESPONSIVO =====
+    // =============================================
+    function atualizarItemsVisiveis() {
+        const larguraTela = window.innerWidth;
+        if (larguraTela <= 600) {
+            itemsVisiveis = 1;
+        } else if (larguraTela <= 900) {
+            itemsVisiveis = 2;
+        } else if (larguraTela <= 1200) {
+            itemsVisiveis = 3;
+        } else {
+            itemsVisiveis = 4;
+        }
+    }
+
 
     function popularModal(categoria) {
+        atualizarItemsVisiveis(); // Verifica o tamanho da tela ao abrir o modal
         const produtos = produtosPorCategoria[categoria] || [];
         totalItems = produtos.length;
         carrosselTrack.innerHTML = '';
-        
-        // Centraliza o track se houver menos itens que o espaço visível
-        carrosselTrack.style.justifyContent = totalItems < itemsVisiveis ? 'center' : 'flex-start';
+        carrosselTrack.style.justifyContent = totalItems <= itemsVisiveis ? 'center' : 'flex-start';
 
         produtos.forEach(produto => {
-            const itemHTML = `<div class="carrossel-item"><img src="${produto.img}" alt="${produto.nome}"><h3>${produto.nome}</h3></div>`;
-            carrosselTrack.insertAdjacentHTML('beforeend', itemHTML);
+            const cardHTML = `
+                <div class="carrossel-item">
+                  <div class="item-imagem"><img src="${produto.img}" alt="${produto.nome}"></div>
+                  <div class="item-info">
+                    <p class="item-marca">${produto.marca || ''}</p>
+                    <p class="item-modelo">${produto.modelo || ''}</p>
+                    <h3 class="item-nome">${produto.nome || ''}</h3>
+                    <p class="item-codigo">${produto.codigo || ''}</p>
+                  </div>
+                </div>`;
+            carrosselTrack.insertAdjacentHTML('beforeend', cardHTML);
         });
-
         modalTitulo.textContent = `Tipos de ${categoria}`;
         resetarCarrossel();
     }
@@ -74,16 +104,14 @@ const menu = document.getElementById('menu');
         const gap = 20;
         const totalMove = currentIndex * (itemWidth + gap);
         carrosselTrack.style.transform = `translateX(-${totalMove}px)`;
-
         atualizarBotoes();
-        criarPaginacao(); // Recria a paginação para atualizar o estado ativo
+        criarPaginacao();
     }
 
     function atualizarBotoes() {
+        const maxIndex = Math.max(0, totalItems - itemsVisiveis);
         btnPrev.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
-        const maxIndex = totalItems - itemsVisiveis;
         btnNext.style.visibility = currentIndex >= maxIndex ? 'hidden' : 'visible';
-        
         if (totalItems <= itemsVisiveis) {
             btnPrev.style.visibility = 'hidden';
             btnNext.style.visibility = 'hidden';
@@ -93,12 +121,12 @@ const menu = document.getElementById('menu');
     function criarPaginacao() {
         if (!paginacaoContainer) return;
         paginacaoContainer.innerHTML = '';
+        
+        const numeroDeParadas = Math.max(0, totalItems - itemsVisiveis) + 1;
+        
+        if (numeroDeParadas <= 1) return;
 
-        const maxIndex = totalItems - itemsVisiveis;
-        if (maxIndex < 1) return; // Não cria bolinhas se não houver rolagem
-
-        // Cria uma bolinha para cada posição possível de início
-        for (let i = 0; i <= maxIndex; i++) {
+        for (let i = 0; i < numeroDeParadas; i++) {
             const dot = document.createElement('button');
             dot.classList.add('paginacao-dot');
             if (i === currentIndex) {
@@ -114,23 +142,29 @@ const menu = document.getElementById('menu');
 
     function resetarCarrossel() {
         currentIndex = 0;
-        setTimeout(moverCarrossel, 50);
+        setTimeout(moverCarrossel, 100);
     }
 
     // --- Event Listeners ---
     botoesAbrirModal.forEach(botao => {
         botao.addEventListener('click', () => {
-            const onclickAttr = botao.getAttribute('onclick');
-            const categoria = onclickAttr.match(/abrirModal\('([^']+)'\)/)[1];
-            popularModal(categoria);
-            modal.showModal();
+            popularModal(botao.getAttribute('data-categoria')); // Mudança para data-attribute
         });
     });
+
+    // Evento para abrir o modal
+    document.querySelectorAll('.btn-modal').forEach(button => {
+    button.addEventListener('click', function() {''
+        const categoria = this.getAttribute('data-categoria'); // Pega o valor do atributo
+        popularModal(categoria);
+        modal.showModal();
+    });
+});
 
     modalFecharBtn.addEventListener('click', () => modal.close());
 
     btnNext.addEventListener('click', () => {
-        const maxIndex = totalItems - itemsVisiveis;
+        const maxIndex = Math.max(0, totalItems - itemsVisiveis);
         if (currentIndex < maxIndex) {
             currentIndex++;
             moverCarrossel();
@@ -146,5 +180,16 @@ const menu = document.getElementById('menu');
 
     modal.addEventListener('click', (event) => {
         if (event.target === modal) modal.close();
+    });
+
+    // =============================================
+    // ===== NOVO: EVENTO PARA DEIXAR O JS RESPONSIVO =====
+    // =============================================
+    window.addEventListener('resize', () => {
+        // Se o modal estiver aberto, recalcula tudo ao redimensionar a janela
+        if (modal.hasAttribute('open')) {
+            atualizarItemsVisiveis();
+            moverCarrossel();
+        }
     });
 });
