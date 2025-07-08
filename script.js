@@ -25,8 +25,6 @@ const menu = document.getElementById('menu');
   });
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    // ... (a sua lista de produtosPorCategoria continua a mesma aqui em cima)
     const produtosPorCategoria = {
         'Facas': [
             { marca: 'RICHPEACE', modelo: 'RP-KNF1625', nome: 'Faca de Corte Oscilante', codigo: '10.101.001', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+1' },
