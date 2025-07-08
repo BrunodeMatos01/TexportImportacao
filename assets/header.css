@@ -113,7 +113,6 @@ p {
 
 #navegacao a {
   position: relative;
-  font-family: "Poppins", "Helvetica", "Arial", sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
   color: #a47e43;
@@ -208,7 +207,6 @@ p {
   padding: 0.4rem 1rem;
   background: linear-gradient(to right, #916c36, #c0a068);
   color: white;
-  font-family: "Poppins", "Helvetica", "Arial", sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;

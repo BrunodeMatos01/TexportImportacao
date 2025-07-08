@@ -39,7 +39,6 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 0.9rem; /* ALTERADO (era 1rem) - Fonte um pouco menor nos campos */
-  font-family: sans-serif;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
 }
@@ -52,8 +51,8 @@
 
 .btn-enviar {
   width: 100%;
-  padding: 8px; /* ALTERADO (era 15px) */
-  font-size: 1rem; /* ALTERADO (era 1.1rem) */
+  padding: 8px;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   background: linear-gradient(to right, #916c36, #c0a068);
@@ -62,10 +61,35 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-enviar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #916c36, #c0a068);
+  transform: translateX(-100%); 
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
 }
 
 .btn-enviar:hover {
-  background-color: transparent;
+  background-color: transparent; 
+  transform: translateY(0.0625rem);
+}
+
+.btn-enviar:hover::before {
+  transform: translateX(0);
+}
+
+.btn-enviar:active {
+  transform: translateY(0);
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
 }
 
 .honeypot {
@@ -116,7 +140,6 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 0.9rem; /* ALTERADO (era 1rem) - Fonte um pouco menor nos campos */
-  font-family: sans-serif;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
 }

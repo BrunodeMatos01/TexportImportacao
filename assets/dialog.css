@@ -1,0 +1,173 @@
+/* ============================================= */
+/* ESTILOS DO MODAL E CARROSSEL         */
+/* ============================================= */
+
+/* Estilo do Fundo (Overlay) quando o Modal está aberto */
+.modal-carrossel::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+  }
+  
+  /* O Modal em si */
+  .modal-carrossel {
+    width: 90%;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 2rem;
+    margin: auto;
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+  
+  /* O <dialog> só recebe a animação quando tem o atributo 'open' */
+  .modal-carrossel[open] {
+    animation-name: fadeIn;
+  }
+  
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+  
+  .modal-fechar {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+    transition: color 0.2s ease;
+  }
+  
+  .modal-fechar:hover {
+      color: #333;
+  }
+  
+  /* Estrutura do Carrossel */
+  .carrossel-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .carrossel-wrapper {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carrossel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Card individual dentro do carrossel */
+  .carrossel-item {
+    flex-shrink: 0;
+    width: calc(25% - 15px); /* Mostra 4 itens. (100% / 4 = 25%). O -15px ajusta para o 'gap' */
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .carrossel-item img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .carrossel-item h3 {
+    font-size: 1rem;
+    margin: 0.5rem 0 0;
+    color: #333;
+  }
+  
+  /* Botões de Navegação do Carrossel */
+  .carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carrossel-btn:hover {
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .carrossel-btn.prev {
+    left: -22.5px;
+  }
+  
+  .carrossel-btn.next {
+    right: -22.5px;
+  }
+  
+  /* Estilos para responsividade */
+  @media (max-width: 950px) {
+    .carrossel-item {
+      width: calc(33.33% - 14px); /* Mostra 3 itens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .modal-carrossel {
+      padding: 1rem;
+    }
+    .carrossel-item {
+      width: calc(50% - 10px); /* Mostra 2 itens */
+    }
+    .carrossel-btn.prev {
+      left: -15px;
+    }
+    .carrossel-btn.next {
+      right: -15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carrossel-item {
+      width: calc(100% - 10px); /* Mostra 1 item */
+    }
+  } 

@@ -56,6 +56,7 @@
     <link rel="stylesheet" href="assets/form.css" />
     <link rel="stylesheet" href="assets/prdutos.css" />
     <link rel="stylesheet" href="assets/orcamento.css">
+    <link rel="stylesheet" href="assets/dialog.css">
     <link rel="stylesheet" href="assets/responsive.css" />
   </head>
 
@@ -210,13 +211,12 @@
             <li class="produto-item">
               <article class="card-produto">
                 <div class="card-imagem">
-                  <img src="https://image.made-in-china.com/202f0j00vuHkIjVRZZrK/365-8-5-2-4mm-CAD-Cam-Lectra-Knife-Textile-Fabric-Cloth-Cutting-Machine-Knife-Blades.webp" alt="" />
+                  <img src="https://image.made-in-china.com/202f0j00vuHkIjVRZZrK/365-8-5-2-4mm-CAD-Cam-Lectra-Knife-Textile-Fabric-Cloth-Cutting-Machine-Knife-Blades.webp" alt="Cerdas" />
+                  
+                  <div class="card-overlay">
+                    <h2 class="produto-titulo">Facas</h2>
+                  </div>
                 </div>
-
-                <div class="card-conteudo">
-                  <h2 class="produto-titulo">Facas</h2>
-                </div>
-
                 <button
                   class="btn-modal"
                   onclick="abrirModal('Facas')"
@@ -227,37 +227,38 @@
             <li class="produto-item">
               <article class="card-produto">
                 <div class="card-imagem">
-                  <img src="https://http2.mlstatic.com/D_NQ_NP_820378-MLB54240980911_032023-O-cerdas-de-nylon-em-bloco-maquina-cortadora-de-tecido-gerber.webp" alt="" />
+                  <img src="https://a-static.mlcdn.com.br/280x210/lixa-para-maquina-de-cortar-tecidos-de-faca-usa-americanca-yh-633/milamak/1683p/a509007bd55cf4127ec9d623f8034f5e.jpeg" alt="Cerdas" />
+                  
+                  <div class="card-overlay">
+                    <h2 class="produto-titulo">Lixas</h2>
+                  </div>
                 </div>
-
-                <div class="card-conteudo">
-                <h2 class="produto-titulo">Cerdas</h2>
-              </div>
-
-                <button
-                  class="btn-modal"
-                  onclick="abrirModal('Cerdas')"
-                  aria-label="Ver mais detalhes sobre Facas">
-                </button>
-              </article>
-            </li>
-
-            <li class="produto-item">
-
-              <article class="card-produto">
-                <div class="card-imagem">
-                  <img src="https://images.tcdn.com.br/img/img_prod/367768/lixa_para_maquina_de_cortar_tecidos_de_faca_eastman_usa_1683_1_20201213190821.jpg" alt="" />
-                </div>
-
-                <div class="card-conteudo">
-                <h2 class="produto-titulo">Lixas</h2>
-              </div>
-
                 <button
                   class="btn-modal"
                   onclick="abrirModal('Lixas')"
                   aria-label="Ver mais detalhes sobre Facas">
                 </button>
+            </li>
+
+            
+
+            <li class="produto-item">
+              <article class="card-produto">
+            
+                <div class="card-imagem">
+                  <img src="https://http2.mlstatic.com/D_NQ_NP_820378-MLB54240980911_032023-O-cerdas-de-nylon-em-bloco-maquina-cortadora-de-tecido-gerber.webp" alt="Cerdas" />
+                  
+                  <div class="card-overlay">
+                    <h2 class="produto-titulo">Cerdas</h2>
+                  </div>
+                </div>
+            
+                <button
+                  class="btn-modal"
+                  onclick="abrirModal('Cerdas')"
+                  aria-label="Ver mais detalhes sobre Cerdas">
+                </button>
+                
               </article>
             </li>
 
@@ -265,10 +266,10 @@
               <article class="card-produto">
                 <div class="card-imagem">
                   <img src="https://m.portuguese.cutter-part.com/photo/pt22916879-703730_200ml_plotter_ink_cartridge_for_lectra_alys_30_60_120_plotter.jpg" alt="" />
-                </div>
-
-                <div class="card-conteudo">
-                  <h2 class="produto-titulo">Cartuchos</h2>
+                  
+                  <div class="card-overlay">
+                    <h2 class="produto-titulo">Cartuchos</h2>
+                  </div>
                 </div>
 
                 <button
@@ -283,12 +284,12 @@
               <article class="card-produto">
                 <div class="card-imagem">
                   <img src="https://odin.welm.com.br/wp-content/uploads/2015/12/164-300x225.jpg" alt="" />
+                  
+                  <div class="card-overlay">
+                    <h2 class="produto-titulo">Rebolos</h2>
+                  </div>
                 </div>
-
-                <div class="card-conteudo">
-                  <h2 class="produto-titulo">Rebolos</h2>
-                </div>
-
+                
                 <button
                   class="btn-modal"
                   onclick="abrirModal('Rebolos')"
@@ -301,12 +302,12 @@
               <article class="card-produto">
                 <div class="card-imagem">
                   <img src="https://sc02.alicdn.com/kf/HTB1BwjkJ7zoK1RjSZFlq6yi4VXaK/226459493/HTB1BwjkJ7zoK1RjSZFlq6yi4VXaK.jpg" alt="" />
+                  
+                  <div class="card-overlay">
+                    <h2 class="produto-titulo">Kits</h2>
+                  </div>
                 </div>
-
-                <div class="card-conteudo">
-                  <h2 class="produto-titulo">Kits</h2>
-                </div>
-
+                
                 <button
                   class="btn-modal"
                   onclick="abrirModal('Kits')"
@@ -318,6 +319,20 @@
         </section>
       </section>
     </main>
+    <dialog class="modal-carrossel" id="modalProdutos">
+      <div class="modal-header">
+          <h2 id="modalTitulo">Carregando...</h2>
+          <button class="modal-fechar" id="modalFecharBtn" aria-label="Fechar modal">×</button>
+      </div>
+      <div class="carrossel-container">
+          <button class="carrossel-btn prev" id="carrosselBtnPrev" aria-label="Anterior">‹</button>
+          <div class="carrossel-wrapper">
+              <div class="carrossel-track" id="carrosselTrack">
+                  </div>
+          </div>
+          <button class="carrossel-btn next" id="carrosselBtnNext" aria-label="Próximo">›</button>
+      </div>
+  </dialog>
     <script src="script.js"></script>
   </body>
 </html>
