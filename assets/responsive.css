@@ -68,6 +68,10 @@ html {
     /* Reduz o tamanho do subtítulo */
   }
 
+  .textoH5 {
+    text-align: center;
+  }
+
   /* 4. Garante que o formulário ocupe a largura adequada */
   .Form {
     width: 80%;

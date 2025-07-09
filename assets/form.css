@@ -1,33 +1,51 @@
+/* --- CONTAINER DO FORMULÁRIO --- */
 .Form {
-  max-width: 450px; /* ALTERADO (era 700px) - Principal ajuste de largura */
-  margin: 0; /* ALTERADO (era 4rem) - Menos espaço acima/abaixo */
-  padding: 0.5rem; /* ALTERADO (era 2rem) - Menos espaçamento interno */
-  background-color: #f8f8f8;
+  max-width: 450px;
+  margin: 0;
+  padding: 0.5rem;
+  /* COR E SOMBRA: Fundo branco puro com uma sombra suave para "flutuar" */
+  background-color: #ffffff;
   border-radius: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid #e0e0e0; /* Borda um pouco mais suave */
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08); /* Sombra que dá profundidade */
+  transition: all 0.3s ease; /* Transição suave para o hover */
+
+  position: relative;
+  z-index: 2;
 }
 
+/* EFEITO EXTRA: O formulário levanta um pouco no hover */
+.Form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* --- TÍTULOS --- */
 .Form h2 {
   text-align: center;
-  color: #333;
+  /* COR: Usando o dourado principal para destaque e identidade */
+  color: #a47e43;
   margin-bottom: 0.5rem;
+  font-weight: bold; /* Garante que o título tenha peso */
 }
 
 .Form p {
   text-align: center;
-  color: #666;
-  margin-bottom: 1.5rem; /* ALTERADO (era 2rem) */
+  /* COR: Um cinza mais escuro e sóbrio para melhor leitura */
+  color: #555;
+  margin-bottom: 1.5rem;
 }
 
+/* --- CAMPOS DO FORMULÁRIO (Inputs, Textarea) --- */
 .form-group {
-  margin-bottom: 1rem; /* ALTERADO (era 1.5rem) - Menos espaço entre os campos */
+  margin-bottom: 1rem;
 }
 
 .form-group label {
   display: block;
   font-weight: bold;
   color: #a47e43;
-  margin-bottom: 0.4rem; /* ALTERADO (era 0.5rem) */
+  margin-bottom: 0.4rem;
 }
 
 .form-group input[type="text"],
@@ -35,36 +53,55 @@
 .form-group input[type="tel"],
 .form-group textarea {
   width: 100%;
-  padding: 8px; /* ALTERADO (era 12px) - Deixa os campos um pouco mais baixos */
-  border: 1px solid #ccc;
+  padding: 8px;
+  border: 1px solid #ddd; /* Borda padrão um pouco mais clara */
   border-radius: 4px;
-  font-size: 0.9rem; /* ALTERADO (era 1rem) - Fonte um pouco menor nos campos */
+  font-size: 0.9rem;
   box-sizing: border-box;
-  transition: border-color 0.3s ease;
+  background-color: #f9f9f9; /* Fundo do input levemente destacado */
+  /* TRANSIÇÃO: Adicionado box-shadow para o efeito de foco */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* FOCO E INTERAÇÃO: O "brilho" ao redor do campo ativo */
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: #a47e43;
+  background-color: #fff;
+  /* O segredo para um foco elegante */
+  box-shadow: 0 0 0 3px rgba(164, 126, 67, 0.15);
 }
 
+
+/* --- BOTÃO DE ENVIO (Estilo Premium) --- */
 .btn-enviar {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  background: linear-gradient(to right, #916c36, #c0a068);
+  /* GRADIENTE REFINADO: Cores mais ricas e harmônicas */
+  background: linear-gradient(135deg, #a47e43, #c7a972);
   color: white;
-  border: 2px solid #a47e43;
+  border: none; /* Borda removida para um look mais limpo */
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease; /* Transição para todas as propriedades */
   position: relative;
   overflow: hidden;
+  /* SOMBRA NO BOTÃO: Dá profundidade e destaque */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* EFEITO DE HOVER SUAVE */
+.btn-enviar:hover {
+  /* No hover, o botão levanta e a sombra se expande */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(164, 126, 67, 0.3);
+}
+
+/* Efeito de preenchimento do hover foi mantido */
 .btn-enviar::before {
   content: "";
   position: absolute;
@@ -72,15 +109,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #916c36, #c0a068);
-  transform: translateX(-100%); 
+  /* GRADIENTE INVERTIDO: Para o efeito de preenchimento */
+  background: linear-gradient(135deg, #a47e43, #c7a972);
+  transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
   z-index: -1;
-}
-
-.btn-enviar:hover {
-  background-color: transparent; 
-  transform: translateY(0.0625rem);
 }
 
 .btn-enviar:hover::before {
@@ -88,47 +121,64 @@
 }
 
 .btn-enviar:active {
+  /* Efeito de clique mais pronunciado */
   transform: translateY(0);
-  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-.honeypot {
+/* Honeypot permanece oculto */
+.honeypot1 {
   display: none;
 }
 
-/* Para a tela de ORCAMENTO*/
-
+/* --- CONTAINER DO FORMULÁRIO --- */
 .Form1 {
-  max-width: 600px; /* ALTERADO (era 700px) - Principal ajuste de largura */
-  margin: 0; /* ALTERADO (era 4rem) - Menos espaço acima/abaixo */
-  padding: 0.5rem; /* ALTERADO (era 2rem) - Menos espaçamento interno */
-  background-color: #f8f8f8;
+  max-width: 450px;
+  margin: 0;
+  padding: 0.5rem;
+  /* COR E SOMBRA: Fundo branco puro com uma sombra suave para "flutuar" */
+  background-color: #ffffff;
   border-radius: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid #e0e0e0; /* Borda um pouco mais suave */
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08); /* Sombra que dá profundidade */
+  transition: all 0.3s ease; /* Transição suave para o hover */
+
+  position: relative;
+  z-index: 2;
 }
 
+/* EFEITO EXTRA: O formulário levanta um pouco no hover */
+.Form1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* --- TÍTULOS --- */
 .Form1 h2 {
   text-align: center;
-  color: #333;
-  margin-bottom: 1rem;
+  /* COR: Usando o dourado principal para destaque e identidade */
+  color: #a47e43;
+  margin-bottom: 0.5rem;
+  font-weight: bold; /* Garante que o título tenha peso */
 }
 
 .Form1 p {
   text-align: center;
-  color: #666;
-  margin-bottom: 2rem; /* ALTERADO (era 2rem) */
+  /* COR: Um cinza mais escuro e sóbrio para melhor leitura */
+  color: #555;
+  margin-bottom: 1.5rem;
 }
 
+/* --- CAMPOS DO FORMULÁRIO (Inputs, Textarea) --- */
 .form-group1 {
-  margin-bottom: 1.5rem; /* ALTERADO (era 1.5rem) - Menos espaço entre os campos */
+  margin-bottom: 1rem;
 }
 
 .form-group1 label {
   display: block;
   font-weight: bold;
-  font-size: 1rem;
   color: #a47e43;
-  margin-bottom: 0.5rem; /* ALTERADO (era 0.5rem) */
+  margin-bottom: 0.4rem;
 }
 
 .form-group1 input[type="text"],
@@ -136,38 +186,80 @@
 .form-group1 input[type="tel"],
 .form-group1 textarea {
   width: 100%;
-  padding: 12px; /* ALTERADO (era 12px) - Deixa os campos um pouco mais baixos */
-  border: 1px solid #ccc;
+  padding: 8px;
+  border: 1px solid #ddd; /* Borda padrão um pouco mais clara */
   border-radius: 4px;
-  font-size: 0.9rem; /* ALTERADO (era 1rem) - Fonte um pouco menor nos campos */
+  font-size: 0.9rem;
   box-sizing: border-box;
-  transition: border-color 0.3s ease;
+  background-color: #f9f9f9; /* Fundo do input levemente destacado */
+  /* TRANSIÇÃO: Adicionado box-shadow para o efeito de foco */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* FOCO E INTERAÇÃO: O "brilho" ao redor do campo ativo */
 .form-group1 input:focus,
 .form-group1 textarea:focus {
   outline: none;
   border-color: #a47e43;
+  background-color: #fff;
+  /* O segredo para um foco elegante */
+  box-shadow: 0 0 0 3px rgba(164, 126, 67, 0.15);
 }
 
+
+/* --- BOTÃO DE ENVIO (Estilo Premium) --- */
 .btn-enviar1 {
   width: 100%;
-  padding: 10px; /* ALTERADO (era 15px) */
-  font-size: 1.1rem; /* ALTERADO (era 1.1rem) */
+  padding: 10px;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  background: linear-gradient(to right, #916c36, #c0a068);
+  /* GRADIENTE REFINADO: Cores mais ricas e harmônicas */
+  background: linear-gradient(135deg, #a47e43, #c7a972);
   color: white;
-  border: 2px solid #a47e43;
+  border: none; /* Borda removida para um look mais limpo */
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease; /* Transição para todas as propriedades */
+  position: relative;
+  overflow: hidden;
+  /* SOMBRA NO BOTÃO: Dá profundidade e destaque */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* EFEITO DE HOVER SUAVE */
 .btn-enviar1:hover {
-  background-color: transparent;
+  /* No hover, o botão levanta e a sombra se expande */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(164, 126, 67, 0.3);
 }
 
-.honeypot1 {
+/* Efeito de preenchimento do hover foi mantido */
+.btn-enviar1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* GRADIENTE INVERTIDO: Para o efeito de preenchimento */
+  background: linear-gradient(135deg, #a47e43, #c7a972);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.btn-enviar1:hover::before {
+  transform: translateX(0);
+}
+
+.btn-enviar1:active {
+  /* Efeito de clique mais pronunciado */
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Honeypot permanece oculto */
+.honeypot {
   display: none;
 }

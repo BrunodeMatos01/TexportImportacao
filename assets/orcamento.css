@@ -21,8 +21,11 @@
      
     background-color: rgba(0, 0, 0, 0.3); 
     
-    backdrop-filter: blur(7px) brightness(47%);
+    backdrop-filter: blur(7px) brightness(65%);
     z-index: 0; 
+
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,0.9) 0%, black 70%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,0.9) 0%, black 70%);
 }
 
 #video-background {
@@ -94,87 +97,128 @@
     
 }
 
-/* --- 2. Definindo as Animações que usaremos (Keyframes) --- */
-/* Animação para o texto deslizar de baixo para cima e aparecer */
+/* ========================================================================== */
+/* 2. DIV DE ORÇAMENTO - A REVOLUÇÃO VISUAL
+/* ========================================================================== */
+
+/* --- Animações (Keyframes) --- */
 @keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animação para a barra decorativa crescer verticalmente */
 @keyframes growInHeight {
-    from {
-        transform: scaleY(0);
-    }
-    to {
-        transform: scaleY(1);
-    }
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+}
+
+/* TÉCNICA AVANÇADA: Keyframes para o fundo Aurora */
+@keyframes aurora-flow {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(100px, 80px) rotate(20deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
 }
 
 
+/* --- O Container Principal da Seção --- */
+#orcamento-div {
+    width: 100%;
+    padding: 4rem 2rem;
+    /* FUNDO ESCURO: Base para o efeito Aurora */
+    background-color: #fbf9ff;
+    position: relative; /* Essencial para o posicionamento dos pseudo-elementos */
+    overflow: hidden; /* Esconde as partes do gradiente que vazam */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* TÉCNICA AVANÇADA: Fundo Aurora Animado com Pseudo-elementos */
+#orcamento-div::before, #orcamento-div::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+}
+
+#orcamento-div::after {
+    bottom: -20%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at center, rgba(230, 158, 50, 0.2), transparent 70%);
+    animation-delay: -12s; /* Des sincroniza as duas animações */
+}
+
+/* --- Bloco de Texto com Efeito de Vidro --- */
 .orcamento-textoForm {
+    position: relative; /* Garante que fique acima do fundo aurora */
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Adicionamos overflow: hidden para que a animação não 'vaze' para fora do container */
-    overflow: hidden;
-    padding: 2rem; /* Um pouco de padding para respirar */
+    padding: 2.5rem; /* Mais respiro */
+    
+    /* TÉCNICA AVANÇADA: Glassmorphism (Efeito de Vidro) */
+    background: rgba(0, 0, 0, 0.671);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Título Principal (H2) com Efeitos --- */
+/* --- Título Principal com Gradiente Animado --- */
 .orcamento-textoForm h2 {
-    font-family: 'Poppins', sans-serif; /* Fonte impactante para o título */
-    font-size: 2.8rem; /* Maior e mais chamativo */
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 2rem;
     position: relative;
     
-    /* Cor do texto como um gradiente sutil */
-    background: linear-gradient(80deg, #996619, #e69e32);
+    /* TÉCNICA AVANÇADA: Gradiente animado no texto */
+    background: linear-gradient(90deg, #e69e32, #c7a16f, #e69e32);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-
-    /* Aplicando a animação de entrada */
-    opacity: 0; /* Começa invisível */
+    background-size: 200% auto; /* Dobro do tamanho para ter espaço para animar */
+    transition: background-position 0.5s ease-in-out;
+    
+    opacity: 0;
     animation: slideInUp 0.8s ease-out 0.3s forwards;
 }
 
-/* --- Detalhe Decorativo Animado --- */
+/* Animação do gradiente do H2 ao passar o mouse */
+.orcamento-textoForm:hover h2 {
+    background-position: -100% 0;
+}
+
+/* --- Detalhe Decorativo da Barra Vertical --- */
 .orcamento-textoForm h2::before {
     content: '';
     position: absolute;
-    left: -2rem; /* Posiciona um pouco à esquerda */
+    left: -2.5rem;
     top: 0;
     width: 6px;
     height: 100%;
-    background: linear-gradient(180deg, #e69e32, #996619); /* Gradiente na barra */
+    background: linear-gradient(180deg, #e69e32, #996619);
     border-radius: 3px;
+    box-shadow: 0 0 10px rgba(230, 158, 50, 0.5); /* Adiciona um brilho à barra */
     
-    /* Animação para a barra 'crescer' */
-    transform-origin: bottom; /* Faz a barra crescer de baixo para cima */
+    transform-origin: bottom;
     animation: growInHeight 0.6s ease-out 0.6s forwards;
 }
 
-
-/* --- Parágrafo de Apoio (P) Animado --- */
+/* --- Parágrafo de Apoio --- */
 .orcamento-textoForm p {
-    font-family: 'Lato', sans-serif; /* Fonte limpa e legível para o texto */
+    font-family: 'Lato', sans-serif;
     font-size: 1.2rem;
-    color: #4a5568;
+    color: rgba(255, 255, 255, 0.85); /* Cor clara para contrastar com o fundo escuro */
     line-height: 1.8;
-    max-width: 500px; /* Evita que o texto fique muito largo */
+    max-width: 500px;
     
-    /* Aplicando a animação de entrada com um pequeno atraso */
-    opacity: 0; /* Começa invisível */
+    opacity: 0;
     animation: slideInUp 0.8s ease-out 0.6s forwards;
 }
-

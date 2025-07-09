@@ -1,9 +1,3 @@
-p{
-  margin: 0;
-  padding: 0;
-}
-
-
 #Container-inicialHome {
   width: 100%;
   height: 40.625rem;
@@ -16,8 +10,25 @@ p{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  /* Adicionado para o pseudo-elemento funcionar corretamente */
+  position: relative; 
 }
 
+/* NOVO: Overlay sutil para melhorar a legibilidade do texto */
+#Container-inicialHome::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)100%);
+  z-index: 0; /* Fica acima do background, abaixo do texto */
+}
+
+
+/* --- TEXTOS --- */
 .textoChamtivo {
   width: 30rem;
   height: auto;
@@ -27,31 +38,43 @@ p{
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  
+  /* Adicionado para ficar acima do overlay */
+  position: relative;
+  z-index: 2;
 }
 
 .textoH1 {
-  width: 100%; 
+  width: 100%;
   height: auto;
 }
 
 .textoH1 h1 {
   font-size: 4.9em;
-  color: white;
+  color: #FFFFFF; /* Branco puro para máximo contraste */
+  font-weight: 900; /* Mais peso para o título principal */
+  /* SOMBRA SUTIL: O segredo para o texto "saltar" do fundo */
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .textoH1 p {
   font-size: 2em;
-  color: white;
+  color: #e0c088;
+  font-weight: 300; /* Mais leve para hierarquia visual */
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .textoH5 {
-  width: 100%; 
+  width: 100%;
   height: auto;
-
   font-size: 1.2em;
-  color: white;
+  color: rgba(255, 255, 255, 0.9); 
+  font-weight: 400;
+  text-align: start; 
+  letter-spacing: 0.5px; 
 }
 
+/* --- BOTÃO MELHORADO --- */
 .btn-vejaProdutos {
   display: inline-block;
   padding: 0.75rem 1.75rem;
@@ -63,23 +86,28 @@ p{
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  margin: 1rem;
+  margin: 1.5rem 1rem 1rem 1rem; /* Aumentado margem superior para respirar */
   
-  background: linear-gradient(to right, #916c36, #c0a068);
+  /* GRADIENTE REFINADO: Cores mais ricas e harmônicas */
+  background: linear-gradient(135deg, #a47e43, #c7a972);
   color: white;
-  border: 0.125rem solid #a47e43;
+  border: none; /* Remove a borda, o gradiente já define a forma */
   border-radius: 0.25rem;
   cursor: pointer;
 
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  /* SOMBRA NO BOTÃO: Dá profundidade e destaque */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease; /* Transição para todas as propriedades */
 }
 
+/* EFEITO DE HOVER SUAVE */
 .btn-vejaProdutos:hover {
-  background-color: transparent;
-
-  transform: translateY(0.0625rem);
+  /* No hover, o botão levanta e a sombra se expande */
+  transform: translateY(-3px);
+  box-shadow: 0 7px 25px rgba(145, 108, 54, 0.4);
 }
 
+/* Efeito de preenchimento do hover foi mantido, mas com as cores novas */
 .btn-vejaProdutos::before {
   content: "";
   position: absolute;
@@ -87,7 +115,7 @@ p{
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #916c36, #c0a068);
+  background: linear-gradient(135deg, #a47e43, #c7a972);
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
   z-index: -1;
@@ -98,6 +126,7 @@ p{
 }
 
 .btn-vejaProdutos:active {
-  transform: translateY(0);
-  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  /* Efeito de clique mais pronunciado */
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }

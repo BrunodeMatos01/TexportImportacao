@@ -1,10 +1,11 @@
 #telaProdutos {
     width: 100%;
-    background-color: #f0f2f5;
+    background: #faf7f7;;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
   }
   
   #textoProduto {
@@ -14,12 +15,13 @@
     justify-content: center;
     font-size: 1.7rem;
     padding: 3rem;
+    color: #a47e43;
   }
   
   #Produtos {
     width: 100%;
     padding: 4rem 2rem 7rem 2rem;
-    background-color: #f0f2f5;
+    background-color: #faf7f7;
   }
   
   .grid-produtos {
