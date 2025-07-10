@@ -1,117 +1,256 @@
+:root {
+  --bg-light: #f7f5f5;
+  --card-bg: #ffffff;
+  --gold-primary: #a47e43;
+  --gold-secondary: #d1ae79;
+  --text-dark: #2c2c2c;
+  --text-light: #f0f0f0;
+  --shadow-color: rgba(44, 44, 44, 0.1);
+}
+
 #telaProdutos {
-    width: 100%;
-    background: #faf7f7;;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-  }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  --gold-light-rgba: rgba(209, 174, 121, 0.12);
+  --gold-lines-rgba: rgba(164, 126, 67, 0.07);
+
+  /* Cor de fundo base, caso as imagens não carreguem */
+  background-color: #f7f5f5;
+
+  /* Múltiplas camadas de background para criar o efeito completo */
+  background-image:
+      /* Camada 3 (Topo): Linhas diagonais sutis para textura */
+      repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          var(--gold-lines-rgba) 21px,
+          var(--gold-lines-rgba) 22px
+      ),
+      /* Camada 2: Luz suave no canto superior esquerdo */
+      radial-gradient(
+          ellipse at 0% 0%,
+          var(--gold-light-rgba) 0%,
+          transparent 40%
+      ),
+      /* Camada 1 (Fundo): Luz suave no canto inferior direito */
+      radial-gradient(
+          ellipse at 100% 100%,
+          var(--gold-light-rgba) 0%,
+          transparent 50%
+      );
   
-  #textoProduto {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.7rem;
-    padding: 3rem;
-    color: #a47e43;
-  }
-  
-  #Produtos {
-    width: 100%;
-    padding: 4rem 2rem 7rem 2rem;
-    background-color: #faf7f7;
-  }
-  
-  .grid-produtos {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    row-gap: 60px;
-    column-gap: 40px;
-    max-width: 1200px;
-  }
-  
-  .card-produto {
-    background-color: var(--card-bg);
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    padding: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 8px 25px rgba(0, 0, 0, 0.05);
-    border: 1px solid transparent;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-  }
-  
-  .card-produto:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.1), 0 15px 40px rgba(0, 0, 0, 0.1);
-    border-color: #d1ae79;
-  }
-  
-  .card-imagem {
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .card-imagem img {
-    width: 100%;
-    aspect-ratio: 27 / 22;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
-    filter: blur(1px);
-  }
-  
-  .card-produto:hover .card-imagem img {
-    transform: scale(1.1);
-    filter: blur(0);
-  }
-  
-  .card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .card-produto:hover .card-overlay {
-    transform: translateY(-100%);
-  }
-  
-  .produto-titulo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0;
-    color: white;
-    text-transform: uppercase;
-  }
-  
-  .btn-modal {
-    background: transparent;
-    border: none;
-    padding: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    z-index: 2;
-  }
-  
-  .btn-modal:focus-visible {
-    outline: 3px solid var(--gold-primary);
-    outline-offset: 3px;
-    border-radius: 16px;
-  }
+  /* Sombra interna sutil para dar profundidade à seção */
+  box-shadow: inset 0 8px 30px -15px rgba(0, 0, 0, 0.2);
+}
+
+#textoProduto {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  padding: 5rem 1rem 3rem 1rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--gold-primary), var(--gold-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 4px 20px rgba(164, 126, 67, 0.1);
+}
+
+#Produtos {
+  width: 100%;
+  padding: 4rem 2rem 7rem 2rem;
+  background-color: transparent;
+}
+
+.grid-produtos {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 80px;
+  column-gap: 60px;
+  max-width: 1200px;
+}
+
+.card-produto {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  /* Sombra inicial mais definida */
+  box-shadow: 0 8px 20px rgba(44, 44, 44, 0.15), 0 12px 30px rgba(44, 44, 44, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Borda sutilmente escura */
+  transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.card-produto:hover {
+  transform: translateY(-15px) scale(1.04);
+  /* Sombra muito mais intensa no hover */
+  box-shadow: 0 30px 50px rgba(44, 44, 44, 0.25), 0 40px 80px rgba(44, 44, 44, 0.2);
+  border-color: var(--gold-secondary);
+  /* Brilho sutil na borda ao passar o mouse */
+  box-shadow: 0 0 15px #a47e43, 0 30px 50px rgba(44, 44, 44, 0.25), 0 40px 80px rgba(44, 44, 44, 0.2);
+}
+
+.card-imagem {
+  overflow: hidden;
+  position: relative;
+}
+
+.card-imagem img {
+  width: 100%;
+  aspect-ratio: 32 / 34;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  filter: saturate(0.2) blur(3px);
+}
+
+.card-produto:hover .card-imagem img {
+  transform: scale(1.1);
+  filter: saturate(1) blur(0);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.card-produto:hover .card-overlay {
+  transform: translateY(-100%);
+}
+
+.produto-titulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-light);
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  transition: opacity 0.3s ease;
+}
+
+.card-produto:hover .produto-titulo {
+  opacity: 0;
+}
+
+.card-imagem::after {
+  content: '';
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 15px rgba(0,0,0,0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: 0s;
+  z-index: 0;
+}
+
+.card-produto:hover .card-imagem::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition-delay: 0.3s;
+}
+
+.btn-modal {
+  background: transparent;
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.btn-modal:focus-visible {
+  outline: 3px solid var(--gold-primary);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+
+/* botão para solicitar orçamento*/
+.produtos-cta-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Adiciona um espaço generoso acima do botão */
+  margin-top: 5rem;
+}
+
+.btn-produtos-orcamento {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-produtos-orcamento img {
+  height: 1.5rem;
+  width: auto;
+}
+
+/* O pseudo-elemento que desliza */
+.btn-produtos-orcamento::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--gold-secondary), var(--gold-primary));
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+/* Efeito combinado no hover */
+.btn-produtos-orcamento:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(164, 126, 67, 0.3);
+}
+
+.btn-produtos-orcamento:hover::before {
+  transform: translateX(0);
+}

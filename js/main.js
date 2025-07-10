@@ -1,3 +1,4 @@
+/*Para funcionar o menu-burguer que é a navegação de calular*/
 const menu = document.getElementById('menu');
   const menuIcon = document.querySelector('.menu-icon');
 
@@ -23,7 +24,25 @@ const menu = document.getElementById('menu');
       menu.classList.remove('show');
     });
   });
+/*========================================================*/
 
+
+
+
+
+/*Para o botão de veja produtos direcionar para produtos*/
+  function scrollToProdutos() {
+    document.querySelector('#telaProdutos').scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+/*========================================================*/
+
+
+
+
+
+/*Carrosel de Produtos*/
 document.addEventListener('DOMContentLoaded', () => {
     const produtosPorCategoria = {
         'Facas': [

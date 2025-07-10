@@ -44,6 +44,8 @@
   <link rel="stylesheet" href="assets/form.css" />
   <link rel="stylesheet" href="assets/prdutos.css" />
   <link rel="stylesheet" href="assets/orcamento.css">
+  <link rel="stylesheet" href="assets/sobreNos.css">
+  <link rel="stylesheet" href="assets/footer.css">
   <link rel="stylesheet" href="assets/dialog.css">
   <link rel="stylesheet" href="assets/responsive.css" />
 </head>
@@ -73,8 +75,8 @@
           </div>
           <div class="menu" id="menu">
             <a href="#">Home</a>
-            <a href="#">Catálogo</a>
-            <a href="#">Contato</a>
+            <a href="#telaProdutos">Catálogo</a>
+            <a href="#contatoFooter">Contato</a>
           </div>
         </div>
       </nav>
@@ -88,8 +90,8 @@
       <nav id="navegacao" aria-label="Navegação Principal">
         <ul>
           <li class="home"><a href="/">Home</a></li>
-          <li class="catalogos"><a href="/catalogo/">Catálogo</a></li>
-          <li class="contato"><a href="/contato/">Contato</a></li>
+          <li class="catalogos"><a href="#telaProdutos">Catálogo</a></li>
+          <li class="contato"><a href="#contatoFooter">Contato</a></li>
         </ul>
       </nav>
 
@@ -109,7 +111,7 @@
         <div class="textoH1">
           <h1>Peças para a indústria têxtil</h1>
           <p>Máquinas de corte.</p>
-          <button class="btn-vejaProdutos">Veja nossos produtos</button>
+          <button class="btn-vejaProdutos" onclick="scrollToProdutos()">Veja nossos produtos</button>
         </div>
         <div class="textoH5">
           <p>A peça que falta, no tempo que você precisa.</p>
@@ -259,35 +261,95 @@
             </article>
           </li>
         </ul>
+        
+        <div class="produtos-cta-container">
+          <a href="/orcamento-conteudo.html" class="btn-produtos-orcamento">
+              <img src="img/Prancheta Icone.png" alt="Ícone de prancheta">
+              <span>Venha conversar conosco</span>
+          </a>
+      </div>
       </section>
     </section>
     <section id="sobreNosSec">
+    
       <div class="quemSomos">
         <div class="imagem-quemSomos">
-
+          <img src="img/TEXPORT logo.jpg" alt="Letreiro com o logo da Texport">
         </div>
         <div class="texto-quemSomos">
-
+          <h3>Nosso Diferencial no Mercado Têxtil</h3>
+          <p>A Texport se destaca pela qualidade inigualável de seus tecidos e por um processo de produção focado na sustentabilidade e inovação...</p>
         </div>
       </div>
+    
+      <ul class="topicos-quemSomos">
+    
+        <li class="missao">
+          <img src="caminho/para/icone-missao.svg" alt="Ícone representando a missão">
+          <h4>Missão</h4>
+          <p>Nossa missão é fornecer produtos têxteis de alta performance, superando as expectativas de nossos clientes a cada entrega.</p>
+        </li>  
+    
+        <li class="visao">
+          <img src="caminho/para/icone-visao.svg" alt="Ícone representando a visão">
+          <h4>Visão</h4>
+          <p>Ser a empresa líder e referência de inovação no mercado têxtil nacional e internacional até 2030.</p>
+        </li>
+    
+        <li class="valores">
+          <img src="caminho/para/icone-valores.svg" alt="Ícone representando os valores">
+          <h4>Valores</h4>
+          <p>Compromisso com a qualidade, ética em todas as relações, inovação constante e respeito ao meio ambiente.</p>
+        </li>
+    
+      </ul>
 
-      <div class="tópicos-quemSomos">
-        <div class="missao">
+      <div class="footer-cta">
+        <a href="/orcamento-conteudo.html" class="btn-sobreNos-orcamento">
+          <img src="img/Prancheta Icone.png" alt="Ícone de prancheta">
+          <span>Solicite agora seu orçamento</span>
+        </a>
+    </div>
+    </section>
+    <footer id="contatoFooter">
 
-        </div>  
-
-        <div class="visao">
-
-        </div>
-
-        <div class="valores">
-
-        </div>
+      <div class="footer-container">
+  
+          <div class="footer-cta">
+              <h2>Pronto para transformar seu projeto?</h2>
+              <p>Vamos conversar sobre suas necessidades. Peça um orçamento sem compromisso e descubra como a qualidade Texport pode fazer a diferença.</p>
+              <a href="/orcamento-conteudo.html" class="btn-sobreNos-orcamento">
+                <img src="img/Prancheta Icone.png" alt="Ícone de prancheta">
+                <span>Descubra o melhor orçamento</span>
+              </a>
+          </div>
+  
+          <div class="footer-info">
+              <h4>Contato</h4>
+              <div class="contact-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <a href="mailto:contato@texport.com.br">contato@texport.com.br</a>
+              </div>
+              <div class="contact-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <a href="tel:+5547999999999">+55 (47) 99999-9999</a>
+              </div>
+  
+              <ul class="social-links">
+                  <li>
+                      <a href="https://instagram.com/seu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                      </a>
+                  </li>
+                   </ul>
+          </div>
       </div>
-    </section>
-    <section id="contatoSec">
-      
-    </section>
+  
+      <div class="footer-bottom-bar">
+          <p>&copy; 2025 Texport. Todos os direitos reservados.</p>
+      </div>
+  
+  </footer>
   </main>
   <dialog class="modal-carrossel" id="modalProdutos">
 

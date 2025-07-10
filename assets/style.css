@@ -7,7 +7,7 @@ html {
   overflow-x: hidden;
   box-sizing: border-box;
   font-family: "Roboto Serif", serif;
-  background-color: none;
+  scroll-behavior: smooth;
 }
 
 
@@ -37,4 +37,74 @@ ul {
     --dourado: #f59e0b;
     --dourado-escuro: #d97706;
 }
+
+/* ========================================================== */
+/* CTA (Call to Action) no Final da Seção Sobre Nós
+/* ========================================================== */
+
+.sobreNos-cta-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-sobreNos-orcamento {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem; 
+  
+  padding: 0.9rem 1rem;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-sobreNos-orcamento img {
+  height: 1.2rem;
+  width: auto;
+}
+
+.btn-sobreNos-orcamento span {
+  position: relative; 
+  z-index: 2;
+}
+
+/* O pseudo-elemento que desliza */
+.btn-sobreNos-orcamento::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--gold-secondary), var(--gold-primary));
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+/* Efeito combinado no hover */
+.btn-sobreNos-orcamento:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(164, 126, 67, 0.3);
+}
+
+.btn-sobreNos-orcamento:hover::before {
+  transform: translateX(0);
+}
+
+
 

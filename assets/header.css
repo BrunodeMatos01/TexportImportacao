@@ -115,7 +115,7 @@ p {
   position: relative;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #a47e43;
+  color: #d1ae79;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -176,7 +176,7 @@ p {
 }
 
 #LogoTexport {
-  width: 8.5rem;
+  width: 9.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,7 +223,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #916c36, #c0a068);
+  background: linear-gradient(to right, #c0a068, #916c36);
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
   z-index: -1;
