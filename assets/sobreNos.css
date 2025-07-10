@@ -100,11 +100,15 @@
 .imagem-quemSomos {
     width: 200px;
     height: auto;
-    border-radius: 16px;
+    border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px var(--shadow-color);
     background-color: rgba(0,0,0,0.2);
     box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .imagem-quemSomos img {

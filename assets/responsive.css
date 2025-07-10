@@ -238,7 +238,8 @@ html {
   }
   .imagem-quemSomos {
       width: 150px;
-      height: 150px;
+      height: auto;
+
   }
   .texto-quemSomos h3 {
       font-size: 1.8rem;
