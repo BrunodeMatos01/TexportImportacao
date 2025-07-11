@@ -1,0 +1,14 @@
+#orcamentoForm {
+    width: 100%;
+    padding-right: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-geral {
+    width: 80%;
+    padding: 1rem;
+}
+
