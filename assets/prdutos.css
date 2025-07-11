@@ -94,7 +94,7 @@
 }
 
 .card-produto:hover {
-  transform: translateY(-15px) scale(1.04);
+  transform: translateY(-7px) scale(1.04);
   /* Sombra muito mais intensa no hover */
   box-shadow: 0 30px 50px rgba(44, 44, 44, 0.25), 0 40px 80px rgba(44, 44, 44, 0.2);
   border-color: var(--gold-secondary);
@@ -113,7 +113,7 @@
   object-fit: cover;
   display: block;
   transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
-  filter: saturate(0.2) blur(3px);
+  filter: saturate(0.5) blur(1px);
 }
 
 .card-produto:hover .card-imagem img {

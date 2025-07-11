@@ -40,11 +40,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+     
+    background-color: rgba(0, 0, 0, 0.3); 
+    
     backdrop-filter: blur(7px) brightness(65%);
-    z-index: 0;
-    -webkit-mask-image: radial-gradient(circle, black 50%, transparent 80%);
-    mask-image: radial-gradient(circle, black 50%, transparent 80%);
+    z-index: 0; 
+
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,0.9) 0%, black 70%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,0.9) 0%, black 70%);
 }
 
 #video-background {
@@ -98,7 +101,7 @@
 #orcamento-div {
     width: 100%;
     padding: 5rem 2rem;
-    background-color: #1a1a1a;
+    background-color: #f7f5f5;
     position: relative;
     overflow: hidden;
 
@@ -176,87 +179,3 @@
     opacity: 0;
 }
 
-/* --- Formulário (Esquerda) --- [NOVO] */
-.Form {
-    z-index: 1;
-    padding: 2rem;
-    border-radius: 8px;
-    background-color: #ffffff;
-    
-    /* CORRIGIDO: Define a largura base do item */
-    flex-basis: 45%;
-    max-width: 600px;
-}
-
-.Form h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
-    color: #2c2c2c;
-    margin-bottom: 0.5rem;
-}
-
-.Form p {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 2rem;
-}
-
-.form-group {
-    margin-bottom: 1.25rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #333;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #f9f9f9;
-    font-size: 1rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #a47e43;
-    box-shadow: 0 0 0 3px rgba(164, 126, 67, 0.2);
-}
-
-.btn-enviar {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(135deg, #a47e43, #d1ae79);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.3s;
-}
-
-.btn-enviar:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(164, 126, 67, 0.4);
-}
-
-.honeypot {
-    display: none;
-}
-
-
-/* ==========================================================================
-   RESPONSIVIDADE
-   ========================================================================== */
-
-/* --- Tablets e Telas Menores (Até 990px) --- */
