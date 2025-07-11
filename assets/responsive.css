@@ -346,7 +346,7 @@ html {
     }
 
     /* Ajusta ambos os blocos para ocupar a largura total */
-    .Form,
+    .FormSPA,
     .orcamento-textoForm {
         flex-basis: auto; /* Reseta a base */
         width: 100%;
@@ -381,12 +381,12 @@ html {
         padding: 3rem 1rem;
     }
 
-    .Form h2,
+    .FormSPA h2,
     .orcamento-textoForm h2 {
         font-size: 1.8rem;
     }
     
-    .Form p,
+    .FormSPA p,
     .orcamento-textoForm p {
         font-size: 1rem;
     }
