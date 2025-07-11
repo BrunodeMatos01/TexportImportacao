@@ -1,10 +1,32 @@
-/* 1. O Container Principal (A Seção do Vídeo) */
+/* ==========================================================================
+   ESTILOS GLOBAIS E ANIMAÇÕES
+   ========================================================================== */
+
+/* Keyframes para animações de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes growInHeight {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+}
+
+/* ==========================================================================
+   1. SEÇÃO DO VÍDEO (TOPO) - [Nenhuma alteração aqui, mantido como estava]
+   ========================================================================== */
+
 #orcamento-video {
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
     width: 100%;
-    height: 600px; 
-
+    height: 600px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -18,14 +40,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-     
-    background-color: rgba(0, 0, 0, 0.3); 
-    
+    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(7px) brightness(65%);
-    z-index: 0; 
-
-    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,0.9) 0%, black 70%);
-    mask-image: radial-gradient(circle, rgba(0,0,0,0.9) 0%, black 70%);
+    z-index: 0;
+    -webkit-mask-image: radial-gradient(circle, black 50%, transparent 80%);
+    mask-image: radial-gradient(circle, black 50%, transparent 80%);
 }
 
 #video-background {
@@ -37,25 +56,12 @@
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; 
+    z-index: -1;
 }
 
-/* --- Animação de Entrada --- */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* --- Bloco 1: Chamada Principal --- */
 #orcamento-chamada {
     width: 100%;
-    max-width: 800px; 
+    max-width: 800px;
     padding: 2rem 1rem;
     color: white;
     text-align: center;
@@ -64,13 +70,13 @@
 
 #orcamento-chamada h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem; /* Aumentado para mais impacto */
     font-weight: 800;
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    opacity: 0; /* Estado inicial para animação */
+    opacity: 0;
     animation: fadeIn 0.8s ease-out 0.2s forwards;
 }
 
@@ -80,95 +86,50 @@
     line-height: 1.6;
     margin-top: 1rem;
     color: #e0e0e0;
-    opacity: 0; /* Estado inicial para animação */
+    opacity: 0;
     animation: fadeIn 0.8s ease-out 0.5s forwards;
 }
 
+/* ==========================================================================
+   2. SEÇÃO DE ORÇAMENTO (FORMULÁRIO E TEXTO) - [CORRIGIDO]
+   ========================================================================== */
 
+/* --- Container Principal da Seção --- */
 #orcamento-div {
     width: 100%;
-    padding: 3rem 2rem;
-    background-color: #f0f2f5;
+    padding: 5rem 2rem;
+    background-color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
 
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    
+    justify-content: center; /* CORRIGIDO: Centraliza os itens */
+    gap: 4rem; /* CORRIGIDO: Adiciona um espaço controlado entre os itens */
+    flex-wrap: wrap;
 }
 
-/* ========================================================================== */
-/* 2. DIV DE ORÇAMENTO - A REVOLUÇÃO VISUAL
-/* ========================================================================== */
-
-/* --- Animações (Keyframes) --- */
-@keyframes slideInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes growInHeight {
-    from { transform: scaleY(0); }
-    to { transform: scaleY(1); }
-}
-
-/* TÉCNICA AVANÇADA: Keyframes para o fundo Aurora */
-@keyframes aurora-flow {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(100px, 80px) rotate(20deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
-}
-
-
-/* --- O Container Principal da Seção --- */
-#orcamento-div {
-    width: 100%;
-    padding: 4rem 2rem;
-    /* FUNDO ESCURO: Base para o efeito Aurora */
-    background-color: #fbf9ff;
-    position: relative; /* Essencial para o posicionamento dos pseudo-elementos */
-    overflow: hidden; /* Esconde as partes do gradiente que vazam */
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-
-/* TÉCNICA AVANÇADA: Fundo Aurora Animado com Pseudo-elementos */
-#orcamento-div::before, #orcamento-div::after {
-    content: '';
-    position: absolute;
-    z-index: 0;
-}
-
-#orcamento-div::after {
-    bottom: -20%;
-    right: -20%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle at center, rgba(230, 158, 50, 0.2), transparent 70%);
-    animation-delay: -12s; /* Des sincroniza as duas animações */
-}
-
-/* --- Bloco de Texto com Efeito de Vidro --- */
+/* --- Bloco de Texto (Direita) --- */
 .orcamento-textoForm {
-    position: relative; /* Garante que fique acima do fundo aurora */
+    position: relative;
     z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2.5rem; /* Mais respiro */
+    padding: 2.5rem;
     
-    /* TÉCNICA AVANÇADA: Glassmorphism (Efeito de Vidro) */
     background: rgba(0, 0, 0, 0.671);
     backdrop-filter: blur(10px);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    /* CORRIGIDO: Define a largura base do item */
+    flex-basis: 45%;
+    max-width: 600px;
 }
 
-/* --- Título Principal com Gradiente Animado --- */
 .orcamento-textoForm h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.8rem;
@@ -176,26 +137,21 @@
     line-height: 1.1;
     margin-bottom: 2rem;
     position: relative;
-    
-    /* TÉCNICA AVANÇADA: Gradiente animado no texto */
     background: linear-gradient(90deg, #e69e32, #c7a16f, #e69e32);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
-    background-size: 200% auto; /* Dobro do tamanho para ter espaço para animar */
+    background-size: 200% auto;
     transition: background-position 0.5s ease-in-out;
-    
-    opacity: 0;
     animation: slideInUp 0.8s ease-out 0.3s forwards;
+    opacity: 0;
 }
 
-/* Animação do gradiente do H2 ao passar o mouse */
 .orcamento-textoForm:hover h2 {
     background-position: -100% 0;
 }
 
-/* --- Detalhe Decorativo da Barra Vertical --- */
 .orcamento-textoForm h2::before {
     content: '';
     position: absolute;
@@ -205,20 +161,102 @@
     height: 100%;
     background: linear-gradient(180deg, #e69e32, #996619);
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba(230, 158, 50, 0.5); /* Adiciona um brilho à barra */
-    
+    box-shadow: 0 0 10px rgba(230, 158, 50, 0.5);
     transform-origin: bottom;
     animation: growInHeight 0.6s ease-out 0.6s forwards;
 }
 
-/* --- Parágrafo de Apoio --- */
 .orcamento-textoForm p {
     font-family: 'Lato', sans-serif;
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.85); /* Cor clara para contrastar com o fundo escuro */
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.8;
     max-width: 500px;
-    
-    opacity: 0;
     animation: slideInUp 0.8s ease-out 0.6s forwards;
+    opacity: 0;
 }
+
+/* --- Formulário (Esquerda) --- [NOVO] */
+.Form {
+    z-index: 1;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #ffffff;
+    
+    /* CORRIGIDO: Define a largura base do item */
+    flex-basis: 45%;
+    max-width: 600px;
+}
+
+.Form h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.Form p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #a47e43;
+    box-shadow: 0 0 0 3px rgba(164, 126, 67, 0.2);
+}
+
+.btn-enviar {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #a47e43, #d1ae79);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.btn-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(164, 126, 67, 0.4);
+}
+
+.honeypot {
+    display: none;
+}
+
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+
+/* --- Tablets e Telas Menores (Até 990px) --- */

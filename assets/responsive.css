@@ -109,10 +109,6 @@ html {
     margin: auto;
   }
 
-  .grid-produtos {
-    /* 4 colunas somente em telas grandes */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
 }
 
 
@@ -340,4 +336,59 @@ html {
   .contact-item {
       justify-content: center;
   }
+}
+
+/*Tela orcamente.hmtl*/
+  @media (max-width: 1416px) {
+    #orcamento-div {
+        /* Inverte a ordem: formulário aparece primeiro */
+        flex-direction: column-reverse; 
+        padding: 4rem 1.5rem;
+    }
+
+    /* Ajusta ambos os blocos para ocupar a largura total */
+    .Form,
+    .orcamento-textoForm {
+        flex-basis: auto; /* Reseta a base */
+        width: 100%;
+        max-width: 650px; /* Limita a largura em tablets para boa leitura */
+    }
+
+    .orcamento-textoForm {
+        text-align: center; /* Centraliza o texto quando empilhado */
+    }
+    
+    .orcamento-textoForm h2::before {
+        display: none; /* Esconde a barra lateral que não funciona bem centralizada */
+    }
+
+    .orcamento-textoForm p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* --- Celulares (Até 768px) --- */
+@media (max-width: 768px) {
+    #orcamento-video {
+        height: 500px;
+    }
+
+    #orcamento-chamada h1 {
+        font-size: 2rem;
+    }
+
+    #orcamento-div {
+        padding: 3rem 1rem;
+    }
+
+    .Form h2,
+    .orcamento-textoForm h2 {
+        font-size: 1.8rem;
+    }
+    
+    .Form p,
+    .orcamento-textoForm p {
+        font-size: 1rem;
+    }
 }
