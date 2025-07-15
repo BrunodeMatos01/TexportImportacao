@@ -430,7 +430,6 @@ html {
 }
 
 .orcamentotexto h1 {
-    font-family: 'Playfair Display', serif;
     font-size: 2.5rem; /* Maior para mais impacto */
     font-weight: 900;
     color: #4a3c20;   /* Cor marrom escura, vinda da paleta ocre */

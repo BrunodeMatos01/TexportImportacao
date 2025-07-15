@@ -155,7 +155,6 @@
 
 .card-imagem::after {
   content: '';
-  font-family: "Poppins", sans-serif;
   font-size: 3rem;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.8);

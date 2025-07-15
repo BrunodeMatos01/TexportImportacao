@@ -72,7 +72,6 @@
 }
 
 #orcamento-chamada h1 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem; /* Aumentado para mais impacto */
     font-weight: 800;
     line-height: 1.2;
@@ -84,7 +83,6 @@
 }
 
 .sobreEmpresa {
-    font-family: 'Roboto', sans-serif;
     font-size: 1.3rem;
     line-height: 1.6;
     margin-top: 1rem;
