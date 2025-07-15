@@ -1,0 +1,141 @@
+/* --- CONTAINER DO FORMULÁRIO --- */
+.FormSPA {
+  max-width: 400px;
+  margin: 0;
+  padding: 2rem 2rem;
+  padding-bottom: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0; /* Borda um pouco mais suave */
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08); /* Sombra que dá profundidade */
+  transition: all 0.3s ease; /* Transição suave para o hover */
+
+  position: relative;
+  z-index: 2;
+}
+
+.FormSPA:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* --- TÍTULOS --- */
+.FormSPA h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #a47e43;
+  font-weight: bold; /* Garante que o título tenha peso */
+}
+
+.preenchaFormSPA {
+  width: 80%;
+
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.FormSPA p {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* --- CAMPOS DO FORMULÁRIO (Inputs, Textarea) --- */
+.form-groupSPA {
+  margin-bottom: 0.7rem;
+}
+
+.form-groupSPA label {
+  display: block;
+  font-weight: bold;
+  color: #a47e43;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.form-groupSPA input[type="text"],
+.form-groupSPA input[type="email"],
+.form-groupSPA input[type="tel"],
+.form-groupSPA textarea {
+  width: 100%;
+  padding: 0.4em;
+  border: 1px solid #ddd; /* Borda padrão um pouco mais clara */
+  border-radius: 4px;
+  font-size: 0.8rem;
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Fundo do input levemente destacado */
+  /* TRANSIÇÃO: Adicionado box-shadow para o efeito de foco */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* FOCO E INTERAÇÃO: O "brilho" ao redor do campo ativo */
+.form-groupSPA input:focus,
+.form-groupSPA textarea:focus {
+  outline: none;
+  border-color: #a47e43;
+  background-color: #fff;
+  /* O segredo para um foco elegante */
+  box-shadow: 0 0 0 3px rgba(164, 126, 67, 0.15);
+}
+
+
+/* --- BOTÃO DE ENVIO (Estilo Premium) --- */
+.btn-enviarSPA {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Roboto Serif", serif;
+  /* GRADIENTE REFINADO: Cores mais ricas e harmônicas */
+  background: linear-gradient(to right, #916c36, #c0a068);
+  color: white;
+  border: none; /* Borda removida para um look mais limpo */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transição para todas as propriedades */
+  position: relative;
+  overflow: hidden;
+  /* SOMBRA NO BOTÃO: Dá profundidade e destaque */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* EFEITO DE HOVER SUAVE */
+.btn-enviarSPA:hover {
+  /* No hover, o botão levanta e a sombra se expande */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(164, 126, 67, 0.3);
+}
+
+/* Efeito de preenchimento do hover foi mantido */
+.btn-enviarSPA::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* GRADIENTE INVERTIDO: Para o efeito de preenchimento */
+  background: linear-gradient(to right, #c0a068, #916c36);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.btn-enviarSPA:hover::before {
+  transform: translateX(0);
+}
+
+.btn-enviarSPA:active {
+  /* Efeito de clique mais pronunciado */
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Honeypot permanece oculto */
+.honeypotSPA {
+  display: none;
+}

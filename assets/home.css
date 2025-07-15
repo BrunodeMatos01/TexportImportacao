@@ -1,6 +1,7 @@
 #Container-inicialHome {
   width: 100%;
   height: 40.625rem;
+  padding: 2rem;
   background-image: url("../img/Produtos Textil de fundo Texport.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -50,37 +51,36 @@
 }
 
 .textoH1 h1 {
-  font-size: 4.9em;
+  font-size: 3.7em;
   color: #FFFFFF; /* Branco puro para máximo contraste */
-  font-weight: 900; /* Mais peso para o título principal */
-  /* SOMBRA SUTIL: O segredo para o texto "saltar" do fundo */
-  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+  font-weight: 700; /* Mais peso para o título principal */
 }
 
 .textoH1 p {
-  font-size: 2em;
-  color: #e0c088;
+  font-size: 1.7em;
+  color: #FFFFFF;
   font-weight: 300; /* Mais leve para hierarquia visual */
-  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .textoH5 {
   width: 100%;
   height: auto;
   font-size: 1.2em;
-  color: rgba(255, 255, 255, 0.9); 
-  font-weight: 400;
+  color: #e0c088; 
   text-align: start; 
   letter-spacing: 0.5px; 
+}
+
+.textoH5 h1 {
+  font-weight: 300;
 }
 
 /* --- BOTÃO MELHORADO --- */
 .btn-vejaProdutos {
   display: inline-block;
-  font-family: "Roboto Serif", serif;
-  padding: 0.75rem 1.75rem;
+  padding: 1.1rem 2.1rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.0625rem;

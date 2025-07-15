@@ -42,6 +42,7 @@
   <link rel="stylesheet" href="assets/header.css" />
   <link rel="stylesheet" href="assets/home.css" />
   <link rel="stylesheet" href="assets/form.css" />
+  <link rel="stylesheet" href="assets/formSPA.css">
   <link rel="stylesheet" href="assets/prdutos.css" />
   <link rel="stylesheet" href="assets/orcamento.css">
   <link rel="stylesheet" href="assets/orcamentoForm.css">
@@ -116,8 +117,8 @@
         <header class="orcamento-slogan">
           <h1>Faça seu orçamento com <br>TEXPORT IMPORTAÇÃO</h1>
           <p class="sobreEmpresa">
-            Impulsionar a excelência operacional do seu negócio têxtil. Com inovação constante, 
-            atendimento dedicado e compromisso genuíno com seus resultados, queremos ser mais do que um fornecedor 
+            Impulsionar a excelência operacional do seu negócio têxtil. Com inovação constante,
+            atendimento dedicado e compromisso genuíno com seus resultados, queremos ser mais do que um fornecedor
             — queremos ser parte essencial do seu sucesso.
           </p>
         </header>
@@ -126,106 +127,119 @@
 
     <section id="orcamentoForm">
       <div class="container-geral">
-        <div class="orcamentoform">
-          <h1>ola mundo</h1>
+        <div class="FormSPA">
+          <h2>Solicite seu Orçamento</h2>
+          <div class="preenchaFormSPA">
+            <p>
+              Preencha o formulário abaixo e nossa equipe de especialistas entrará
+              em contato.
+            </p>
+          </div>
+
+          <form action="enviar-email.php" method="POST" class="contact-form">
+            <div class="form-groupSPA">
+              <label for="nome">Nome Completo</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+            </div>
+
+            <div class="form-groupSPA">
+              <label for="email">Seu Melhor E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seu-email@exemplo.com" required />
+            </div>
+
+            <div class="form-groupSPA">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(47) 99999-8888" required />
+            </div>
+
+            <div class="form-groupSPA">
+              <label for="mensagem">Descrição Desejada</label>
+              <textarea id="mensagem" name="mensagem" rows="3" placeholder="Descreva oque deseja, por favor!"
+                required></textarea>
+            </div>
+
+            <div class="honeypotSPA">
+              <label for="website">Não preencha este campo</label>
+              <input type="text" id="website" name="website" />
+            </div>
+
+            <div class="form-groupSPA">
+              <button type="submit" class="btn-enviarSPA">Enviar Mensagem</button>
+            </div>
+          </form>
         </div>
         <div class="orcamentotexto">
-          <h1>sla oq tmb</h1>
+            <h1>Otimize Sua Produção com os Componentes Certos</h1>
+            <p>
+                Buscando mais eficiência para sua indústria? Nossos componentes de alta performance são a resposta. 
+                Preencha o formulário e receba uma proposta ágil com as peças certas para sua necessidade. 
+                É o primeiro passo para uma produção mais lucrativa.
+            </p>
         </div>
       </div>
     </section>
 
-    <section id="sobreNosSec">
-    
-      <div class="quemSomos">
-        <div class="imagem-quemSomos">
-          <img src="img/TEXPORT logo.jpg" alt="Letreiro com o logo da Texport">
-        </div>
-        <div class="texto-quemSomos">
-          <h3>Nosso Diferencial no Mercado Têxtil</h3>
-          <p>Em um setor que nunca para, a precisão e a velocidade são a chave para o sucesso. Na Texport Importação, 
-            entendemos que uma máquina parada representa uma perda irrecuperável. É por isso que nosso diferencial não 
-            está apenas nas peças que importamos, mas na solução completa que oferecemos.</p>
-            <p>Mais do que fornecer peças, entregamos a tranquilidade e a eficiência que sua produção necessita para prosperar sem interrupções.</p>
-        </div>
-      </div>
-    
-      <ul class="topicos-quemSomos">
-    
-        <li class="missao">
-          <img src="caminho/para/icone-missao.svg" alt="Ícone representando a missão">
-          <h4>Missão</h4>
-          <p>Importar peças de alta performance e precisão, entregando soluções que unem excelência 
-            técnica e agilidade para garantir a continuidade e impulsionar a competitividade da indústria têxtil brasileira.</p>
-        </li>  
-    
-        <li class="visao">
-          <img src="caminho/para/icone-visao.svg" alt="Ícone representando a visão">
-          <h4>Visão</h4>
-          <p>Ser a referência e o parceiro mais confiável da indústria têxtil brasileira, reconhecido pela excelência, 
-            inovação constante e por antecipar as necessidades de um mercado em evolução.</p>
-        </li>
-    
-        <li class="valores">
-          <img src="caminho/para/icone-valores.svg" alt="Ícone representando os valores">
-          <h4>Valores</h4>
-            <p>Nossa base é a integridade. Nossa promessa é a qualidade. Nossa resposta é a agilidade. 
-              Somos parceiros inovadores, focados em uma única coisa: o sucesso do seu negócio.</p>
-        </li>
-    
-      </ul>
-
-      <div class="footer-cta">
-        <a href="/orcamento-conteudo.html" class="btn-sobreNos-orcamento">
-          <img src="img/Prancheta Icone.png" alt="Ícone de prancheta">
-          <span>Solicite agora seu orçamento</span>
-        </a>
-    </div>
-    </section>
     <footer id="contatoFooter">
 
       <div class="footer-container">
-  
-          <div class="footer-cta">
-              <h2>Pronto para transformar seu projeto?</h2>
-              <p>Vamos conversar sobre suas necessidades. Peça um orçamento sem compromisso e descubra como a qualidade Texport pode fazer a diferença.</p>
-              <a href="/orcamento-conteudo.html" class="btn-sobreNos-orcamento">
-                <img src="img/Prancheta Icone.png" alt="Ícone de prancheta">
-                <span>Descubra o melhor orçamento</span>
+
+        <div class="footer-cta">
+          <h2>Pronto para transformar seu projeto?</h2>
+          <p>Vamos conversar sobre suas necessidades. Peça um orçamento sem compromisso e descubra como a qualidade
+            Texport pode fazer a diferença.</p>
+          <a href="/orcamento-conteudo.html" class="btn-sobreNos-orcamento">
+            <img src="img/Prancheta Icone.png" alt="Ícone de prancheta">
+            <span>Descubra o melhor orçamento</span>
+          </a>
+        </div>
+
+        <div class="footer-info">
+          <h4>Contato</h4>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:contato@texport.com.br">texport.vendas@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg>
+            <a href="tel:+5547999999999">+55 (47) 98864-3697</a>
+          </div>
+
+          <ul class="social-links">
+            <li>
+              <a href="https://instagram.com/texport.importacao" target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
               </a>
-          </div>
-  
-          <div class="footer-info">
-              <h4>Contato</h4>
-              <div class="contact-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                  <a href="mailto:contato@texport.com.br">texport.vendas@gmail.com</a>
-              </div>
-              <div class="contact-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <a href="tel:+5547999999999">+55 (47) 98864-3697</a>
-              </div>
-  
-              <ul class="social-links">
-                  <li>
-                      <a href="https://instagram.com/texport.importacao" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="https://wa.me/554788643697?text=Olá,%20gostaria%20de%20mais%20informações" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                        <img src="img/Icone WhatsApp.png" alt="Icone WhatsApp">
-                    </a>
-                </li>
-                   </ul>
-          </div>
+            </li>
+            <li>
+              <a href="https://wa.me/554788643697?text=Olá,%20gostaria%20de%20mais%20informações" target="_blank"
+                rel="noopener noreferrer" aria-label="WhatsApp">
+                <img src="img/Icone WhatsApp.png" alt="Icone WhatsApp">
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-  
+
       <div class="footer-bottom-bar">
-          <p>&copy; 2025 Texport. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Texport. Todos os direitos reservados.</p>
       </div>
-  
-  </footer>
+
+    </footer>
   </main>
   <script src="js/main.js"></script>
   <script src="js/form.js"></script>

@@ -1,9 +1,9 @@
 /* --- CONTAINER DO FORMULÁRIO --- */
 .Form {
-  max-width: 450px;
+  max-width: 400px;
   margin: 0;
-  padding: 0.5rem;
-  /* COR E SOMBRA: Fundo branco puro com uma sombra suave para "flutuar" */
+  padding: 2rem 2rem;
+  padding-bottom: 1rem;
   background-color: #ffffff;
   border-radius: 8px;
   border: 1px solid #e0e0e0; /* Borda um pouco mais suave */
@@ -14,7 +14,6 @@
   z-index: 2;
 }
 
-/* EFEITO EXTRA: O formulário levanta um pouco no hover */
 .Form:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
@@ -22,23 +21,31 @@
 
 /* --- TÍTULOS --- */
 .Form h2 {
+  font-size: 2rem;
   text-align: center;
-  /* COR: Usando o dourado principal para destaque e identidade */
   color: #a47e43;
-  margin-bottom: 0.5rem;
   font-weight: bold; /* Garante que o título tenha peso */
 }
 
+.preenchaForm {
+  width: 80%;
+
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .Form p {
+  font-size: 0.8rem;
   text-align: center;
-  /* COR: Um cinza mais escuro e sóbrio para melhor leitura */
   color: #555;
-  margin-bottom: 1.5rem;
+  margin-bottom: 15px;
 }
 
 /* --- CAMPOS DO FORMULÁRIO (Inputs, Textarea) --- */
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 
 .form-group label {
@@ -46,6 +53,7 @@
   font-weight: bold;
   color: #a47e43;
   margin-bottom: 0.4rem;
+  font-size: 0.8rem;
 }
 
 .form-group input[type="text"],
@@ -53,10 +61,10 @@
 .form-group input[type="tel"],
 .form-group textarea {
   width: 100%;
-  padding: 8px;
+  padding: 0.4em;
   border: 1px solid #ddd; /* Borda padrão um pouco mais clara */
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   box-sizing: border-box;
   background-color: #f9f9f9; /* Fundo do input levemente destacado */
   /* TRANSIÇÃO: Adicionado box-shadow para o efeito de foco */
@@ -77,7 +85,7 @@
 /* --- BOTÃO DE ENVIO (Estilo Premium) --- */
 .btn-enviar {
   width: 100%;
-  padding: 10px;
+  padding: 0.7rem;
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
