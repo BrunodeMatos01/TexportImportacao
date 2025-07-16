@@ -72,9 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let totalItems = 0;
     let itemsVisiveis = 4; // Valor padrão
 
-    // =============================================
-    // ===== NOVO: FUNÇÃO PARA DEIXAR O JS RESPONSIVO =====
-    // =============================================
     function atualizarItemsVisiveis() {
         const larguraTela = window.innerWidth;
         if (larguraTela <= 600) {
@@ -88,9 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
     function popularModal(categoria) {
-        atualizarItemsVisiveis(); // Verifica o tamanho da tela ao abrir o modal
+        atualizarItemsVisiveis();
         const produtos = produtosPorCategoria[categoria] || [];
         totalItems = produtos.length;
         carrosselTrack.innerHTML = '';
@@ -109,6 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>`;
             carrosselTrack.insertAdjacentHTML('beforeend', cardHTML);
         });
+
+        // ===== NOVO: Impede o comportamento padrão de arrastar imagens =====
+        carrosselTrack.querySelectorAll('img').forEach(img => {
+            img.addEventListener('dragstart', (e) => e.preventDefault());
+        });
+        
         modalTitulo.textContent = `Tipos de ${categoria}`;
         resetarCarrossel();
     }
@@ -120,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const itemWidth = carrosselItem.offsetWidth;
         const gap = 20;
         const totalMove = currentIndex * (itemWidth + gap);
+        
         carrosselTrack.style.transform = `translateX(-${totalMove}px)`;
         atualizarBotoes();
         criarPaginacao();
@@ -162,21 +165,19 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(moverCarrossel, 100);
     }
 
-    // --- Event Listeners ---
     botoesAbrirModal.forEach(botao => {
         botao.addEventListener('click', () => {
-            popularModal(botao.getAttribute('data-categoria')); // Mudança para data-attribute
+            popularModal(botao.getAttribute('data-categoria'));
         });
     });
 
-    // Evento para abrir o modal
     document.querySelectorAll('.btn-modal').forEach(button => {
-    button.addEventListener('click', function() {''
-        const categoria = this.getAttribute('data-categoria'); // Pega o valor do atributo
-        popularModal(categoria);
-        modal.showModal();
+        button.addEventListener('click', function() {
+            const categoria = this.getAttribute('data-categoria');
+            popularModal(categoria);
+            modal.showModal();
+        });
     });
-});
 
     modalFecharBtn.addEventListener('click', () => modal.close());
 
@@ -199,15 +200,94 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target === modal) modal.close();
     });
 
-    // =============================================
-    // ===== NOVO: EVENTO PARA DEIXAR O JS RESPONSIVO =====
-    // =============================================
     window.addEventListener('resize', () => {
-        // Se o modal estiver aberto, recalcula tudo ao redimensionar a janela
         if (modal.hasAttribute('open')) {
             atualizarItemsVisiveis();
             moverCarrossel();
         }
     });
-});
 
+    // ==============================================================
+    // ===== NOVO: LÓGICA DE ARRASTAR (SWIPE) PARA O CARROSSEL =====
+    // ==============================================================
+    let isDragging = false;
+    let startX;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID;
+
+    function dragStart(event) {
+        if (totalItems <= itemsVisiveis) return; // Não arrasta se não houver para onde
+        isDragging = true;
+        // Pega a posição inicial do clique/toque
+        startX = event.type.startsWith('touch') ? event.touches[0].clientX : event.pageX;
+        // Pega a posição atual do carrossel para continuar o movimento a partir dela
+        const transformMatrix = window.getComputedStyle(carrosselTrack).getPropertyValue('transform');
+        if (transformMatrix !== 'none') {
+            prevTranslate = parseInt(transformMatrix.split(',')[4]);
+        } else {
+            prevTranslate = 0;
+        }
+        // Desativa a transição suave durante o arraste para um movimento instantâneo
+        carrosselTrack.style.transition = 'none';
+        // Usa a animação para um movimento mais fluido
+        animationID = requestAnimationFrame(animation);
+        carrosselTrack.style.cursor = 'grabbing';
+    }
+
+    function dragMove(event) {
+        if (isDragging) {
+            // Calcula a distância que o dedo/mouse moveu
+            const currentPosition = event.type.startsWith('touch') ? event.touches[0].clientX : event.pageX;
+            const moveX = currentPosition - startX;
+            currentTranslate = prevTranslate + moveX;
+        }
+    }
+    
+    function animation() {
+        if (isDragging) {
+             carrosselTrack.style.transform = `translateX(${currentTranslate}px)`;
+             requestAnimationFrame(animation);
+        }
+    }
+
+    function dragEnd(event) {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        cancelAnimationFrame(animationID);
+        // Ativa a transição suave novamente para o "snap"
+        carrosselTrack.style.transition = 'transform 0.5s ease-out';
+        carrosselTrack.style.cursor = 'grab';
+
+        // Calcula o quanto foi arrastado desde o início
+        const movedBy = currentTranslate - prevTranslate;
+        const maxIndex = Math.max(0, totalItems - itemsVisiveis);
+
+        // Define um "limite" de arraste para mudar de slide (ex: 50 pixels)
+        const dragThreshold = 50;
+
+        // Se arrastou para a esquerda o suficiente e não está no final, avança
+        if (movedBy < -dragThreshold && currentIndex < maxIndex) {
+            currentIndex++;
+        }
+        // Se arrastou para a direita o suficiente e não está no início, volta
+        if (movedBy > dragThreshold && currentIndex > 0) {
+            currentIndex--;
+        }
+
+        // Chama sua função original para mover o carrossel para a posição correta
+        moverCarrossel();
+    }
+
+    // Adiciona os listeners para mouse e toque no "track" do carrossel
+    carrosselTrack.addEventListener('mousedown', dragStart);
+    carrosselTrack.addEventListener('touchstart', dragStart, { passive: true });
+
+    carrosselTrack.addEventListener('mousemove', dragMove);
+    carrosselTrack.addEventListener('touchmove', dragMove, { passive: true });
+
+    document.addEventListener('mouseup', dragEnd); // Usar document para 'mouseup'
+    carrosselTrack.addEventListener('mouseleave', dragEnd);
+    carrosselTrack.addEventListener('touchend', dragEnd);
+});
