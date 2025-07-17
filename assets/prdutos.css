@@ -68,6 +68,9 @@
   padding: 0.5rem;
   background: linear-gradient(90deg, var(--gold-primary), var(--gold-secondary));
   border-radius: 7px;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 1s ease-out;
 }
 
 #Produtos {
@@ -75,6 +78,30 @@
   padding: 4rem 2rem 7rem 2rem;
   background-color: transparent;
 }
+
+/* Animação para os CARDS ÍMPARES (1º, 3º, 5º) vindo da ESQUERDA */
+.produto-item:nth-child(odd) {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease-out;
+
+}
+
+/* Animação para os CARDS PARES (2º, 4º, 6º) vindo da DIREITA */
+.produto-item:nth-child(even) {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s ease-out;
+}
+
+.fundo-dourado.visible,
+.produtos-cta-container.visible,
+.produto-item.visible {
+  opacity: 1;
+  transform: translate(0, 0); /* Reseta a posição para a original */
+}
+
+
 
 .grid-produtos {
   list-style-type: none;
@@ -208,6 +235,10 @@
   align-items: center;
   /* Adiciona um espaço generoso acima do botão */
   margin-top: 5rem;
+  animation-delay: 0.4s;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 1s ease-out;
 }
 
 .btn-produtos-orcamento {

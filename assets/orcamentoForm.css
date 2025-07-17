@@ -1,62 +1,78 @@
+/* --- ESTILOS E ANIMAÇÕES PARA A SEÇÃO DE ORÇAMENTO (DIREÇÕES TROCADAS) --- */
+
 #orcamentoForm {
     width: 100%;
     padding-top: 4rem;
     padding-bottom: 4rem;
     padding-right: 1rem;
-
     margin: auto;
-
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
+    /* Importante para evitar barra de rolagem durante a animação */
 }
 
 .container-geral {
     width: 80%;
     padding: 1rem;
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    gap: 2rem;
+    /* Adicionado um gap para garantir espaçamento */
 }
 
-/* --- Estilo Moderno e Profissional --- */
 
-/* --- Estilo Light & Elegant --- */
-
-/* --- Estilo Warm & Sophisticated --- */
 
 .orcamentotexto {
-    /* Layout e Caixa */
-    width: 50%;
+    width: 40%;
     box-sizing: border-box;
-    margin-right: 1px;
-    border: none;  
+    border: none;
     border-left: 5px solid #a47e43;
-    
-    /* Espaçamento Interno e Alinhamento */
-    padding: 2.5rem 3rem; /* Padding vertical e horizontal diferentes */
+    padding: 2.5rem 3rem;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem; /* Um pouco mais de espaço entre os elementos */
+    gap: 1.25rem;
+
+    /* MODIFICADO: Estado inicial para a animação (vem da DIREITA) */
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1.4s ease-out;
+    transition-delay: 0.2s;
+    /* Atraso para chegar depois do formulário */
+}
+
+
+/* Estilos de texto não precisam de modificação */
+.orcamentotexto h1,
+.orcamentotexto p {
+    margin: 0;
 }
 
 .orcamentotexto h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem; /* Maior para mais impacto */
+    font-size: 2.7rem;
     font-weight: 900;
-    color: #4a3c20;   /* Cor marrom escura, vinda da paleta ocre */
+    color: #4a3c20;
     line-height: 1.25;
-    margin: 0;
 }
 
 .orcamentotexto p {
-    font-size: 1rem;
-    color: #6c5f46; /* Cinza amarronzado que combina com o fundo */
+    font-size: 1.1rem;
+    color: #6c5f46;
     line-height: 1.8;
     font-weight: 500;
-    margin: 0;
+}
+
+
+/* --- Gatilho de Visibilidade (Controlado por JavaScript) --- */
+
+/* Quando .container-geral se torna visível, seus filhos animam para a posição final. */
+.container-geral.is-visible .FormSPA,
+.container-geral.is-visible .orcamentotexto {
+    opacity: 1;
+    transform: translateX(0);
 }

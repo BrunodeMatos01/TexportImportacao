@@ -6,12 +6,18 @@
   padding-bottom: 1rem;
   background-color: #ffffff;
   border-radius: 8px;
-  border: 1px solid #e0e0e0; /* Borda um pouco mais suave */
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08); /* Sombra que dá profundidade */
-  transition: all 0.3s ease; /* Transição suave para o hover */
+  border: 1px solid #e0e0e0;
+  /* Borda um pouco mais suave */
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  /* Sombra que dá profundidade */
+  transition: all 0.3s ease;
+  /* Transição suave para o hover */
 
   position: relative;
   z-index: 2;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1.5s ease-out;
 }
 
 .FormSPA:hover {
@@ -24,7 +30,8 @@
   font-size: 2rem;
   text-align: center;
   color: #a47e43;
-  font-weight: bold; /* Garante que o título tenha peso */
+  font-weight: bold;
+  /* Garante que o título tenha peso */
 }
 
 .preenchaFormSPA {
@@ -62,11 +69,13 @@
 .form-groupSPA textarea {
   width: 100%;
   padding: 0.4em;
-  border: 1px solid #ddd; /* Borda padrão um pouco mais clara */
+  border: 1px solid #ddd;
+  /* Borda padrão um pouco mais clara */
   border-radius: 4px;
   font-size: 0.8rem;
   box-sizing: border-box;
-  background-color: #f9f9f9; /* Fundo do input levemente destacado */
+  background-color: #f9f9f9;
+  /* Fundo do input levemente destacado */
   /* TRANSIÇÃO: Adicionado box-shadow para o efeito de foco */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -92,10 +101,12 @@
   /* GRADIENTE REFINADO: Cores mais ricas e harmônicas */
   background: linear-gradient(to right, #916c36, #c0a068);
   color: white;
-  border: none; /* Borda removida para um look mais limpo */
+  border: none;
+  /* Borda removida para um look mais limpo */
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s ease; /* Transição para todas as propriedades */
+  transition: all 0.3s ease;
+  /* Transição para todas as propriedades */
   position: relative;
   overflow: hidden;
   /* SOMBRA NO BOTÃO: Dá profundidade e destaque */

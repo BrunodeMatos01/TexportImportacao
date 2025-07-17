@@ -43,6 +43,7 @@
   /* Adicionado para ficar acima do overlay */
   position: relative;
   z-index: 2;
+  animation: slideInFromLeft 1s ease-out forwards;
 }
 
 .textoH1 {

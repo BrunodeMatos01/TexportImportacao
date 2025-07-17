@@ -106,5 +106,82 @@ ul {
   transform: translateX(0);
 }
 
+/*EFEITOS*/
+/* ====================================================== */
+/* CÓDIGO DE ANIMAÇÃO PARA A PÁGINA HOME    */
+/* ====================================================== */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%); /* Começa fora da tela, à esquerda */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /* Termina na sua posição original */
+    opacity: 1;
+  }
+}
+
+/* Animação que vem da DIREITA para o centro */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%); /* Começa fora da tela, à direita */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /* Termina na sua posição original */
+    opacity: 1;
+  }
+}
+
+/* ====================================================== */
+/* CÓDIGO DE ANIMAÇÃO PARA A PÁGINA DE PRODUTOS          */
+/* ====================================================== */
+
+/* 1. Definição das Animações (Cima, Baixo, Esquerda, Direita) */
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 
 

@@ -396,7 +396,6 @@ html {
 /*Tela orcamente.hmtl*/
 @media (max-width: 1416px) {
   #orcamento-div {
-    /* Inverte a ordem: formulário aparece primeiro */
     flex-direction: column-reverse;
     padding: 4rem 1.5rem;
   }
@@ -409,6 +408,11 @@ html {
     width: 100%;
     max-width: 650px;
     /* Limita a largura em tablets para boa leitura */
+  }
+
+  .FormSPA h2,
+  .orcamento-textoForm h2 {
+    font-size: 1.8rem;
   }
 
   .orcamento-textoForm {
@@ -443,7 +447,7 @@ html {
 
   .FormSPA h2,
   .orcamento-textoForm h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   .FormSPA p,
@@ -453,6 +457,59 @@ html {
 }
 
 /*Section do formulario da pagina de orcamento */
+
+@media (max-width: 1024px) {
+
+  .container-geral {
+    width: 99%;
+    justify-content: space-around;
+  }
+
+  .FormSPA {
+    max-width: 400px;
+  }
+
+  .orcamentotexto {
+    /* Layout e Caixa */
+    max-width: 400px;
+    box-sizing: border-box;
+    margin-right: 1px;
+    border: none;
+    border-left: 5px solid #a47e43;
+
+    /* Espaçamento Interno e Alinhamento */
+    padding: 1.5rem 1.5rem;
+    /* Padding vertical e horizontal diferentes */
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    /* Um pouco mais de espaço entre os elementos */
+  }
+
+
+  .orcamentotexto h1 {
+    font-size: 2.4rem;
+    /* Maior para mais impacto */
+    font-weight: 900;
+    color: #4a3c20;
+    /* Cor marrom escura, vinda da paleta ocre */
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .orcamentotexto p {
+    font-size: 1.1rem;
+    color: #6c5f46;
+    /* Cinza amarronzado que combina com o fundo */
+    line-height: 1.8;
+    font-weight: 500;
+    margin: 0;
+  }
+
+}
+
+
 @media (max-width: 992px) {
   .container-geral {
     flex-direction: column-reverse;

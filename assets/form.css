@@ -12,6 +12,7 @@
 
   position: relative;
   z-index: 2;
+  animation: slideInFromRight 1s ease-out forwards;
 }
 
 .Form:hover {

@@ -17,7 +17,7 @@
 
 @keyframes aurora-flow {
     0% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(120px, 90px) rotate(25deg); }
+    50% { transform: translate(120px, 90px) rotate(0deg); }
     100% { transform: translate(0, 0) rotate(0deg); }
 }
 
@@ -75,7 +75,10 @@
     z-index: 2;
     margin-bottom: -2rem;
     text-shadow: 0 0 20px var(--glow-color);
-    animation: fadeIn-scaleUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s backwards;
+    opacity: 0;
+    transform: scale(0.95) rotate(-2deg);
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-delay: 0.1s;
 }
 
 .quemSomos {
@@ -94,7 +97,10 @@
     border-radius: 20px;
     border: 1px solid var(--border-color);
     box-shadow: 0 15px 40px var(--shadow-color);
-    animation: fadeIn-scaleUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0.4s backwards;
+    opacity: 0;
+    transform: scale(0.95) rotate(-2deg);
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-delay: 0.2s;
 }
 
 .imagem-quemSomos {
@@ -152,7 +158,10 @@
     width: 3px;
     height: 100%;
     background: linear-gradient(to bottom, transparent, var(--gold-primary), transparent);
-    animation: timeline-grow 1s ease-out 0.8s backwards;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1s ease-out;
+    transition-delay: 0.4s;
     transform-origin: top;
 }
 
@@ -162,18 +171,18 @@
     width: 50%;
     box-sizing: border-box;
     opacity: 0;
-    animation: fadeIn-scaleUp 0.8s ease-out forwards;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
-.topicos-quemSomos li:nth-child(1) { animation-delay: 1.2s; }
-.topicos-quemSomos li:nth-child(2) { animation-delay: 1.4s; }
-.topicos-quemSomos li:nth-child(3) { animation-delay: 1.6s; }
+.topicos-quemSomos li:nth-child(1) { transition-delay: 0.4s; }
+.topicos-quemSomos li:nth-child(2) { transition-delay: 0.4s; }
+.topicos-quemSomos li:nth-child(3) { transition-delay: 0.4s; }
 
 .topicos-quemSomos li:nth-child(odd) {
     float: left;
     clear: both;
     text-align: right;
     padding-right: 45px;
+    transform: translateX(-30px) scale(0.9);
 }
 
 .topicos-quemSomos li:nth-child(even) {
@@ -181,6 +190,27 @@
     clear: both;
     text-align: left;
     padding-left: 45px;
+    transform: translateX(30px) scale(0.9);
+}
+
+/* --- A CLASSE MÁGICA QUE O JS VAI ADICIONAR --- */
+
+/* Estado final (visível) para o H2 e o card "Quem Somos" */
+#sobreNosSec > h2.is-visible,
+.quemSomos.is-visible {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+/* Estado final (visível) para a linha da timeline */
+.topicos-quemSomos.is-visible::before {
+    transform: scaleY(1);
+}
+
+/* Estado final (visível) para os itens da timeline */
+.topicos-quemSomos.is-visible li {
+    opacity: 1;
+    transform: translateX(0) scale(1);
 }
 
 .topicos-quemSomos li::before {

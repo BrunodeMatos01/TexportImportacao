@@ -291,3 +291,108 @@ document.addEventListener('DOMContentLoaded', () => {
     carrosselTrack.addEventListener('mouseleave', dragEnd);
     carrosselTrack.addEventListener('touchend', dragEnd);
 });
+
+
+/*EFITOS DA PAGINA DE PRODUTOS*/
+// Seleciona TODOS os elementos que você quer animar
+  const elementsToAnimate = document.querySelectorAll('.fundo-dourado, .produto-item, .produtos-cta-container');
+
+  // Configurações do Observer (pode ajustar o threshold)
+  // threshold: 0.1 significa que a animação dispara quando 10% do elemento está visível
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  // Cria o "vigia"
+  const observer = new IntersectionObserver((entries, observer) => {
+    // Roda para cada elemento que mudar de visibilidade
+    entries.forEach(entry => {
+      // Se o elemento ESTÁ visível na tela...
+      if (entry.isIntersecting) {
+        // Adiciona a classe .visible para disparar a animação CSS
+        entry.target.classList.add('visible');
+        
+        // Opcional: Para de observar o elemento depois que a animação já aconteceu
+        // Isso melhora a performance.
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Coloca o "vigia" para observar cada um dos seus elementos
+  elementsToAnimate.forEach(element => {
+    observer.observe(element);
+  });
+
+/*EFITOS PARA PAGINA DE SOBRENÓS*/
+// =========================================================================
+// SCRIPT DE ANIMAÇÃO UNIFICADO - COMPATÍVEL COM HTMX
+// =========================================================================
+
+/**
+ * Esta função contém toda a lógica para encontrar e observar os elementos
+ * que devem ser animados em QUALQUER página do seu site.
+ */
+function iniciarObservadoresDeAnimacao() {
+
+    // --- Lógica para a Seção "Sobre Nós" ---
+    const sobreNosElements = document.querySelectorAll('#sobreNosSec > h2, .quemSomos, .topicos-quemSomos');
+    if (sobreNosElements.length > 0) {
+        const sobreNosObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sobreNosElements.forEach(element => sobreNosObserver.observe(element));
+    }
+
+
+    // --- Lógica para a Seção "Chamada de Orçamento" ---
+    const orcamentoChamadaElements = document.querySelectorAll('#orcamento-chamada');
+    if (orcamentoChamadaElements.length > 0) {
+        const orcamentoChamadaObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        orcamentoChamadaElements.forEach(element => orcamentoChamadaObserver.observe(element));
+    }
+
+
+    // --- Lógica para a Seção "Formulário de Orçamento" (Texto e Form) ---
+    const orcamentoFormElements = document.querySelectorAll('.container-geral');
+    if (orcamentoFormElements.length > 0) {
+        const orcamentoFormObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        orcamentoFormElements.forEach(element => orcamentoFormObserver.observe(element));
+    }
+    
+    // --- Adicione aqui a lógica para outras seções, se houver ---
+
+}
+
+
+// --- GATILHOS DE EXECUÇÃO ---
+
+// 1. Executa a função no primeiro carregamento da página.
+document.addEventListener('DOMContentLoaded', iniciarObservadoresDeAnimacao);
+
+// 2. Executa a função NOVAMENTE toda vez que o HTMX carregar novo conteúdo.
+//    Isso é o que resolve o seu problema de SPA.
+document.body.addEventListener('htmx:load', function() {
+    iniciarObservadoresDeAnimacao();
+});
