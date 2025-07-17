@@ -89,7 +89,7 @@
     align-items: center;
     gap: 2.5rem;
     padding: 2.5rem;
-    background: var(--glass-bg);
+    background: var(--border-color);
     backdrop-filter: blur(12px);
     border-radius: 20px;
     border: 1px solid var(--border-color);
@@ -101,8 +101,6 @@
     width: 150px;
     height: auto;
     overflow: hidden;
-    box-shadow: 0 10px 30px var(--shadow-color);
-    background-color: rgba(0,0,0,0.2);
     box-sizing: border-box;
     
     display: flex;
@@ -111,8 +109,8 @@
 }
 
 .imagem-quemSomos img {
-    width: 50%;
-    height: 50%;
+    width: 9rem;
+    height: 9rem;
     object-fit: contain;
 }
 

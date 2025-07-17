@@ -78,16 +78,15 @@
 /* --- BOTÃO MELHORADO --- */
 .btn-vejaProdutos {
   display: inline-block;
-  padding: 1.1rem 2.1rem;
+  padding: 1rem 10rem;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.0625rem;
-  text-decoration: none;
   position: relative;
   overflow: hidden;
-  margin: 1.5rem 1rem 1rem 1rem; /* Aumentado margem superior para respirar */
+  margin: 1rem 1rem;
   
   /* GRADIENTE REFINADO: Cores mais ricas e harmônicas */
   background: linear-gradient(to right, #916c36, #c0a068);
