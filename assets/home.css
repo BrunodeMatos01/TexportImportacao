@@ -93,7 +93,7 @@
   background: linear-gradient(to right, #916c36, #c0a068);
   color: white;
   border: none; /* Remove a borda, o gradiente já define a forma */
-  border-radius: 0.25rem;
+  border-radius: 4px;
   cursor: pointer;
 
   /* SOMBRA NO BOTÃO: Dá profundidade e destaque */

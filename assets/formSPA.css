@@ -11,13 +11,7 @@
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
   /* Sombra que dá profundidade */
   transition: all 0.3s ease;
-  /* Transição suave para o hover */
-
-  position: relative;
-  z-index: 2;
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: all 1.5s ease-out;
+  animation: slideInFromLeft 1s ease-out forwards;
 }
 
 .FormSPA:hover {
