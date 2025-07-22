@@ -11,23 +11,23 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
-  /* Adicionado para o pseudo-elemento funcionar corretamente */
-  position: relative; 
+  position: relative;
 }
 
 /* NOVO: Overlay sutil para melhorar a legibilidade do texto */
 #Container-inicialHome::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)100%);
-  z-index: 0; /* Fica acima do background, abaixo do texto */
-}
 
+  background-color: rgba(223, 147, 34, 0.3);
+
+  backdrop-filter: blur(3px) brightness(100%);
+  z-index: 0; 
+}
 
 /* --- TEXTOS --- */
 .textoChamtivo {
@@ -39,7 +39,7 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  
+
   /* Adicionado para ficar acima do overlay */
   position: relative;
   z-index: 2;
@@ -53,13 +53,13 @@
 
 .textoH1 h1 {
   font-size: 3.7em;
-  color: #FFFFFF; /* Branco puro para máximo contraste */
+  color: #ffffff; /* Branco puro para máximo contraste */
   font-weight: 700; /* Mais peso para o título principal */
 }
 
 .textoH1 p {
   font-size: 1.7em;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 300; /* Mais leve para hierarquia visual */
 }
 
@@ -67,9 +67,9 @@
   width: 100%;
   height: auto;
   font-size: 1.2em;
-  color: #e0c088; 
-  text-align: start; 
-  letter-spacing: 0.5px; 
+  color: #e0c088;
+  text-align: start;
+  letter-spacing: 0.5px;
 }
 
 .textoH5 h1 {
@@ -88,7 +88,7 @@
   position: relative;
   overflow: hidden;
   margin: 1rem 1rem;
-  
+
   /* GRADIENTE REFINADO: Cores mais ricas e harmônicas */
   background: linear-gradient(to right, #916c36, #c0a068);
   color: white;
