@@ -1,7 +1,7 @@
 #Container-inicialHome {
   width: 100%;
-  height: 40.625rem;
-  padding: 2rem;
+  height: 45.625rem;
+  padding: 0;
   background-image: url("../img/Produtos Textil de fundo Texport.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,15 +23,14 @@
   width: 100%;
   height: 100%;
 
-  background-color: rgba(223, 147, 34, 0.3);
-
-  backdrop-filter: blur(3px) brightness(100%);
+  backdrop-filter: blur(0px) brightness(80%);
   z-index: 0; 
 }
 
 /* --- TEXTOS --- */
 .textoChamtivo {
   width: 30rem;
+  max-width: 3000px;
   height: auto;
 
   display: flex;

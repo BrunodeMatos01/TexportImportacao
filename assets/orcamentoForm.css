@@ -2,21 +2,21 @@
 
 #orcamentoForm {
     width: 100%;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    padding-right: 1rem;
-    margin: auto;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
+
+    background-color: #ededed;
     /* Importante para evitar barra de rolagem durante a animação */
 }
 
 .container-geral {
     width: 80%;
-    padding: 1rem;
+    padding: 3rem;
     display: flex;
     flex-direction: row;
     align-items: center;

@@ -1,3 +1,29 @@
+/* TELAS GRANDES */
+@media (min-width: 2550px) {
+  .orcamentotexto {
+    width: 30rem;
+    max-width: 3000px;
+    box-sizing: border-box;
+    border: none;
+    border-left: 5px solid #a47e43;
+    padding: 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    animation: slideInFromRight 1s ease-out forwards;
+  }
+
+    .footer-container {
+      max-width: 1650px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 4rem;
+  }
+  
+}
+
 html {
   font-size: 16px;
 }
@@ -35,6 +61,15 @@ html {
 .btn-vejaProdutos {
   padding: 1.2rem 1rem;
   font-size: 1.1rem;
+}
+
+/* Header*/
+#navBranca {
+  padding: 0.8rem 2rem;
+}
+
+#LogoTexport {
+  padding-left: 3.4rem;
 }
 
 
@@ -179,8 +214,7 @@ html {
 @media (max-width: 768px) {
   #textoProduto {
     font-size: 1.6rem;
-    padding: 2rem;
-    padding-bottom: 0;
+    padding: 4.5rem 2rem;
     text-align: center;
   }
 
@@ -309,6 +343,7 @@ html {
 /* Sobre Nós*/
 @media (max-width: 992px) {
   .quemSomos {
+    width: 80%;
     grid-template-columns: 1fr;
     text-align: center;
   }
@@ -329,6 +364,7 @@ html {
   }
 
   .quemSomos {
+    width: 100%;
     padding: 1.5rem;
     gap: 1.5rem;
   }
@@ -355,7 +391,7 @@ html {
   .topicos-quemSomos li,
   .topicos-quemSomos li:nth-child(even),
   .topicos-quemSomos li:nth-child(odd) {
-    width: 100%;
+    width: 90%;
     float: none;
     clear: none;
     text-align: left;
@@ -377,6 +413,22 @@ html {
 }
 
 /* Fotter */
+@media (max-width: 1300px) {
+  .footer-container {
+    max-width: 900px;
+    justify-content: space-evenly;
+}
+
+  .footer-info {
+    text-align: left ;    
+  }
+
+  .contact-item {
+    text-align: left;
+  }
+}
+
+
 @media (max-width: 850px) {
   .footer-container {
     flex-direction: column;
@@ -386,19 +438,29 @@ html {
 
   .footer-info {
     align-items: center;
+    text-align: left;
   }
 
   .contact-item {
     justify-content: center;
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn-sobreNos-orcamento {
+    font-size: 1rem;
   }
 }
 
 /*Tela orcamente.hmtl*/
+
 @media (max-width: 1416px) {
   #orcamento-div {
     flex-direction: column-reverse;
-    padding: 4rem 1.5rem;
+    padding: 1rem 1.5rem;
   }
+  
 
   /* Ajusta ambos os blocos para ocupar a largura total */
   .FormSPA,
@@ -432,7 +494,7 @@ html {
 }
 
 /* --- Celulares (Até 768px) --- */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   #orcamento-video {
     height: 500px;
   }
@@ -447,18 +509,42 @@ html {
 
   .FormSPA h2,
   .orcamento-textoForm h2 {
-    font-size: 1.7rem;
+    font-size: 2.2rem;
   }
 
   .FormSPA p,
   .orcamento-textoForm p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 560px) {
+  #orcamento-video {
+    height: 500px;
+  }
+
+  #orcamento-chamada h1 {
+    font-size: 2rem;
+  }
+
+  #orcamento-div {
+    padding: 3rem 1rem;
+  }
+
+  .FormSPA h2,
+  .orcamento-textoForm h2 {
+    font-size: 1.6rem;
+  }
+
+  .FormSPA p,
+  .orcamento-textoForm p {
+    font-size: 0.7rem;
   }
 }
 
 /*Section do formulario da pagina de orcamento */
 
-@media (max-width: 1024px) {
+@media (max-width: 1300px) {
 
   .container-geral {
     width: 99%;
@@ -471,7 +557,7 @@ html {
 
   .orcamentotexto {
     /* Layout e Caixa */
-    max-width: 400px;
+    max-width: 100%;
     box-sizing: border-box;
     margin-right: 1px;
     border: none;
@@ -489,7 +575,7 @@ html {
 
 
   .orcamentotexto h1 {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     /* Maior para mais impacto */
     font-weight: 900;
     color: #4a3c20;
@@ -499,7 +585,7 @@ html {
   }
 
   .orcamentotexto p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #6c5f46;
     /* Cinza amarronzado que combina com o fundo */
     line-height: 1.8;
@@ -511,6 +597,54 @@ html {
 
 
 @media (max-width: 992px) {
+  .container-geral {
+    flex-direction: column-reverse;
+  }
+
+  .FormSPA {
+    max-width: 480px;
+  }
+
+  .orcamentotexto {
+    /* Layout e Caixa */
+    width: 90%;
+    box-sizing: border-box;
+    margin-right: 1px;
+    border: none;
+    border-left: 5px solid #a47e43;
+
+    /* Espaçamento Interno e Alinhamento */
+    padding: 1.5rem 1.5rem;
+    /* Padding vertical e horizontal diferentes */
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    /* Um pouco mais de espaço entre os elementos */
+  }
+
+  .orcamentotexto h1 {
+    font-size: 2.8rem;
+    /* Maior para mais impacto */
+    font-weight: 900;
+    color: #4a3c20;
+    /* Cor marrom escura, vinda da paleta ocre */
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .orcamentotexto p {
+    font-size: 1rem;
+    color: #6c5f46;
+    /* Cinza amarronzado que combina com o fundo */
+    line-height: 1.8;
+    font-weight: 500;
+    margin: 0;
+  }
+
+}
+
+@media (max-width: 560px) {
   .container-geral {
     flex-direction: column-reverse;
   }
@@ -534,7 +668,7 @@ html {
   }
 
   .orcamentotexto h1 {
-    font-size: 2.5rem;
+    font-size: 1.9rem;
     /* Maior para mais impacto */
     font-weight: 900;
     color: #4a3c20;
@@ -553,3 +687,7 @@ html {
   }
 
 }
+
+
+
+

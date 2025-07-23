@@ -85,11 +85,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .carrossel-wrapper {
   overflow: hidden;
   width: 100%;
+  border-radius: 12px;
+  
 }
 
 .carrossel-track {
@@ -114,11 +117,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.carrossel-item:hover {
-  transform: translateY(-8px) scale(1.02); /* Efeito de elevação */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
 .item-imagem img {
   width: 100%;
   display: block;
@@ -128,7 +126,7 @@
 }
 
 .carrossel-item:hover .item-imagem img {
-  transform: scale(1.05); /* Zoom sutil na imagem */
+  transform: scale(1.10); /* Zoom sutil na imagem */
 }
 
 .item-info {
