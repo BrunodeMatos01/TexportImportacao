@@ -63,7 +63,7 @@
 
     background-color: rgba(0, 0, 0, 0.3);
 
-    backdrop-filter: blur(7px) brightness(65%);
+    backdrop-filter: blur(7px) brightness(50%);
     z-index: 0;
 
     -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.9) 0%, black 70%);
