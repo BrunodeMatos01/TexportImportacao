@@ -4,38 +4,37 @@
 
 /* Keyframes para animações de entrada */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-
 @keyframes growInHeight {
-    from {
-        transform: scaleY(0);
-    }
+  from {
+    transform: scaleY(0);
+  }
 
-    to {
-        transform: scaleY(1);
-    }
+  to {
+    transform: scaleY(1);
+  }
 }
 
 /* ==========================================================================
@@ -43,107 +42,103 @@
    ========================================================================== */
 
 #orcamento-video {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 600px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 #orcamento-video::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-    background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 
-    backdrop-filter: blur(7px) brightness(50%);
-    z-index: 0;
+  backdrop-filter: blur(7px) brightness(50%);
+  z-index: 0;
 
-    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.9) 0%, black 70%);
-    mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.9) 0%, black 70%);
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.9) 0%, black 70%);
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.9) 0%, black 70%);
 }
 
 #video-background {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
 }
 
 #orcamento-chamada {
+  width: 100%;
 
-    width: 100%;
+  max-width: 800px;
 
-    max-width: 800px;
+  padding: 2rem 1rem;
 
-    padding: 2rem 1rem;
+  color: white;
 
-    color: white;
+  text-align: center;
 
-    text-align: center;
-
-    z-index: 1;
+  z-index: 1;
 }
 
 #orcamento-chamada h1 {
+  font-size: 2.5rem;
 
-    font-size: 2.5rem;
+  font-weight: 800;
 
-    font-weight: 800;
+  line-height: 1.2;
 
-    line-height: 1.2;
+  text-transform: uppercase;
 
-    text-transform: uppercase;
+  letter-spacing: 1px;
 
-    letter-spacing: 1px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  /* MODIFICADO: Estado inicial para a animação */
 
+  opacity: 0;
 
-    /* MODIFICADO: Estado inicial para a animação */
+  transform: translateY(20px);
 
-    opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 
-    transform: translateY(20px);
-
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-
-    transition-delay: 0.2s;
-    /* Atraso para o título aparecer */
+  transition-delay: 0.2s;
+  /* Atraso para o título aparecer */
 }
 
 .sobreEmpresa {
+  font-size: 1.3rem;
 
-    font-size: 1.3rem;
+  line-height: 1.6;
 
-    line-height: 1.6;
+  margin-top: 1rem;
 
-    margin-top: 1rem;
+  color: #e0e0e0;
 
-    color: #e0e0e0;
-
-    /* MODIFICADO: Estado inicial para a animação */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    transition-delay: 0.5s;
-    /* Atraso maior para o parágrafo */
+  /* MODIFICADO: Estado inicial para a animação */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition-delay: 0.5s;
+  /* Atraso maior para o parágrafo */
 }
 
 #orcamento-chamada.is-visible h1,
-#orcamento-chamada.is-visible .sobreEmpresa { 
-    opacity: 1; 
-    transform: translateY(0);
+#orcamento-chamada.is-visible .sobreEmpresa {
+  opacity: 1;
+  transform: translateY(0);
 }

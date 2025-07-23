@@ -36,23 +36,24 @@ p {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 150px;
-  background-color: #181717;
+  width: 90px;
+  background-color: #a47e43;
   display: none;
   flex-direction: column;
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 10px 0;
   z-index: 1000;
 }
 
 .menu a {
   color: white;
-  padding: 10px 20px;
+  padding: 10px 10px;
   text-decoration: none;
+  font-size: 1rem;
 }
 
 .menu a:hover {
-  background: #916c36;
+  background: #805e2b;
 }
 
 .menu.show {

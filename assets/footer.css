@@ -93,7 +93,7 @@
     width: 100%;
     height: 100%;
     /* O gradiente pode ser sutilmente diferente para um efeito de "brilho" */
-    background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+    background: linear-gradient(135deg, var(--gold-secondary), var(--gold-primary));
     transform: translateX(-100%);
     transition: transform 0.5s ease-in-out;
     z-index: -1;

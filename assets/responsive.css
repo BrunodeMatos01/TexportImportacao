@@ -46,7 +46,7 @@ html {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 901px) {
   #navegacaoMobile {
     display: none;
   }
@@ -68,9 +68,12 @@ html {
   padding: 0.8rem 2rem;
 }
 
-#LogoTexport {
-  padding-left: 3.4rem;
+@media (max-width: 900px) {
+  #LogoTexport {
+    padding-left: 3.4rem;
+  }
 }
+
 
 
 
@@ -544,7 +547,7 @@ html {
 
 /*Section do formulario da pagina de orcamento */
 
-@media (max-width: 1300px) {
+@media (max-width: 1500px) {
 
   .container-geral {
     width: 99%;
@@ -602,7 +605,7 @@ html {
   }
 
   .FormSPA {
-    max-width: 480px;
+    max-width: 400px;
   }
 
   .orcamentotexto {
@@ -647,6 +650,10 @@ html {
 @media (max-width: 560px) {
   .container-geral {
     flex-direction: column-reverse;
+  }
+
+  .FormSPA {
+    max-width: 300px;
   }
 
   .orcamentotexto {
