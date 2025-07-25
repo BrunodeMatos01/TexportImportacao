@@ -139,7 +139,7 @@
 }
 
 .item-marca {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #c0a068; /* Cor de destaque (dourado) */
   text-transform: uppercase;
@@ -147,8 +147,14 @@
   margin: 0 0 4px 0;
 }
 
+.item-modelo {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 0 1rem 0;
+}
+
 .item-nome {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #1a1a1a;
   margin: 0 0 12px 0;
@@ -156,16 +162,10 @@
   flex-grow: 1;
 }
 
-.item-modelo {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 0 0 1rem 0;
-}
-
 .item-codigo {
   margin-top: auto;
   padding-top: 8px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #999;
   border-top: 1px solid #eee;
 }
