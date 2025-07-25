@@ -139,7 +139,7 @@
 }
 
 .item-marca {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #c0a068; /* Cor de destaque (dourado) */
   text-transform: uppercase;
@@ -148,7 +148,7 @@
 }
 
 .item-modelo {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #555;
   margin: 0 0 1rem 0;
 }
@@ -165,7 +165,7 @@
 .item-codigo {
   margin-top: auto;
   padding-top: 8px;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #999;
   border-top: 1px solid #eee;
 }
