@@ -377,3 +377,7 @@ document.addEventListener('DOMContentLoaded', iniciarObservadoresDeAnimacao);
 document.body.addEventListener('htmx:load', function() {
     iniciarObservadoresDeAnimacao();
 });
+
+
+
+

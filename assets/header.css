@@ -28,7 +28,7 @@ p {
   height: 4px;
   width: 100%;
   background: #a47e43;
-  border-radius: 2px;
+  border-radius: 5px;
   transition: all 0.3s ease;
 }
 
@@ -37,7 +37,7 @@ p {
   top: 100%;
   left: 0;
   width: 90px;
-  background-color: #916c36;
+  background-color: #c0a068;
   display: none;
   flex-direction: column;
   border-radius: 4px;
@@ -53,7 +53,7 @@ p {
 }
 
 .menu a:hover {
-  background: #805e2b;
+  background: rgb(158, 127, 73)
 }
 
 .menu.show {
