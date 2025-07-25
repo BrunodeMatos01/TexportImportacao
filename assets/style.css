@@ -10,8 +10,9 @@ html {
   scroll-behavior: smooth;
   touch-action: manipulation;
 }
-* {
-  outline: 1px solid red;
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 
@@ -22,10 +23,14 @@ h4,
 h5,
 h6 {
   margin: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 a {
   text-decoration: none;
   color: inherit;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 li {
   list-style-type: none;
