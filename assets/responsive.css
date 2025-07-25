@@ -280,6 +280,22 @@ html {
     /* O card ocupa 100% do wrapper, que já tem 90% da tela */
     width: 100%; 
   }
+
+  .item-marca {
+    font-size: 1.2rem;
+  }
+  
+  .item-modelo {
+    font-size: 1.1rem;
+  }
+  
+  .item-nome {
+    font-size: 1.3rem;
+  }
+  
+  .item-codigo {
+    font-size: 1.1rem;
+  }
 }
 
 /* === AJUSTES FINOS PARA TELAS MENORES === */
