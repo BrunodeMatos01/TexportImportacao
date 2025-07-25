@@ -1,31 +1,42 @@
-/*Para funcionar o menu-burguer que é a navegação de calular*/
-const menu = document.getElementById('menu');
-  const menuIcon = document.querySelector('.menu-icon');
+/* ========================================================
+   CÓDIGO DO MENU-BURGUER - VERSÃO COM DELEGAÇÃO DE EVENTOS
+   (Funciona com HTMX)
+   ======================================================== */
 
-  function toggleMenu() {
-    menu.classList.toggle('show');
-  }
+// Usamos 'document' como nosso "vigia" de eventos de clique
+document.addEventListener('click', function(event) {
+    
+    // Encontra o menu e o ícone na página ATUALMENTE carregada
+    // Fazemos isso dentro do evento para sempre pegar a versão mais recente dos elementos
+    const menu = document.getElementById('menu');
+    const menuIcon = document.querySelector('.menu-icon');
 
-  // Fecha o menu ao clicar fora
-  document.addEventListener('click', function(event) {
-    const isClickInsideMenu = menu.contains(event.target);
-    const isClickOnIcon = menuIcon.contains(event.target);
-
-    // Se clicar fora do menu e fora do ícone
-    if (!isClickInsideMenu && !isClickOnIcon) {
-      menu.classList.remove('show');
+    // Se não encontrar os elementos (pode acontecer durante a troca de página), não faz nada.
+    if (!menu || !menuIcon) {
+        return;
     }
-  });
 
-  // Fecha o menu ao clicar em um link
-  const links = menu.querySelectorAll('a');
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('show');
-    });
-  });
-/*========================================================*/
+    // AÇÃO 1: VERIFICA SE O CLIQUE FOI NO ÍCONE DO MENU
+    // Usamos .closest() para pegar o clique mesmo que seja num filho do ícone (ex: um svg)
+    if (menuIcon.contains(event.target)) {
+        menu.classList.toggle('show');
+        return; // Para a execução aqui para não acionar a lógica de "fechar fora"
+    }
 
+    // AÇÃO 2: VERIFICA SE O CLIQUE FOI EM UM LINK DENTRO DO MENU
+    const clickedLink = event.target.closest('#menu a');
+    if (clickedLink) {
+        menu.classList.remove('show');
+        return; // Apenas fecha o menu, a navegação do link continua normalmente
+    }
+
+    // AÇÃO 3: VERIFICA SE O CLIQUE FOI FORA DO MENU
+    // Esta lógica só roda se não clicamos no ícone nem num link
+    if (!menu.contains(event.target)) {
+        menu.classList.remove('show');
+    }
+});
+/* ====================================================== */
 
 
 
@@ -78,16 +89,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Funções de Controle do Modal e Scroll Lock ---
     function abrirModal(categoria) {
-        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-        document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
+        savedScrollY = window.scrollY;
         document.body.classList.add('body-no-scroll');
+        document.body.style.top = `-${savedScrollY}px`;
         popularModal(categoria);
         modal.showModal();
     }
 
     function fecharModal() {
         document.body.classList.remove('body-no-scroll');
-        document.documentElement.style.removeProperty('--scrollbar-width');
+        document.body.style.top = '';
+        window.scrollTo(0, savedScrollY);
         modal.close();
     }
 

@@ -3,6 +3,8 @@
 /* ============================================= */
 
 /* ===== BACKDROP E ANIMAÇÃO DO MODAL ===== */
+
+
 .modal-carrossel::backdrop {
   backdrop-filter: blur(8px) saturate(120%);
 }
