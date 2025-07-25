@@ -11,9 +11,6 @@ html {
   touch-action: manipulation;
 }
 
-body, html {
-  overflow-x: hidden;
-}
 
 
 

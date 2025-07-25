@@ -207,16 +207,16 @@
 .carrossel-paginacao {
   display: flex;
   justify-content: center;
-  gap: 15px; /* Mais espaçamento */
-  margin-top: 3rem; /* Mais distância do carrossel */
+  gap: 35px; 
+  margin-top: 3rem; 
   padding-bottom: 1rem;
 }
 
 .paginacao-dot {
-  width: 12px;
-  height: 12px;
+  width: 17px;
+  height: 17px;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(119, 119, 119, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   padding: 0;
