@@ -11,6 +11,11 @@ html {
   touch-action: manipulation;
 }
 
+.body-no-scroll {
+  overflow: hidden;
+  /* A variável --scrollbar-width será definida via JS */
+  padding-right: var(--scrollbar-width);
+}
 
 
 

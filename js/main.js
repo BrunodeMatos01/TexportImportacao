@@ -39,9 +39,10 @@ const menu = document.getElementById('menu');
 /*========================================================*/
 
 
-    /*Carrosel de Produtos*/
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Dados e Seleção de Elementos (sem alteração) ---
+    // --- Dados e Seleção de Elementos ---
     const produtosPorCategoria = {
         'Facas': [
             { marca: 'RICHPEACE', modelo: 'RP-KNF1625', nome: 'Faca de Corte Oscilante', codigo: '10.101.001', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+1' },
@@ -75,7 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let startX = 0;
     let dragMovement = 0;
 
-    // --- Funções Principais (sem grandes alterações na lógica) ---
+    // --- Funções de Controle do Modal e Scroll Lock ---
+    function abrirModal(categoria) {
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
+        document.body.classList.add('body-no-scroll');
+        popularModal(categoria);
+        modal.showModal();
+    }
+
+    function fecharModal() {
+        document.body.classList.remove('body-no-scroll');
+        document.documentElement.style.removeProperty('--scrollbar-width');
+        modal.close();
+    }
+
+    // --- Funções do Carrossel ---
     function atualizarItemsVisiveis() {
         const larguraTela = window.innerWidth;
         if (larguraTela <= 900) {
@@ -121,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!carrosselItem) return;
 
         const itemWidth = carrosselItem.offsetWidth;
-        const gap = 20; // Certifique-se que o gap no seu CSS é 20px
+        const gap = 20;
         const totalMove = currentIndex * (itemWidth + gap);
         
         currentSnappedPosition = -totalMove;
@@ -157,18 +173,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetarCarrossel() {
         currentIndex = 0;
-        // Usar requestAnimationFrame garante que o movimento aconteça após a renderização
         requestAnimationFrame(() => {
             moverCarrossel();
         });
     }
 
-    // --- LÓGICA DE ARRASTAR (SWIPE) - REESCRITA ---
+    // --- Lógica de Arrastar (Swipe) ---
     function dragStart(event) {
         if (totalItems <= itemsVisiveis) return;
         isDragging = true;
         startX = event.type.startsWith('touch') ? event.touches[0].clientX : event.pageX;
-        carrosselTrack.style.transition = 'none'; // Remove transição suave durante o arraste
+        carrosselTrack.style.transition = 'none';
         carrosselTrack.style.cursor = 'grabbing';
     }
 
@@ -176,17 +191,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isDragging) return;
         const currentX = event.type.startsWith('touch') ? event.touches[0].clientX : event.pageX;
         dragMovement = currentX - startX;
-        // Aplica o movimento visual em tempo real
         carrosselTrack.style.transform = `translateX(${currentSnappedPosition + dragMovement}px)`;
     }
 
     function dragEnd() {
         if (!isDragging) return;
         isDragging = false;
-        carrosselTrack.style.transition = 'transform 0.5s ease-out'; // Recoloca a transição para o "snap"
+        carrosselTrack.style.transition = 'transform 0.5s ease-out';
         carrosselTrack.style.cursor = 'grab';
 
-        const dragThreshold = 50; // Mínimo de 50px de arraste para mudar de slide
+        const dragThreshold = 50;
         const maxIndex = Math.max(0, totalItems - itemsVisiveis);
 
         if (dragMovement < -dragThreshold && currentIndex < maxIndex) {
@@ -195,9 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex--;
         }
 
-        // Reseta o movimento de arraste
         dragMovement = 0;
-        // Chama a função principal para "snap" na posição correta do novo currentIndex
         moverCarrossel();
     }
 
@@ -205,15 +217,14 @@ document.addEventListener('DOMContentLoaded', () => {
     botoesAbrirModal.forEach(button => {
         button.addEventListener('click', function() {
             const categoria = this.getAttribute('data-categoria');
-            popularModal(categoria);
-            modal.showModal();
+            abrirModal(categoria);
         });
     });
 
-    modalFecharBtn.addEventListener('click', () => modal.close());
+    modalFecharBtn.addEventListener('click', fecharModal);
 
     modal.addEventListener('click', (event) => {
-        if (event.target === modal) modal.close();
+        if (event.target === modal) fecharModal();
     });
 
     btnNext.addEventListener('click', () => {
@@ -235,13 +246,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modal.hasAttribute('open')) {
             atualizarItemsVisiveis();
             moverCarrossel();
+            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+            document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
         }
     });
 
     // Event Listeners para o Arraste (Swipe)
     carrosselTrack.addEventListener('mousedown', dragStart);
-    document.addEventListener('mousemove', dragMove); // Listener no document para não perder o arraste
-    document.addEventListener('mouseup', dragEnd);   // Listener no document para garantir que o arraste termine
+    document.addEventListener('mousemove', dragMove);
+    document.addEventListener('mouseup', dragEnd);
 
     carrosselTrack.addEventListener('touchstart', dragStart, { passive: true });
     document.addEventListener('touchmove', dragMove, { passive: true });

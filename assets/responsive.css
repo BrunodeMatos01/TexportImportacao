@@ -289,20 +289,11 @@ html {
     /* Em telas um pouco menores, podemos aumentar um pouco a largura */
     width: 95%;
   }
-  .carrossel-btn.prev {
-    left: -5px; /* Ajusta os botões para mais perto */
-  }
-  .carrossel-btn.next {
-    right: -5px; /* Ajusta os botões para mais perto */
-  }
-  .carrossel-btn.next,
-  .carrossel-btn.prev {
-    padding-bottom: 4px;
-    width: 35px;
-    height: 35px;
-  }
   .modal-header {
     padding: 1rem 1.5rem;
+  }
+  .carrossel-btn {
+    display: none;
   }
 }
 

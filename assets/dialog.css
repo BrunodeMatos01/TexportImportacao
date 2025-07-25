@@ -207,7 +207,7 @@
 .carrossel-paginacao {
   display: flex;
   justify-content: center;
-  gap: 35px; 
+  gap: 17px; 
   margin-top: 3rem; 
   padding-bottom: 1rem;
 }
