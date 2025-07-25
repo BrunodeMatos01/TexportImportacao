@@ -260,86 +260,73 @@ html {
 /* ===========================================*/
 
 /* dialog */
+
+/* === NOTEBOOKS E TELAS MENORES (<= 1200px) === */
+/* 2 Itens por página, bem grandes */
 @media (max-width: 1200px) {
-  .carrossel-wrapper {
-    width: 75%;
-  }
-
   .carrossel-item {
-    width: calc(33.33% - 14px);
+    width: calc(50% - 10px); /* Largura para 2 itens com 20px de gap */
   }
-
 }
+
+/* === TABLETS E CELULARES (<= 900px) === */
+/* 1 Item por página, ocupando quase toda a tela */
+@media (max-width: 900px) {
+  .carrossel-wrapper {
+    /* Centraliza o único card, ocupando 90% da largura do modal */
+    width: 90%; 
+  }
+  .carrossel-item {
+    /* O card ocupa 100% do wrapper, que já tem 90% da tela */
+    width: 100%; 
+  }
+}
+
+/* === AJUSTES FINOS PARA TELAS MENORES === */
 
 @media (max-width: 768px) {
   .carrossel-wrapper {
-    width: 70%;
+    /* Em telas um pouco menores, podemos aumentar um pouco a largura */
+    width: 95%;
   }
-
-  .carrossel-item {
-    width: calc(50% - 10px);
-  }
-
   .carrossel-btn.prev {
-    left: 1rem;
+    left: -5px; /* Ajusta os botões para mais perto */
   }
-
   .carrossel-btn.next {
-    right: 1rem;
+    right: -5px; /* Ajusta os botões para mais perto */
   }
-
-  .modal-header {
-    padding: 1rem 1.5rem;
-  }
-
   .carrossel-btn.next,
   .carrossel-btn.prev {
     padding-bottom: 4px;
     width: 35px;
     height: 35px;
   }
+  .modal-header {
+    padding: 1rem 1.5rem;
+  }
 }
 
 @media (max-width: 580px) {
   .carrossel-wrapper {
-    width: 65%;
+    /* Em celulares, 95% ainda é uma boa medida para não colar nas bordas */
+    width: 95%;
   }
-
   .modal-header h2 {
     font-size: 1.4rem;
   }
-
-  .carrossel-item {
-    width: 100%;
-  }
+  /* O width de 100% do .carrossel-item já foi definido em (max-width: 900px) */
 
   .carrossel-btn {
     width: 40px;
     height: 40px;
   }
 
-  @media (max-width: 1200px) {
-    .carrossel-item {
-      width: calc(33.33% - 14px);
-    }
-  }
-
-  @media (max-width: 900px) {
-    .carrossel-item {
-      width: calc(50% - 10px);
-    }
-  }
-
-  @media (max-width: 600px) {
-    .carrossel-item {
-      width: 100%;
-    }
-
-
-    .modal-fechar {
-      width: 35px;
-      height: 35px;
-    }
+  .item-imagem img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 30/25;
+    object-fit: cover;
+    transition: transform 0.4s ease;
   }
 }
 
@@ -442,6 +429,7 @@ html {
   .footer-info {
     align-items: center;
     text-align: left;
+    padding-right: 0;
   }
 
   .contact-item {
@@ -454,6 +442,13 @@ html {
   .btn-sobreNos-orcamento {
     font-size: 1rem;
   }
+
+  .footer-info {
+    align-items: center;
+    text-align: left;
+    padding-right: 0;
+  }
+  
 }
 
 /*Tela orcamente.hmtl*/

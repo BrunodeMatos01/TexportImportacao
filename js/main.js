@@ -70,18 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentIndex = 0;
     let totalItems = 0;
-    let itemsVisiveis = 4; // Valor padrão
+    let itemsVisiveis = 4; 
+    let currentSnappedPosition = 0;
 
     function atualizarItemsVisiveis() {
         const larguraTela = window.innerWidth;
-        if (larguraTela <= 600) {
+        if (larguraTela <= 900) {
             itemsVisiveis = 1;
-        } else if (larguraTela <= 900) {
-            itemsVisiveis = 2;
         } else if (larguraTela <= 1200) {
-            itemsVisiveis = 3;
+            itemsVisiveis = 2;
         } else {
-            itemsVisiveis = 4;
+            itemsVisiveis = 3;
         }
     }
 
@@ -123,7 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const gap = 20;
         const totalMove = currentIndex * (itemWidth + gap);
         
-        carrosselTrack.style.transform = `translateX(-${totalMove}px)`;
+        currentSnappedPosition = -totalMove; 
+    
+        carrosselTrack.style.transform = `translateX(${currentSnappedPosition}px)`; 
         atualizarBotoes();
         criarPaginacao();
     }
@@ -217,20 +218,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let animationID;
 
     function dragStart(event) {
-        if (totalItems <= itemsVisiveis) return; // Não arrasta se não houver para onde
+        if (totalItems <= itemsVisiveis) return;
         isDragging = true;
-        // Pega a posição inicial do clique/toque
         startX = event.type.startsWith('touch') ? event.touches[0].clientX : event.pageX;
-        // Pega a posição atual do carrossel para continuar o movimento a partir dela
-        const transformMatrix = window.getComputedStyle(carrosselTrack).getPropertyValue('transform');
-        if (transformMatrix !== 'none') {
-            prevTranslate = parseInt(transformMatrix.split(',')[4]);
-        } else {
-            prevTranslate = 0;
-        }
-        // Desativa a transição suave durante o arraste para um movimento instantâneo
+        
+        // MODIFICADO: Use nossa variável de estado em vez de ler o DOM.
+        // Isso garante que sempre começamos do lugar certo.
+        prevTranslate = currentSnappedPosition; 
+    
+        // O código abaixo permanece igual...
         carrosselTrack.style.transition = 'none';
-        // Usa a animação para um movimento mais fluido
         animationID = requestAnimationFrame(animation);
         carrosselTrack.style.cursor = 'grabbing';
     }

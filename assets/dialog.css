@@ -104,8 +104,8 @@
 /* ===== CARD COM DESIGN PREMIUM ===== */
 .carrossel-item {
   flex-shrink: 0;
-  width: calc(25% - 15px);
-  background: linear-gradient(145deg, #ffffff, #f7f7f7); /* Gradiente sutil */
+  width: calc(33.333% - 13.34px); /* Largura para 3 itens com 20px de gap */
+  background: linear-gradient(145deg, #ffffff, #f7f7f7);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -120,7 +120,7 @@
 .item-imagem img {
   width: 100%;
   display: block;
-  aspect-ratio: 16/10;
+  aspect-ratio: 17/13;
   object-fit: cover;
   transition: transform 0.4s ease;
 }

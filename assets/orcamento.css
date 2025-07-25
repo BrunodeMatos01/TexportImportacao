@@ -83,60 +83,44 @@
 
 #orcamento-chamada {
   width: 100%;
-
   max-width: 800px;
-
   padding: 2rem 1rem;
-
-  color: white;
-
+  /* A cor original do texto foi movida para os elementos filhos */
   text-align: center;
-
   z-index: 1;
 }
 
 #orcamento-chamada h1 {
   font-size: 2.5rem;
-
   font-weight: 800;
-
   line-height: 1.2;
-
   text-transform: uppercase;
-
   letter-spacing: 1px;
 
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: #a47e43;
 
-  /* MODIFICADO: Estado inicial para a animação */
-
-  opacity: 0;
-
-  transform: translateY(20px);
-
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-
-  transition-delay: 0.2s;
-  /* Atraso para o título aparecer */
-}
-
-.sobreEmpresa {
-  font-size: 1.3rem;
-
-  line-height: 1.6;
-
-  margin-top: 1rem;
-
-  color: #e0e0e0;
-
-  /* MODIFICADO: Estado inicial para a animação */
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   transition-delay: 0.5s;
-  /* Atraso maior para o parágrafo */
 }
 
+.sobreEmpresa {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+
+  /* MODIFICADO: Cor de apoio elegante e legível */
+  color: white;
+  
+  /* Animação (sem alteração) */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition-delay: 0.5s;
+}
+
+/* Visibilidade para animação (sem alteração) */
 #orcamento-chamada.is-visible h1,
 #orcamento-chamada.is-visible .sobreEmpresa {
   opacity: 1;
