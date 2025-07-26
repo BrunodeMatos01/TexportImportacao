@@ -95,6 +95,10 @@ html {
     /* Melhora a performance em mobile */
   }
 
+  #Container-inicialHome::before {
+    backdrop-filter: blur(1px) brightness(50%);
+  }
+
   /* 2. Ajusta o container do texto chamativo */
   .textoChamtivo {
     width: 90%;

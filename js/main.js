@@ -411,6 +411,17 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     ];
 
+    // --- NOVO CÓDIGO PARA PRÉ-CARREGAR AS IMAGENS ---
+  function precarregarImagens() {
+    slidesDeFundo.forEach(slide => {
+      const img = new Image();
+      // Remove 'url("' e '")' para pegar só o caminho
+      const caminhoLimpo = slide.imagem.replace('url("', '').replace('")', '');
+      img.src = caminhoLimpo;
+    });
+  }
+  // ----------------------------------------------
+
     const container = document.getElementById('Container-inicialHome');
   
     // 3. Lógica para trocar a imagem
