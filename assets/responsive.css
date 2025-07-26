@@ -172,6 +172,14 @@ html {
   }
 
 }
+@media (max-width: 500px) {
+  .Form {
+    width: 80%;
+    max-width: 300px;
+    margin: 0;
+    padding: 0.8rem 1.1rem;
+  }
+}
 
 
 /* ORCAMENTO */
