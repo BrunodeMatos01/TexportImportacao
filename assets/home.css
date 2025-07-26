@@ -2,7 +2,7 @@
   width: 100%;
   height: 45.625rem;
   padding: 0;
-  background-image: url("../img/Produtos Textil de fundo Texport.png");
+  
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -12,6 +12,8 @@
   justify-content: space-evenly;
   align-items: center;
   position: relative;
+
+  transition: background-image 1s ease-in-out;
 }
 
 /* NOVO: Overlay sutil para melhorar a legibilidade do texto */
@@ -23,7 +25,7 @@
   width: 100%;
   height: 100%;
 
-  backdrop-filter: blur(0px) brightness(80%);
+  backdrop-filter: blur(3px) brightness(50%);
   z-index: 0; 
 }
 

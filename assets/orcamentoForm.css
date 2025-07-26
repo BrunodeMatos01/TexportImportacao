@@ -10,7 +10,7 @@
     justify-content: center;
     overflow-x: hidden;
 
-    background-color: #ededed;
+    background-color: white;
     /* Importante para evitar barra de rolagem durante a animação */
 }
 

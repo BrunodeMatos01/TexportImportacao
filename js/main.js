@@ -381,3 +381,58 @@ document.body.addEventListener('htmx:load', function() {
 
 
 
+/* IMAGENS QUE FICAM PASSANDO DE FUNDO NA SECTION HOME */
+
+// Espera a página carregar para executar o script
+document.addEventListener("DOMContentLoaded", function() {
+
+    // --- MODIFICAÇÃO 1: Array de Objetos ---
+    // Agora cada item tem a imagem e a sua posição de fundo.
+    const slidesDeFundo = [ 
+      { 
+        imagem: 'url("img/Maquina Corte automatico.png")', 
+        posicao: 'center center'
+      },
+      { 
+        imagem: 'url("img/Maquina Corte automatico 1.png")', 
+        posicao: 'center 80%' 
+      },
+      { 
+        imagem: 'url("img/Maquina Corte automatico 2.png")', 
+        posicao: 'center 55%'
+      },
+      { 
+        imagem: 'url("img/Maquina Corte automatico 3.png")', 
+        posicao: 'center center'  
+      },
+      { 
+        imagem: 'url("img/Produtos Textil de fundo Texport.png")',
+        posicao: 'center center' 
+      }
+    ];
+
+    const container = document.getElementById('Container-inicialHome');
+  
+    // 3. Lógica para trocar a imagem
+    let imagemAtual = 0;
+  
+    function trocarImagem() {
+      
+      // Pega o objeto do slide atual
+      const slideAtual = slidesDeFundo[imagemAtual];
+  
+      // Aplica a imagem do objeto
+      container.style.backgroundImage = slideAtual.imagem;
+      
+      // Aplica a posição de fundo do objeto
+      container.style.backgroundPosition = slideAtual.posicao;
+  
+      // Prepara o índice da próxima imagem (continua igual)
+      imagemAtual = (imagemAtual + 1) % slidesDeFundo.length;
+    }
+  
+    // 4. Inicia a troca e define o intervalo (continua igual)
+    trocarImagem(); 
+    setInterval(trocarImagem, 2500);
+  });
+
