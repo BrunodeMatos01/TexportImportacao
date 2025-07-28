@@ -384,8 +384,22 @@ document.body.addEventListener('htmx:load', function() {
 /* IMAGENS QUE FICAM PASSANDO DE FUNDO NA SECTION HOME */
 
 // Espera a página carregar para executar o script// SEU JAVASCRIPT ATUALIZADO
-document.addEventListener("DOMContentLoaded", function() {
+// Variável global para guardar o ID do timer do slideshow.
+// Isso é crucial para evitar timers duplicados ao navegar com HTMX.
+let slideshowInterval = null;
 
+/**
+ * Função principal que busca e inicializa todos os componentes interativos da página.
+ * Ela pode ser chamada a qualquer momento para re-scanear o DOM.
+ */
+function inicializarPagina() {
+  console.log("Executando inicialização de componentes...");
+
+  // --- INICIALIZADOR DO SLIDESHOW DE FUNDO ---
+  const containerSlide = document.getElementById('Container-inicialHome');
+  
+  // Roda o código do slideshow apenas se o container existir na página atual
+  if (containerSlide) {
     const slidesDeFundo = [ 
       { imagem: 'url("img/Maquina Corte automatico WEB.png")', posicao: 'center center' },
       { imagem: 'url("img/Maquina Corte automatico 1 WEB.png")', posicao: 'center 80%' },
@@ -393,35 +407,62 @@ document.addEventListener("DOMContentLoaded", function() {
       { imagem: 'url("img/Maquina Corte automatico 2 WEB.png")', posicao: 'center 55%' },
       { imagem: 'url("img/Produtos Textil de fundo Texport WEB.png")', posicao: 'center center' }
     ];
-  
-    // Seleciona todas as camadas de slide que criamos no HTML
-    const camadasSlide = document.querySelectorAll('.fundo-slide');
-  
-    // Aplica as imagens e posições em cada camada correspondente
-    camadasSlide.forEach((camada, index) => {
-      if (slidesDeFundo[index]) {
-        camada.style.backgroundImage = slidesDeFundo[index].imagem;
-        camada.style.backgroundPosition = slidesDeFundo[index].posicao;
-      }
-    });
-  
-    let imagemAtual = 0;
-  
-    function trocarImagem() {
-      // Remove a classe 'visivel' de todas as camadas
-      camadasSlide.forEach(camada => {
-        camada.classList.remove('visivel');
+    
+    const camadasSlide = containerSlide.querySelectorAll('.fundo-slide');
+    
+    // Verifica se existem camadas de slide para manipular
+    if (camadasSlide.length > 0) {
+      // Aplica as imagens e posições em cada camada
+      camadasSlide.forEach((camada, index) => {
+        if (slidesDeFundo[index]) {
+          camada.style.backgroundImage = slidesDeFundo[index].imagem;
+          camada.style.backgroundPosition = slidesDeFundo[index].posicao;
+        }
       });
-  
-      // Adiciona a classe 'visivel' apenas na camada do slide atual
-      camadasSlide[imagemAtual].classList.add('visivel');
-  
-      // Prepara o índice para a próxima troca
-      imagemAtual = (imagemAtual + 1) % camadasSlide.length;
-    }
-  
-    // Inicia o slideshow
-    trocarImagem(); // Mostra a primeira imagem imediatamente
-    setInterval(trocarImagem, 3500); // Troca a cada 5 segundos
-  });
 
+      let imagemAtual = 0;
+      const totalImagens = camadasSlide.length;
+
+      function trocarImagem() {
+        // Remove a classe 'visivel' de todas as camadas para garantir um estado limpo
+        camadasSlide.forEach(camada => camada.classList.remove('visivel'));
+        
+        // Adiciona a classe 'visivel' apenas na camada do slide atual
+        camadasSlide[imagemAtual].classList.add('visivel');
+        
+        // Prepara o índice da próxima imagem para a próxima chamada
+        imagemAtual = (imagemAtual + 1) % totalImagens;
+      }
+
+      // **MUITO IMPORTANTE:** Limpa qualquer timer antigo antes de criar um novo.
+      if (slideshowInterval) {
+        clearInterval(slideshowInterval);
+      }
+      
+      trocarImagem(); // Mostra a primeira imagem imediatamente
+      slideshowInterval = setInterval(trocarImagem, 5000); // Inicia o novo timer (5 segundos)
+    }
+  }
+
+  // --- INICIALIZADOR DO VÍDEO DE FUNDO ---
+  const video = document.getElementById('video-background'); // Assumindo que seu vídeo tem este ID
+  
+  // Roda o código do vídeo apenas se o elemento de vídeo existir na página atual
+  if (video) {
+    // O navegador deve tocar o vídeo sozinho por causa dos atributos (autoplay, muted, etc).
+    // Esta linha é uma garantia extra para tentar dar o "play" caso ele não tenha iniciado.
+    video.play().catch(error => {
+      // O console.log ajuda a debugar caso o navegador bloqueie o autoplay por algum motivo.
+      console.warn("Aviso: O navegador impediu a tentativa de autoplay do vídeo.", error);
+    });
+  }
+}
+
+// --- EVENT LISTENERS ---
+
+// 1. Roda a função quando a página é carregada pela primeira vez.
+document.addEventListener('DOMContentLoaded', inicializarPagina);
+
+// 2. Roda a função TODA VEZ que o HTMX terminar de inserir um novo conteúdo na página.
+// Isso garante que os componentes da nova página sejam ativados.
+document.body.addEventListener('htmx:afterSwap', inicializarPagina);
