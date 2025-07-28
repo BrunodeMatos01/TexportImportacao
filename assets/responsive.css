@@ -89,7 +89,7 @@ html {
   }
 
   #Container-inicialHome::before {
-    backdrop-filter: blur(1px) brightness(65%);
+    backdrop-filter: blur(3px) brightness(55%);
   }
 
   .fundo-slide {
@@ -196,18 +196,18 @@ html {
 
   .Form {
     width: 80%;
-    max-width: 230px;
+    max-width: 270px;
     margin: 0;
     padding: 0.7rem 1rem;
   }
 
   .Form h2 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
 
   .Form p {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     text-align: center;
     color: #555;
     margin-bottom: 3px;
