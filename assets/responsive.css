@@ -89,7 +89,7 @@ html {
   }
 
   #Container-inicialHome::before {
-    backdrop-filter: blur(3px) brightness(55%);
+    backdrop-filter: blur(2px) brightness(55%);
   }
 
   .fundo-slide {
