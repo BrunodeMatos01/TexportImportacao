@@ -1,22 +1,18 @@
+/* SEU CSS ATUALIZADO */
+
+/* O container agora serve apenas como uma "caixa" de referência */
 #Container-inicialHome {
   width: 100%;
   height: 45.625rem;
   padding: 0;
-  
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   position: relative;
-
-  transition: background-image 1s ease-in-out, background-position 1s ease-in-out;
+  overflow: hidden; /* Importante para efeitos não vazarem */
 }
 
-/* NOVO: Overlay sutil para melhorar a legibilidade do texto */
+/* Opcional: Overlay de blur/brilho que fica sobre as imagens */
 #Container-inicialHome::before {
   content: "";
   position: absolute;
@@ -24,9 +20,33 @@
   left: 0;
   width: 100%;
   height: 100%;
-
   backdrop-filter: blur(3px) brightness(50%);
-  z-index: 0; 
+  z-index: -1; /* Fica entre o conteúdo e o fundo */
+}
+
+/* Estilo para as camadas de imagem */
+.fundo-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  /* Posição da imagem será definida pelo JS */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; 
+
+  /* EFEITO DE FADE */
+  opacity: 0; /* Começam invisíveis */
+  transition: opacity 1.5s ease-in-out; /* Transição suave de opacidade */
+
+  z-index: -2; /* Ficam lá no fundo, atrás do overlay */
+}
+
+/* Classe que o JavaScript vai usar para tornar uma imagem visível */
+.fundo-slide.visivel {
+  opacity: 1;
 }
 
 /* --- TEXTOS --- */

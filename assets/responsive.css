@@ -79,52 +79,41 @@ html {
 
 @media (max-width: 900px) {
 
-  /* 1. Altera o container principal para empilhar os itens */
   #Container-inicialHome {
     flex-direction: column;
-    /* Coloca um item embaixo do outro */
     justify-content: center;
-    /* Centraliza verticalmente */
     gap: 2rem;
-    /* Adiciona um espaço entre o texto e o formulário */
     height: auto;
-    /* Altura se ajusta ao conteúdo */
     padding: 3rem 0rem;
-    /* Espaçamento interno para não colar nas bordas */
     background-attachment: scroll;
-    /* Melhora a performance em mobile */
   }
 
   #Container-inicialHome::before {
     backdrop-filter: blur(1px) brightness(50%);
   }
 
-  /* 2. Ajusta o container do texto chamativo */
-  .textoChamtivo {
-    width: 90%;
-    /* Ocupa toda a largura disponível */
-    max-width: 500px;
-    /* Limita a largura máxima para leitura */
-    text-align: center;
-    /* Centraliza todo o texto e o botão */
+  .fundo-slide {
+    background-attachment: scroll; 
   }
 
-  /* 3. Ajusta o tamanho da fonte para telas menores */
+  .textoChamtivo {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+  }
+
   .textoH1 h1 {
     font-size: 3.5em;
-    /* Reduz o tamanho do título principal */
   }
 
   .textoH1 p {
     font-size: 1.5em;
-    /* Reduz o tamanho do subtítulo */
   }
 
   .textoH5 {
     text-align: center;
   }
 
-  /*FORM*/
   .Form {
     width: 80%;
     max-width: 400px;

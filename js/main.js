@@ -383,55 +383,45 @@ document.body.addEventListener('htmx:load', function() {
 
 /* IMAGENS QUE FICAM PASSANDO DE FUNDO NA SECTION HOME */
 
-// Espera a página carregar para executar o script
+// Espera a página carregar para executar o script// SEU JAVASCRIPT ATUALIZADO
 document.addEventListener("DOMContentLoaded", function() {
 
-   
     const slidesDeFundo = [ 
-      { 
-        imagem: 'url("img/Maquina Corte automatico.png")', 
-        posicao: 'center center'
-      },
-      { 
-        imagem: 'url("img/Maquina Corte automatico 1 WEB.png")', 
-        posicao: 'center 80%'
-      },
-      { 
-        imagem: 'url("img/Maquina Corte automatico 3 WEB.png")', 
-        posicao: 'center center'
-      },
-      { 
-        imagem: 'url("img/Maquina Corte automatico 2 WEB.png")', 
-        posicao: 'center 55%'
-      },
-      { 
-        imagem: 'url("img/Produtos Textil de fundo Texport WEB.png")',
-        posicao: 'center center'
-      }
+      { imagem: 'url("img/Maquina Corte automatico WEB.png")', posicao: 'center center' },
+      { imagem: 'url("img/Maquina Corte automatico 1 WEB.png")', posicao: 'center 80%' },
+      { imagem: 'url("img/Maquina Corte automatico 3 WEB.png")', posicao: 'center center' },
+      { imagem: 'url("img/Maquina Corte automatico 2 WEB.png")', posicao: 'center 55%' },
+      { imagem: 'url("img/Produtos Textil de fundo Texport WEB.png")', posicao: 'center center' }
     ];
-
-    // --- NOVO CÓDIGO PARA PRÉ-CARREGAR AS IMAGENS ---
-  function precarregarImagens() {
-    slidesDeFundo.forEach(slide => {
-      const img = new Image();
-      const caminhoLimpo = slide.imagem.replace('url("', '').replace('")', '');
-      img.src = caminhoLimpo;
+  
+    // Seleciona todas as camadas de slide que criamos no HTML
+    const camadasSlide = document.querySelectorAll('.fundo-slide');
+  
+    // Aplica as imagens e posições em cada camada correspondente
+    camadasSlide.forEach((camada, index) => {
+      if (slidesDeFundo[index]) {
+        camada.style.backgroundImage = slidesDeFundo[index].imagem;
+        camada.style.backgroundPosition = slidesDeFundo[index].posicao;
+      }
     });
-  }
-  // ----------------------------------------------
-
-    const container = document.getElementById('Container-inicialHome');
+  
     let imagemAtual = 0;
   
     function trocarImagem() {
-      const slideAtual = slidesDeFundo[imagemAtual];
-      container.style.backgroundImage = slideAtual.imagem;
-      container.style.backgroundPosition = slideAtual.posicao;
-      imagemAtual = (imagemAtual + 1) % slidesDeFundo.length;
+      // Remove a classe 'visivel' de todas as camadas
+      camadasSlide.forEach(camada => {
+        camada.classList.remove('visivel');
+      });
+  
+      // Adiciona a classe 'visivel' apenas na camada do slide atual
+      camadasSlide[imagemAtual].classList.add('visivel');
+  
+      // Prepara o índice para a próxima troca
+      imagemAtual = (imagemAtual + 1) % camadasSlide.length;
     }
   
-    precarregarImagens();
-    trocarImagem(); 
-    setInterval(trocarImagem, 2500); 
+    // Inicia o slideshow
+    trocarImagem(); // Mostra a primeira imagem imediatamente
+    setInterval(trocarImagem, 3500); // Troca a cada 5 segundos
   });
 
