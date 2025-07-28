@@ -59,14 +59,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-
   background-color: rgba(0, 0, 0, 0.3);
-
   backdrop-filter: blur(7px) brightness(50%);
-  z-index: 0;
-
-  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.9) 0%, black 70%);
-  mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.9) 0%, black 70%);
+  z-index: 2; 
 }
 
 #video-background {
@@ -78,7 +73,7 @@
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -1;
+  z-index: 1; /* ▲ MUDANÇA: Coloca o vídeo na frente */
 }
 
 #orcamento-chamada {
@@ -87,7 +82,7 @@
   padding: 2rem 1rem;
   /* A cor original do texto foi movida para os elementos filhos */
   text-align: center;
-  z-index: 1;
+  z-index: 10;
 }
 
 #orcamento-chamada h1 {
