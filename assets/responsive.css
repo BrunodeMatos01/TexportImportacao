@@ -529,6 +529,10 @@ html {
     height: 500px;
   }
 
+  #orcamento-video::before {
+    backdrop-filter: blur(1px) brightness(70%);
+  }
+
   #orcamento-chamada h1 {
     font-size: 2rem;
   }
