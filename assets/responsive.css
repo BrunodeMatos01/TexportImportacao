@@ -166,6 +166,34 @@ html {
 
 }
 @media (max-width: 500px) {
+  #Container-inicialHome {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    height: auto;
+    padding: 1rem 0rem;
+    background-attachment: scroll;
+  }
+
+  .textoChamtivo {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .textoH1 h1 {
+    font-size: 3.5em;
+    line-height: 1.3;
+  }
+
+  .textoH1 p {
+    font-size: 1.5em;
+  }
+
+  .textoH5 {
+    text-align: center;
+  }
+
   .Form {
     width: 80%;
     max-width: 230px;
@@ -183,6 +211,10 @@ html {
     text-align: center;
     color: #555;
     margin-bottom: 3px;
+  }
+
+  .btn-vejaProdutos {
+    margin-bottom: 0;
   }
 }
 
