@@ -572,11 +572,14 @@ html {
   #orcamento-video {
     height: 500px;
   }
-
+  
   #orcamento-video::before {
     backdrop-filter: blur(1px) brightness(100%);
   }
-
+  
+  #video-background {
+    object-position: 70% 50%; 
+  }
   #orcamento-chamada h1 {
     font-size: 2rem;
   }
