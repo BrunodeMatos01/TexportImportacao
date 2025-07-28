@@ -530,7 +530,7 @@ html {
   }
 
   #orcamento-video::before {
-    backdrop-filter: blur(1px) brightness(70%);
+    backdrop-filter: blur(1px) brightness(100%);
   }
 
   #orcamento-chamada h1 {
