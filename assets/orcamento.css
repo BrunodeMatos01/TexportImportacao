@@ -2,40 +2,6 @@
    ESTILOS GLOBAIS E ANIMAÇÕES
    ========================================================================== */
 
-/* Keyframes para animações de entrada */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes growInHeight {
-  from {
-    transform: scaleY(0);
-  }
-
-  to {
-    transform: scaleY(1);
-  }
-}
 
 /* ==========================================================================
    1. SEÇÃO DO VÍDEO (TOPO) - [Nenhuma alteração aqui, mantido como estava]
@@ -97,6 +63,7 @@
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   transition-delay: 0.5s;
+  animation: revealTextUp 1.5s ease-out forwards;
 }
 
 .sobreEmpresa {
@@ -112,6 +79,7 @@
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   transition-delay: 0.5s;
+  animation: revealTextUp 1.5s ease-out forwards;
 }
 
 /* Visibilidade para animação (sem alteração) */

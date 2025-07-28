@@ -120,26 +120,45 @@ ul {
 /* ====================================================== */
 /* CÓDIGO DE ANIMAÇÃO PARA A PÁGINA HOME    */
 /* ====================================================== */
+/* Animação que vem da ESQUERDA, agora com mais dinamismo */
 @keyframes slideInFromLeft {
   from {
-    transform: translateX(-100%); /* Começa fora da tela, à esquerda */
     opacity: 0;
+    transform: translateX(-100%) rotate(-5deg); /* Começa um pouco inclinado */
+    filter: blur(4px);
   }
   to {
-    transform: translateX(0); /* Termina na sua posição original */
     opacity: 1;
+    transform: translateX(0) rotate(0deg); /* Termina reto */
+    filter: blur(0);
   }
 }
 
-/* Animação que vem da DIREITA para o centro */
+/* Animação que vem da DIREITA, com o mesmo dinamismo */
 @keyframes slideInFromRight {
   from {
-    transform: translateX(100%); /* Começa fora da tela, à direita */
     opacity: 0;
+    transform: translateX(100%) rotate(5deg); /* Começa inclinado para o outro lado */
+    filter: blur(4px);
   }
   to {
-    transform: translateX(0); /* Termina na sua posição original */
     opacity: 1;
+    transform: translateX(0) rotate(0deg);
+    filter: blur(0);
+  }
+}
+
+/* NOVO KEYFRAME: Efeito para revelar texto de baixo para cima */
+@keyframes revealTextUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%); /* O texto começa abaixo de sua posição */
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
   }
 }
 
@@ -190,6 +209,95 @@ ul {
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+/* ====================================================== */
+/* CÓDIGO DE ANIMAÇÃO PARA A PÁGINA DE SobreNos         */
+/* ====================================================== */
+
+/* Um "respiro" mais suave ao aparecer. */
+@keyframes fadeIn-scaleUp {
+  from { 
+    opacity: 0; 
+    transform: scale(0.9); /* Começa um pouco menor */
+    filter: blur(2px);
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Movimento mais orgânico e menos linear, como uma partícula flutuando. */
+@keyframes aurora-flow {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(40px, 30px) rotate(3deg); }
+  50%  { transform: translate(100px, 80px) rotate(-1deg); }
+  75%  { transform: translate(20px, 100px) rotate(-4deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Efeito de crescimento com uma leve "elasticidade" no final. */
+@keyframes timeline-grow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+  /* Dica: na classe que usar esta animação, adicione 'transform-origin: top;' ou 'bottom;' 
+     para controlar de onde a linha "cresce". */
+}
+
+/* ====================================================== */
+/* CÓDIGO DE ANIMAÇÃO PARA A PÁGINA Orcamento       */            /* A pgina de OrcamentoForm usa o mesmo efieto da pagina home */
+/* ====================================================== */
+
+/* Efeito de aparição suave. */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Efeito de subir que "passa um pouco" e volta, dando peso ao elemento. */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  80% {
+    transform: translateY(-5px); /* Passa um pouquinho para cima */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Assenta na posição final */
+  }
+}
+
+@keyframes growInHeight {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* ====================================================== */
+/* CÓDIGO DE ANIMAÇÃO PARA A PÁGINA Dialog      */ 
+/* ====================================================== */
+
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 

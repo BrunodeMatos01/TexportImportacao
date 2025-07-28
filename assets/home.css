@@ -31,17 +31,16 @@
   position: absolute;
   top: 0;
   left: 0;
-  
-  /* Posição da imagem será definida pelo JS */
+
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed; 
 
   /* EFEITO DE FADE */
-  opacity: 0; /* Começam invisíveis */
-  transition: opacity 1.5s ease-in-out; /* Transição suave de opacidade */
+  opacity: 0; 
+  transition: opacity 1s ease-in-out;
 
-  z-index: -2; /* Ficam lá no fundo, atrás do overlay */
+  z-index: -2;
 }
 
 /* Classe que o JavaScript vai usar para tornar uma imagem visível */
@@ -76,12 +75,14 @@
   font-size: 3.7em;
   color: #ffffff; /* Branco puro para máximo contraste */
   font-weight: 700; /* Mais peso para o título principal */
+  animation: revealTextUp 1.5s ease-out forwards;
 }
 
 .textoH1 p {
   font-size: 1.7em;
   color: #ffffff;
   font-weight: 300; /* Mais leve para hierarquia visual */
+  animation: revealTextUp 1.5s ease-out forwards;
 }
 
 .textoH5 {
@@ -95,6 +96,7 @@
 
 .textoH5 h1 {
   font-weight: 300;
+  animation: revealTextUp 1.5s ease-out forwards;
 }
 
 /* --- BOTÃO MELHORADO --- */

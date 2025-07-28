@@ -52,6 +52,7 @@
     font-weight: 900;
     color: #4a3c20;
     line-height: 1.25;
+    animation: revealTextUp 1.5s ease-out forwards;
 }
 
 .orcamentotexto p {
@@ -59,6 +60,7 @@
     color: #6c5f46;
     line-height: 1.8;
     font-weight: 500;
+    animation: revealTextUp 1.5s ease-out forwards;
 }
 
 

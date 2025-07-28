@@ -10,22 +10,6 @@
     --glow-color: rgba(230, 158, 50, 0.4);
 }
 
-@keyframes fadeIn-scaleUp {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes aurora-flow {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(120px, 90px) rotate(0deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
-}
-
-@keyframes timeline-grow {
-    from { transform: scaleY(0); }
-    to { transform: scaleY(1); }
-}
-
 #sobreNosSec {
     width: 100%;
     padding: 6rem 2rem;
