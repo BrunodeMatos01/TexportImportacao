@@ -1,5 +1,5 @@
 /* ========================================================
-   CÓDIGO DO MENU-BURGUER - VERSÃO COM DELEGAÇÃO DE EVENTOS
+   CÓDIGO DO MENU-BURGUER - VERSÃO FINAL COM ANIMAÇÕES
    (Funciona com HTMX)
    ======================================================== */
 
@@ -7,36 +7,36 @@
 document.addEventListener('click', function(event) {
     
     // Encontra o menu e o ícone na página ATUALMENTE carregada
-    // Fazemos isso dentro do evento para sempre pegar a versão mais recente dos elementos
     const menu = document.getElementById('menu');
     const menuIcon = document.querySelector('.menu-icon');
 
-    // Se não encontrar os elementos (pode acontecer durante a troca de página), não faz nada.
+    // Se não encontrar os elementos, não faz nada.
     if (!menu || !menuIcon) {
         return;
     }
 
     // AÇÃO 1: VERIFICA SE O CLIQUE FOI NO ÍCONE DO MENU
-    // Usamos .closest() para pegar o clique mesmo que seja num filho do ícone (ex: um svg)
     if (menuIcon.contains(event.target)) {
         menu.classList.toggle('show');
-        return; // Para a execução aqui para não acionar a lógica de "fechar fora"
+        menuIcon.classList.toggle('active'); // NOVO: Anima o ícone para "X" e vice-versa
+        return; // Para a execução aqui
     }
 
     // AÇÃO 2: VERIFICA SE O CLIQUE FOI EM UM LINK DENTRO DO MENU
     const clickedLink = event.target.closest('#menu a');
     if (clickedLink) {
         menu.classList.remove('show');
-        return; // Apenas fecha o menu, a navegação do link continua normalmente
+        menuIcon.classList.remove('active'); // NOVO: Garante que o ícone volte ao normal
+        return; 
     }
 
     // AÇÃO 3: VERIFICA SE O CLIQUE FOI FORA DO MENU
-    // Esta lógica só roda se não clicamos no ícone nem num link
-    if (!menu.contains(event.target)) {
+    // Esta lógica só roda se o menu estiver aberto e não clicamos nele.
+    if (menu.classList.contains('show') && !menu.contains(event.target)) {
         menu.classList.remove('show');
+        menuIcon.classList.remove('active'); // NOVO: Garante que o ícone volte ao normal
     }
 });
-/* ====================================================== */
 
 
 
@@ -362,7 +362,20 @@ function iniciarObservadoresDeAnimacao() {
         orcamentoFormElements.forEach(element => orcamentoFormObserver.observe(element));
     }
     
-    // --- Adicione aqui a lógica para outras seções, se houver ---
+    
+    // --- Lógica para a Seção "Segmento" (AGORA PADRONIZADA) ---
+    const segmentoElements = document.querySelectorAll('#segmento');
+    if (segmentoElements.length > 0) {
+        const segmentoObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        segmentoElements.forEach(element => segmentoObserver.observe(element));
+    }
 
 }
 

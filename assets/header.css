@@ -11,6 +11,7 @@ p {
   align-items: center;
   position: relative;
 }
+
 .menu-container {
   position: relative;
 }
@@ -22,6 +23,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 1001; 
 }
 
 .menu-icon span {
@@ -29,35 +31,60 @@ p {
   width: 100%;
   background: #a47e43;
   border-radius: 5px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out; /* Transição para a animação */
 }
 
+/* --- ANIMAÇÃO DO ÍCONE PARA "X" --- */
+.menu-icon.active span:nth-child(1) {
+  /* Gira a primeira barra 45 graus e a move para o centro */
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-icon.active span:nth-child(2) {
+  /* Esconde a barra do meio */
+  opacity: 0;
+}
+.menu-icon.active span:nth-child(3) {
+  /* Gira a terceira barra -45 graus e a move para o centro */
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- ANIMAÇÃO DO MENU "ABRINDO PARA BAIXO" --- */
 .menu {
   position: absolute;
-  top: 100%;
-  left: 0;
-  width: 90px;
+  top: 100%; /* Começa logo abaixo do ícone */
+  left: 0px; /* Ajuste para centralizar o menu abaixo do ícone */
+  width: 100px; 
   background-color: #c0a068;
-  display: none;
-  flex-direction: column;
   border-radius: 4px;
   padding: 10px 0;
   z-index: 1000;
+
+  /* Esconde o menu por padrão usando opacidade e escala */
+  opacity: 0;
+  visibility: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu.show {
+  /* Mostra o menu ativando a opacidade e a escala */
+  opacity: 1;
+  visibility: visible;
+  transform: scaleY(1); /* "Cresce" para sua altura total */
 }
 
 .menu a {
   color: white;
-  padding: 10px 10px;
+  padding: 0px 10px;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 2.5;
 }
 
 .menu a:hover {
-  background: rgb(158, 127, 73)
-}
-
-.menu.show {
-  display: flex;
+  background: rgb(158, 127, 73);
 }
 
 /*=======================*/

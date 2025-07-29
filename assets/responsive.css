@@ -122,7 +122,7 @@ html {
   }
 
   .Form h2 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
 
@@ -202,12 +202,12 @@ html {
   }
 
   .Form h2 {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
   }
 
 
   .Form p {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
     text-align: center;
     color: #555;
     margin-bottom: 3px;
@@ -524,7 +524,7 @@ html {
 
   .FormSPA h2,
   .orcamento-textoForm h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .orcamento-textoForm {
@@ -559,12 +559,12 @@ html {
 
   .FormSPA h2,
   .orcamento-textoForm h2 {
-    font-size: 2.2rem;
+    font-size: 1.7rem;
   }
 
   .FormSPA p,
   .orcamento-textoForm p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -590,12 +590,12 @@ html {
 
   .FormSPA h2,
   .orcamento-textoForm h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .FormSPA p,
   .orcamento-textoForm p {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
 
@@ -749,6 +749,20 @@ html {
 
 }
 
+/* Segmento */
+@media (max-width: 560px) {
+  .segmento-texto-imagem {
+    width: 90%;
+  }
+
+  .segmento-texto-imagem .automacao {
+    font-size: 1.9rem;
+  }
+
+  .segmento-texto-imagem p {
+    font-size: 1rem;
+    }
+}
 
 
 

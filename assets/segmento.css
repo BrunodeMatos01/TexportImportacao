@@ -1,0 +1,87 @@
+/* ======================================= */
+/* CSS DA SEÇÃO SEGMENTO - VERSÃO CORRIGIDA */
+/* ======================================= */
+
+/* ESTADO INICIAL: Perfeito, continua igual. */
+.segmento-texto-imagem img,
+.segmento-texto-imagem .automacao,
+.segmento-texto-imagem p {
+    opacity: 0;
+}
+
+/* QUANDO #segmento TIVER A CLASSE .is-visible, AS ANIMAÇÕES COMEÇAM. Perfeito, continua igual. */
+
+#segmento.is-visible .segmento-texto-imagem img {
+    opacity: 1; 
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+#segmento.is-visible .segmento-texto-imagem .automacao { 
+    opacity: 1;
+    animation: slideInFromRight 1s ease-out forwards;
+}
+
+#segmento.is-visible .segmento-texto-imagem p {
+    opacity: 1;
+    animation: revealTextUp 1s ease-out forwards;
+}
+
+#segmento {
+    width: 100%;
+    height: auto;
+    padding: 3rem 2rem; 
+    background-color: #ffffff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.segmento-texto-imagem {
+    width: 80%; 
+    border-radius: 12px; 
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.4rem; 
+    text-align: center;
+}
+
+.segmento-texto-imagem img {
+    width: 22rem;
+    height: 17rem;
+    border-radius: 5px; 
+    object-fit: cover; 
+    margin-bottom: 1rem; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); 
+    /* A linha 'animation' foi REMOVIDA daqui. */
+}
+
+figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.segmento-texto-imagem .automacao { 
+    color: #a47e43;
+    font-size: 2rem;
+    font-weight: 700; 
+    letter-spacing: -0.5px; 
+    margin-bottom: 1.7rem; 
+    /* A linha 'animation' foi REMOVIDA daqui. */
+}
+
+
+.segmento-texto-imagem p {
+    font-size: 1.1rem;
+    color: #555; 
+    line-height: 1.7; 
+    max-width: 90%;
+    /* A linha 'animation' foi REMOVIDA daqui. */
+}
+

@@ -63,7 +63,7 @@
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   transition-delay: 0.5s;
-  animation: revealTextUp 1.5s ease-out forwards;
+  animation: revealTextUp 1s ease-out forwards;
 }
 
 .sobreEmpresa {
@@ -79,7 +79,7 @@
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   transition-delay: 0.5s;
-  animation: revealTextUp 1.5s ease-out forwards;
+  animation: revealTextUp 1s ease-out forwards;
 }
 
 /* Visibilidade para animação (sem alteração) */

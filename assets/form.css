@@ -22,7 +22,7 @@
 
 /* --- TÍTULOS --- */
 .Form h2 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   text-align: center;
   color: #a47e43;
   font-weight: bold; /* Garante que o título tenha peso */
@@ -38,7 +38,7 @@
 
 
 .Form p {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-align: center;
   color: #555;
   margin-bottom: 15px;

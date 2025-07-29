@@ -10,7 +10,8 @@
     justify-content: center;
     overflow-x: hidden;
 
-    background-color: white;
+    background-color: #ffffff;
+    overflow-y: hidden; 
     /* Importante para evitar barra de rolagem durante a animação */
 }
 
@@ -48,7 +49,7 @@
 
 .orcamentotexto h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.7rem;
+    font-size: 2.5rem;
     font-weight: 900;
     color: #4a3c20;
     line-height: 1.25;

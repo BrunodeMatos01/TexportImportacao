@@ -19,6 +19,12 @@ html {
   /* A posição 'top' será definida via JS para manter o scroll no lugar */
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 
 
 h1,
