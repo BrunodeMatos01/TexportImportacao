@@ -84,7 +84,7 @@ html {
     justify-content: center;
     gap: 2rem;
     height: auto;
-    padding: 1rem 0rem;
+    padding: 1.8rem 0rem;
     background-attachment: scroll;
   }
 
@@ -157,7 +157,7 @@ html {
   }
 
   #LogoTexport {
-    width: 8.5rem;
+    width: 10.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -202,12 +202,12 @@ html {
   }
 
   .Form h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
 
   .Form p {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     text-align: center;
     color: #555;
     margin-bottom: 3px;
@@ -752,7 +752,7 @@ html {
 /* Segmento */
 @media (max-width: 560px) {
   .segmento-texto-imagem {
-    width: 90%;
+    width: 95%;
   }
 
   .segmento-texto-imagem .automacao {
@@ -760,7 +760,7 @@ html {
   }
 
   .segmento-texto-imagem p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     }
 }
 
