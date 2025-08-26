@@ -1,6 +1,5 @@
 /* ========================================================
    CÓDIGO DO MENU-BURGUER - VERSÃO FINAL COM ANIMAÇÕES
-   (Funciona com HTMX)
    ======================================================== */
 
 // Usamos 'document' como nosso "vigia" de eventos de clique
@@ -39,17 +38,13 @@ document.addEventListener('click', function(event) {
 });
 
 
-
-
 /*Para o botão de veja produtos direcionar para produtos*/
-  function scrollToProdutos() {
-    document.querySelector('#telaProdutos').scrollIntoView({
-      behavior: 'smooth'
-    });
-  }
+function scrollToProdutos() {
+  document.querySelector('#telaProdutos').scrollIntoView({
+    behavior: 'smooth'
+  });
+}
 /*========================================================*/
-
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -294,40 +289,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*EFITOS DA PAGINA DE PRODUTOS*/
 // Seleciona TODOS os elementos que você quer animar
-  const elementsToAnimate = document.querySelectorAll('.fundo-dourado, .produto-item, .produtos-cta-container');
+const elementsToAnimate = document.querySelectorAll('.fundo-dourado, .produto-item, .produtos-cta-container');
 
-  // Configurações do Observer (pode ajustar o threshold)
-  // threshold: 0.1 significa que a animação dispara quando 10% do elemento está visível
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
+// Configurações do Observer (pode ajustar o threshold)
+// threshold: 0.1 significa que a animação dispara quando 10% do elemento está visível
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
+};
 
-  // Cria o "vigia"
-  const observer = new IntersectionObserver((entries, observer) => {
-    // Roda para cada elemento que mudar de visibilidade
-    entries.forEach(entry => {
-      // Se o elemento ESTÁ visível na tela...
-      if (entry.isIntersecting) {
-        // Adiciona a classe .visible para disparar a animação CSS
-        entry.target.classList.add('visible');
-        
-        // Opcional: Para de observar o elemento depois que a animação já aconteceu
-        // Isso melhora a performance.
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  // Coloca o "vigia" para observar cada um dos seus elementos
-  elementsToAnimate.forEach(element => {
-    observer.observe(element);
+// Cria o "vigia"
+const observer = new IntersectionObserver((entries, observer) => {
+  // Roda para cada elemento que mudar de visibilidade
+  entries.forEach(entry => {
+    // Se o elemento ESTÁ visível na tela...
+    if (entry.isIntersecting) {
+      // Adiciona a classe .visible para disparar a animação CSS
+      entry.target.classList.add('visible');
+      
+      // Opcional: Para de observar o elemento depois que a animação já aconteceu
+      // Isso melhora a performance.
+      observer.unobserve(entry.target);
+    }
   });
+}, observerOptions);
+
+// Coloca o "vigia" para observar cada um dos seus elementos
+elementsToAnimate.forEach(element => {
+  observer.observe(element);
+});
+
 
 /*EFITOS PARA PAGINA DE SOBRENÓS*/
 // =========================================================================
-// SCRIPT DE ANIMAÇÃO UNIFICADO - COMPATÍVEL COM HTMX
+// SCRIPT DE ANIMAÇÃO UNIFICADO
 // =========================================================================
 
 /**
@@ -397,18 +393,10 @@ function iniciarObservadoresDeAnimacao() {
 
 }
 
-
 // --- GATILHOS DE EXECUÇÃO ---
 
 // 1. Executa a função no primeiro carregamento da página.
 document.addEventListener('DOMContentLoaded', iniciarObservadoresDeAnimacao);
-
-// 2. Executa a função NOVAMENTE toda vez que o HTMX carregar novo conteúdo.
-//    Isso é o que resolve o seu problema de SPA.
-document.body.addEventListener('htmx:load', function() {
-    iniciarObservadoresDeAnimacao();
-});
-
 
 
 
@@ -490,13 +478,5 @@ function inicializarPagina() {
 }
 
 // --- EVENT LISTENERS ---
-
 // 1. Roda a função quando a página é carregada pela primeira vez.
 document.addEventListener('DOMContentLoaded', inicializarPagina);
-
-// 2. Roda a função TODA VEZ que o HTMX terminar de inserir um novo conteúdo na página.
-// Isso garante que os componentes da nova página sejam ativados.
-document.body.addEventListener('htmx:afterSwap', inicializarPagina);
-
-
-
