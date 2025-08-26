@@ -56,34 +56,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Dados e Seleção de Elementos ---
     const produtosPorCategoria = {
         'Facas': [
-            { marca: 'RICHPEACE', modelo: 'RP-KNF1625', nome: 'Faca de Corte Oscilante', codigo: '10.101.001', img: '../img/imgProdutos/facas 1.png' },
-            { marca: 'JUKI', modelo: 'JK-T1310', nome: 'Faca de Corte Digital', codigo: '10.101.002', img: '../img/imgProdutos/facas 2.png' },
-            { marca: 'RICHPEACE', modelo: 'RP-KNF2030', nome: 'Faca Circular Automática', codigo: '10.101.003', img: '../img/imgProdutos/facas 3.png' },
-            { marca: 'JUKI', modelo: 'JK-T1315', nome: 'Faca para Couro', codigo: '10.101.004', img: '../img/imgProdutos/facas 4.png' },
-            { marca: 'EXTRA', modelo: 'EXT-005', nome: 'Faca Extra 5', codigo: '10.101.005', img: '../img/imgProdutos/facas 6.png' },
+            { marca: 'RICHPEACE', modelo: 'RP-KNF1625', nome: 'Faca de Corte Oscilante', codigo: '10.101.001', img: '../img/imgProdutos/facas-1.png' },
+            { marca: 'JUKI', modelo: 'JK-T1310', nome: 'Faca de Corte Digital', codigo: '10.101.002', img: '../img/imgProdutos/facas-2.png' },
+            { marca: 'RICHPEACE', modelo: 'RP-KNF2030', nome: 'Faca Circular Automática', codigo: '10.101.003', img: '../img/imgProdutos/facas-3.png' },
+            { marca: 'JUKI', modelo: 'JK-T1315', nome: 'Faca para Couro', codigo: '10.101.004', img: '../img/imgProdutos/facas-4.png' },
+            { marca: 'EXTRA', modelo: 'EXT-005', nome: 'Faca Extra 5', codigo: '10.101.005', img: '../img/imgProdutos/facas-6.png' },
         ],
         'Lixas': [
-            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Lixas 1.png' },
-            { marca: '3M', modelo: 'Cubitron II', nome: 'Lixa de Grão Grosso 80', codigo: '20.201.002', img: '../img/imgProdutos/Lixas 2.png' },
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Lixas-1.png' },
+            { marca: '3M', modelo: 'Cubitron II', nome: 'Lixa de Grão Grosso 80', codigo: '20.201.002', img: '../img/imgProdutos/Lixas-2.png' },
         ],
         'Cerdas': [
-            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Cerdas grande.png' },
-            { marca: '3M', modelo: 'Cubitron II', nome: 'Lixa de Grão Grosso 80', codigo: '20.201.002', img: '../img/imgProdutos/Cerdas Pequena.png' },
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Cerdas-grande.png' },
+            { marca: '3M', modelo: 'Cubitron II', nome: 'Lixa de Grão Grosso 80', codigo: '20.201.002', img: '../img/imgProdutos/Cerdas-Pequena.png' },
         ],
         'Cartuchos': [
             { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Cartuchos.png' },
         ],
         'Afiadores': [
-            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Afiador 1.png' },
-            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Afiador 2.png' },
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Afiador-1.png' },
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Afiador-2.png' },
             { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Rebolos.png' },
-            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Afiador 3.png' },
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Afiador-3.png' },
         ],
         'Coroas': [
             { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Coroas.png' },
         ],
         'Teclados': [
-            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Teclado Lectra.png' },
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Teclado-Lectra.png' },
         ],
     };
 
@@ -432,11 +432,11 @@ function inicializarPagina() {
   // Roda o código do slideshow apenas se o container existir na página atual
   if (containerSlide) {
     const slidesDeFundo = [ 
-      { imagem: 'url("img/Maquina Corte automatico WEB.png")', posicao: 'center center' },
-      { imagem: 'url("img/Maquina Corte automatico 1 WEB.png")', posicao: 'center 80%' },
-      { imagem: 'url("img/Maquina Corte automatico 3 WEB.png")', posicao: 'center center' },
-      { imagem: 'url("img/Maquina Corte automatico 2 WEB.png")', posicao: 'center 55%' },
-      { imagem: 'url("img/Produtos Textil de fundo Texport WEB.png")', posicao: 'center center' }
+      { imagem: 'url("img/Maquina-Corte-automatico-WEB.png")', posicao: 'center center' },
+      { imagem: 'url("img/Maquina-Corte-automatico-1-WEB.png")', posicao: 'center 80%' },
+      { imagem: 'url("img/Maquina-Corte-automatico-3-WEB.png")', posicao: 'center center' },
+      { imagem: 'url("img/Maquina-Corte-automatico-2-WEB.png")', posicao: 'center 55%' },
+      { imagem: 'url("img/Produtos-Textil-de-fundo-Texport-WEB.png")', posicao: 'center center' }
     ];
     
     const camadasSlide = containerSlide.querySelectorAll('.fundo-slide');
@@ -497,3 +497,137 @@ document.addEventListener('DOMContentLoaded', inicializarPagina);
 // 2. Roda a função TODA VEZ que o HTMX terminar de inserir um novo conteúdo na página.
 // Isso garante que os componentes da nova página sejam ativados.
 document.body.addEventListener('htmx:afterSwap', inicializarPagina);
+
+
+
+/* htmx-assets-loader.js
+   - Move <link rel="stylesheet"> do body para <head>
+   - Carrega/executa <script> vindos em fragments
+   - Evita duplicatas
+*/
+
+(function () {
+    'use strict';
+  
+    function linkExists(href) {
+      if (!href) return false;
+      return !!document.head.querySelector('link[rel="stylesheet"][href="' + href + '"]');
+    }
+  
+    function scriptExists(src) {
+      if (!src) return false;
+      return !!document.querySelector('script[src="' + src + '"]');
+    }
+  
+    function moveLinksToHead(container) {
+      var selector = 'link[rel="stylesheet"]';
+      var links;
+      if (container) links = Array.from(container.querySelectorAll(selector));
+      else links = Array.from(document.querySelectorAll(selector)).filter(l => l.parentNode !== document.head);
+  
+      links.forEach(function (link) {
+        var href = link.getAttribute('href') || '';
+        // Se já existe, remove a versão do body/fragment
+        if (linkExists(href)) {
+          link.remove();
+          return;
+        }
+        // Preload -> stylesheet
+        if (link.rel && link.rel.toLowerCase() === 'preload' && link.getAttribute('as') === 'style') {
+          link.rel = 'stylesheet';
+          document.head.appendChild(link);
+          return;
+        }
+        document.head.appendChild(link);
+      });
+    }
+  
+    function processScripts(container) {
+      if (!container) return;
+      var scripts = Array.from(container.querySelectorAll('script'));
+      scripts.forEach(function (oldScript) {
+        var src = oldScript.getAttribute('src');
+        var type = oldScript.getAttribute('type') || 'text/javascript';
+  
+        if (src) {
+          if (scriptExists(src)) {
+            oldScript.remove();
+            return;
+          }
+          var s = document.createElement('script');
+          if (type) s.type = type;
+          s.src = src;
+          if (oldScript.hasAttribute('async')) s.async = true;
+          if (oldScript.hasAttribute('defer')) s.defer = true;
+          document.body.appendChild(s);
+          oldScript.remove();
+        } else {
+          var inline = oldScript.textContent || oldScript.innerText || '';
+          if (!inline.trim()) {
+            oldScript.remove();
+            return;
+          }
+          var s2 = document.createElement('script');
+          if (type) s2.type = type;
+          try {
+            s2.appendChild(document.createTextNode(inline));
+          } catch (e) {
+            s2.text = inline;
+          }
+          document.body.appendChild(s2);
+          oldScript.remove();
+        }
+      });
+    }
+  
+    function handleFragment(container) {
+      if (!container) {
+        moveLinksToHead();
+        return;
+      }
+      moveLinksToHead(container);
+      processScripts(container);
+    }
+  
+    function onInitialLoad() {
+      moveLinksToHead();
+    }
+  
+    function setupHTMXListeners() {
+      document.addEventListener('htmx:afterSwap', function (evt) {
+        try {
+          var target = evt.detail && evt.detail.target ? evt.detail.target : (evt.detail && evt.detail.elt ? evt.detail.elt : evt.target);
+          handleFragment(target || document.body);
+        } catch (e) {
+          handleFragment(document.body);
+        }
+      });
+  
+      document.addEventListener('htmx:afterOnLoad', function (evt) {
+        try {
+          var target = evt.detail && evt.detail.target ? evt.detail.target : document.body;
+          handleFragment(target);
+        } catch (e) {
+          handleFragment(document.body);
+        }
+      });
+    }
+  
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        onInitialLoad();
+        setupHTMXListeners();
+      });
+    } else {
+      onInitialLoad();
+      setupHTMXListeners();
+    }
+  
+    window.__htmxAssetsLoader = {
+      moveLinksToHead: moveLinksToHead,
+      processScripts: processScripts,
+      handleFragment: handleFragment
+    };
+  
+  })();
+  
