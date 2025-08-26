@@ -111,7 +111,7 @@
 .item-imagem img {
   width: 100%;
   display: block;
-  aspect-ratio: 17/13;
+  aspect-ratio: 12/16;
   object-fit: cover;
   transition: transform 0.4s ease;
 }

@@ -56,16 +56,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Dados e Seleção de Elementos ---
     const produtosPorCategoria = {
         'Facas': [
-            { marca: 'RICHPEACE', modelo: 'RP-KNF1625', nome: 'Faca de Corte Oscilante', codigo: '10.101.001', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+1' },
-            { marca: 'JUKI', modelo: 'JK-T1310', nome: 'Faca de Corte Digital', codigo: '10.101.002', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+2' },
-            { marca: 'RICHPEACE', modelo: 'RP-KNF2030', nome: 'Faca Circular Automática', codigo: '10.101.003', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+3' },
-            { marca: 'JUKI', modelo: 'JK-T1315', nome: 'Faca para Couro', codigo: '10.101.004', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+4' },
-            { marca: 'EXTRA', modelo: 'EXT-005', nome: 'Faca Extra 5', codigo: '10.101.005', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+5' },
-            { marca: 'EXTRA', modelo: 'EXT-006', nome: 'Faca Extra 6', codigo: '10.101.006', img: 'https://placehold.co/400x300/e8e8e8/333?text=Faca+6' },
+            { marca: 'RICHPEACE', modelo: 'RP-KNF1625', nome: 'Faca de Corte Oscilante', codigo: '10.101.001', img: '../img/imgProdutos/facas 1.png' },
+            { marca: 'JUKI', modelo: 'JK-T1310', nome: 'Faca de Corte Digital', codigo: '10.101.002', img: '../img/imgProdutos/facas 2.png' },
+            { marca: 'RICHPEACE', modelo: 'RP-KNF2030', nome: 'Faca Circular Automática', codigo: '10.101.003', img: '../img/imgProdutos/facas 3.png' },
+            { marca: 'JUKI', modelo: 'JK-T1315', nome: 'Faca para Couro', codigo: '10.101.004', img: '../img/imgProdutos/facas 4.png' },
+            { marca: 'EXTRA', modelo: 'EXT-005', nome: 'Faca Extra 5', codigo: '10.101.005', img: '../img/imgProdutos/facas 6.png' },
         ],
         'Lixas': [
-            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: 'https://placehold.co/400x300/f0eade/333?text=Lixa+1' },
-            { marca: '3M', modelo: 'Cubitron II', nome: 'Lixa de Grão Grosso 80', codigo: '20.201.002', img: 'https://placehold.co/400x300/f0eade/333?text=Lixa+2' },
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Lixas 1.png' },
+            { marca: '3M', modelo: 'Cubitron II', nome: 'Lixa de Grão Grosso 80', codigo: '20.201.002', img: '../img/imgProdutos/Lixas 2.png' },
+        ],
+        'Cerdas': [
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Cerdas grande.png' },
+            { marca: '3M', modelo: 'Cubitron II', nome: 'Lixa de Grão Grosso 80', codigo: '20.201.002', img: '../img/imgProdutos/Cerdas Pequena.png' },
+        ],
+        'Cartuchos': [
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Cartuchos.png' },
+        ],
+        'Afiadores': [
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Afiador 1.png' },
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Afiador 2.png' },
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Rebolos.png' },
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Afiador 3.png' },
+        ],
+        'Coroas': [
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Coroas.png' },
+        ],
+        'Teclados': [
+            { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Teclado Lectra.png' },
         ],
     };
 

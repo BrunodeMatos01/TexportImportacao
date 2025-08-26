@@ -376,7 +376,7 @@ html {
   .item-imagem img {
     width: 100%;
     display: block;
-    aspect-ratio: 30/25;
+    aspect-ratio: 30/36;
     object-fit: cover;
     transition: transform 0.4s ease;
   }
