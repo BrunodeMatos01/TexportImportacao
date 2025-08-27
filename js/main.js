@@ -211,35 +211,38 @@ document.addEventListener('DOMContentLoaded', () => {
         // Dados e variáveis de estado
         const produtosPorCategoria = {
              'Facas': [
-                { marca: 'RICHPEACE', modelo: 'RP-KNF1625', nome: 'Faca de Corte Oscilante', codigo: '10.101.001', img: '../img/imgProdutos/Facas-1.png' },
-                { marca: 'JUKI', modelo: 'JK-T1310', nome: 'Faca de Corte Digital', codigo: '10.101.002', img: '../img/imgProdutos/Facas-2.png' },
-                { marca: 'RICHPEACE', modelo: 'RP-KNF2030', nome: 'Faca Circular Automática', codigo: '10.101.003', img: '../img/imgProdutos/Facas-3.png' },
-                { marca: 'JUKI', modelo: 'JK-T1315', nome: 'Faca para Couro', codigo: '10.101.004', img: '../img/imgProdutos/Facas-4.png' },
-                { marca: 'EXTRA', modelo: 'EXT-005', nome: 'Faca Extra 5', codigo: '10.101.005', img: '../img/imgProdutos/Facas-6.png' },
+                { marca: 'Lectra', modelo: 'Q50 IX6', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Facas-1.png' },
+                { marca: 'Lectra', modelo: 'MH8 MH9 MH88', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Facas-2.png' },
+                { marca: 'Gerber', modelo: 'GT7250 XLC7000 Z7 S91', nome: 'Lâminas de Corte Compatível Gerber', img: '../img/imgProdutos/Facas-3.png' },
+                { marca: 'Bullmer', modelo: '8001 8002 8003 E80', nome: 'Lâminas de Corte Compatível Bullmer', img: '../img/imgProdutos/Facas-4.png' },
+                { marca: 'Yin', nome: 'Lâminas de Corte Compatível Bullmer', img: '../img/imgProdutos/Facas-6.png' },
             ],
             'Lixas': [
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Lixas-1.png' },
-                { marca: '3M', modelo: 'Cubitron II', nome: 'Lixa de Grão Grosso 80', codigo: '20.201.002', img: '../img/imgProdutos/Lixas-2.png' },
+                { marca: 'P 150', modelo: 'G80', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Lixas-1.png' },
             ],
             'Cerdas': [
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Cerdas-grande.png' },
-                { marca: '3M', modelo: 'Cubitron II', nome: 'Lixa de Grão Grosso 80', codigo: '20.201.002', img: '../img/imgProdutos/Cerdas-Pequena.png' },
+                { marca: 'Lectra', modelo: 'IX6 Q50 MH8', nome: 'Cerdas Compatível com Máquina Lectra', img: '../img/imgProdutos/Cerdas-grande.png' },
+                { marca: 'Bullmer', modelo: 'Cubitron II', nome: 'Cerdas Compatível com Máquina Bullmer', codigo: '20.201.002', img: '../img/imgProdutos/Cerdas-Pequena.png' },
             ],
             'Cartuchos': [
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Cartuchos.png' },
+                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Cartuchos.png' },
             ],
             'Afiadores': [
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Afiador-1.png' },
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Afiador-2.png' },
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Rebolos.png' },
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Afiador-3.png' },
+                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Afiador-1.png' },
+                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Afiador-2.png' },
+                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Rebolos.png' },
+                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Afiador-3.png' },
             ],
-            'Coroas': [
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Coroas.png' },
+            'Correias': [
+                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Coroas.png' },
             ],
             'Teclados': [
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', codigo: '20.201.001', img: '../img/imgProdutos/Teclado-Lectra.png' },
+                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Teclado-Lectra.png' },
             ],
+            'Guia de Lâminas': [
+                { marca: 'Guia de Lâmina Lectra', modelo: 'Q50 IX6', nome: 'Compatível com Máquina Lectra', img: '../img/imgProdutos/Afiador-2.png' },
+            ],
+
         };
         let currentIndex = 0, totalItems = 0, itemsVisiveis = 3, currentSnappedPosition = 0;
         let isDragging = false, startX = 0, dragMovement = 0;
