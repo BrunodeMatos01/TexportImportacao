@@ -210,34 +210,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Dados e variáveis de estado
         const produtosPorCategoria = {
-             'Facas': [
-                { marca: 'Lectra', modelo: 'Q50 IX6', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Facas-1.png' },
-                { marca: 'Lectra', modelo: 'MH8 MH9 MH88', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Facas-2.png' },
-                { marca: 'Gerber', modelo: 'GT7250 XLC7000 Z7 S91', nome: 'Lâminas de Corte Compatível Gerber', img: '../img/imgProdutos/Facas-3.png' },
-                { marca: 'Bullmer', modelo: '8001 8002 8003 E80', nome: 'Lâminas de Corte Compatível Bullmer', img: '../img/imgProdutos/Facas-4.png' },
-                { marca: 'Yin', nome: 'Lâminas de Corte Compatível Bullmer', img: '../img/imgProdutos/Facas-6.png' },
+             'Laminas': [
+                { marca: 'Lectra', modelo: 'Q50 IX6', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Laminas Lectra Q50 IX6.png' },
+                { marca: 'Lectra', modelo: 'MH8 MH9 MH88', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Laminas Lectra MH8 MH9 MH88.png' },
+                { marca: 'Lectra', modelo: 'Q80', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Laminas Lectra Q80.png' },
+                { marca: 'Gerber', modelo: 'GT7250 XLC7000 Z7 S91', nome: 'Lâminas de Corte Compatível Gerber', img: '../img/imgProdutos/Laminas Gerber GT7250 Z7 S91.png' },
+                { marca: 'Bullmer', modelo: '8001 8002 8003 E80', nome: 'Lâminas de Corte Compatível Bullmer', img: '../img/imgProdutos/Laminas Bullmer 8001 8002.png' },
+                { marca: 'Yin', nome: 'Lâminas de Corte Compatível Yin', img: '../img/imgProdutos/Laminas Yin.png' },
+                { marca: 'Audaces', modelo: 'Cabeça7" 5"', nome: 'Lâminas de Corte Compatível Audaces', img: '../img/imgProdutos/Laminas Audaces.png' },
+
             ],
             'Lixas': [
-                { marca: 'P 150', modelo: 'G80', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Lixas-1.png' },
+                { marca: 'Lectra', modelo: '260*19MM P150', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Lixas P150 Lectra.png' },
+                { marca: 'Lectra', modelo: '295*12MM P150', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Lixas P150 IX100.png' },
+                { marca: 'Lectra', modelo: '260*19MM P80', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Lixas Lectra P80.png' },
             ],
             'Cerdas': [
-                { marca: 'Lectra', modelo: 'IX6 Q50 MH8', nome: 'Cerdas Compatível com Máquina Lectra', img: '../img/imgProdutos/Cerdas-grande.png' },
-                { marca: 'Bullmer', modelo: 'Cubitron II', nome: 'Cerdas Compatível com Máquina Bullmer', codigo: '20.201.002', img: '../img/imgProdutos/Cerdas-Pequena.png' },
+                { marca: 'Lectra', nome: 'Cerdas Compatível com Máquina Lectra', img: '../img/imgProdutos/Cerdas Lectra.png' },
+                { marca: 'Bullmer', nome: 'Cerdas Compatível com Máquina Bullmer', img: '../img/imgProdutos/Cerdas Bullmer.png' },
             ],
             'Cartuchos': [
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Cartuchos.png' },
+                { marca: 'Alys INK', modelo: '703730', nome: 'Cartuchos compatível com ploter Lectra', img: '../img/imgProdutos/Cartuchos Alys INK.png' },
             ],
             'Afiadores': [
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Afiador-1.png' },
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Afiador-2.png' },
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Rebolos.png' },
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Afiador-3.png' },
+                { marca: 'Yin', nome: 'Afiador compatível com Máquina Yin', img: '../img/imgProdutos/Afiador Yin.png' },
+                { marca: 'Gerber', modelo: 'GT', nome: 'Afiador compatível com Máquina Gerber', img: '../img/imgProdutos/Afiador rebolo Gerber.png' },
+                { marca: 'Bullmer', nome: 'Afiador compatível com Máquina Bullmer', img: '../img/imgProdutos/Afiador rebolo Bullmer.png' },
             ],
             'Correias': [
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Coroas.png' },
+                { marca: 'Yin', modelo: 'YTB 3*240', nome: 'Correia compatível com Máquina Yin', img: '../img/imgProdutos/Correias Yin.png' },
             ],
             'Teclados': [
-                { marca: 'NORTON', modelo: 'A275', nome: 'Lixa de Grão Fino 220', img: '../img/imgProdutos/Teclado-Lectra.png' },
+                { marca: 'Lectra', modelo: 'Teclado Bolha NGC', nome: 'Teclado compatível com Máquina Lectra', img: '../img/imgProdutos/Teclado Bolha Lectra.png' },
             ],
             'Guia de Lâminas': [
                 { marca: 'Guia de Lâmina Lectra', modelo: 'Q50 IX6', nome: 'Compatível com Máquina Lectra', img: '../img/imgProdutos/Afiador-2.png' },
