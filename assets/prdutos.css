@@ -51,6 +51,10 @@
   transition: all 1s ease-out;
 }
 
+.fundo-dourado h1 {
+  font-size: 3rem;
+}
+
 .texto-sobre-produtos {
  animation: slideInFromLeft 1s ease-in-out;
 }

@@ -214,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { marca: 'Lectra', modelo: 'Q50 IX6', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Laminas Lectra Q50 IX6.png' },
                 { marca: 'Lectra', modelo: 'MH8 MH9 MH88', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Laminas Lectra MH8 MH9 MH88.png' },
                 { marca: 'Lectra', modelo: 'Q80', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Laminas Lectra Q80.png' },
+                { marca: 'Lectra', modelo: 'IX-100', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Laminas Lectra IX 100.png' },
                 { marca: 'Gerber', modelo: 'GT7250 XLC7000 Z7 S91', nome: 'Lâminas de Corte Compatível Gerber', img: '../img/imgProdutos/Laminas Gerber GT7250 Z7 S91.png' },
                 { marca: 'Bullmer', modelo: '8001 8002 8003 E80', nome: 'Lâminas de Corte Compatível Bullmer', img: '../img/imgProdutos/Laminas Bullmer 8001 8002.png' },
                 { marca: 'Yin', nome: 'Lâminas de Corte Compatível Yin', img: '../img/imgProdutos/Laminas Yin.png' },
@@ -238,13 +239,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 { marca: 'Bullmer', nome: 'Afiador compatível com Máquina Bullmer', img: '../img/imgProdutos/Afiador rebolo Bullmer.png' },
             ],
             'Correias': [
-                { marca: 'Yin', modelo: 'YTB 3*240', nome: 'Correia compatível com Máquina Yin', img: '../img/imgProdutos/Correias Yin.png' },
+                { marca: 'Yin', modelo: 'YTB 3*240', nome: 'Correia compatível com Máquina Yin', img: '../img/imgProdutos/Correias Yin 240.png' },
+                { marca: 'Bullmer', modelo: '170135048', nome: 'Correia dentada compatível com Máquina Bullmer', img: '../img/imgProdutos/Correias dentada Bullmer1.png' },
+                { marca: 'Yin', modelo: 'YTB 3*390', nome: 'Correia compatível com Máquina Yin', img: '../img/imgProdutos/Correias Yin 390.png' },
+                { marca: 'Bullmer', modelo: '170135160', nome: 'Correia compatível com Máquina Bullmer', img: '../img/imgProdutos/Correias Bullmer GG.png' },
+                { marca: 'Yin', modelo: 'YTB 3*355', nome: 'Correia compatível com Máquina Yin', img: '../img/imgProdutos/Correias Yin 355.png' },
+                { marca: 'Yin', modelo: 'YTB 3*132', nome: 'Correia compatível com Máquina Yin', img: '../img/imgProdutos/Correias Yin 132.png' },
+                { marca: 'Bullmer', modelo: '012424', nome: 'Correia dentada compatível com Máquina Bullmer', img: '../img/imgProdutos/Correias dentada Bullmer3.png' },
+                { marca: 'Bullmer', modelo: '063429', nome: 'Correia dentada compatível com Máquina Bullmer', img: '../img/imgProdutos/Correias dentada Bullmer2.png' },
+                { marca: 'Bullmer', modelo: '053759', nome: 'Correia dentada compatível com Máquina Bullmer', img: '../img/imgProdutos/Correias dentada Bullmer4.png' },
             ],
             'Teclados': [
                 { marca: 'Lectra', modelo: 'Teclado Bolha NGC', nome: 'Teclado compatível com Máquina Lectra', img: '../img/imgProdutos/Teclado Bolha Lectra.png' },
             ],
             'Guia de Lâminas': [
-                { marca: 'Guia de Lâmina Lectra', modelo: 'Q50 IX6', nome: 'Compatível com Máquina Lectra', img: '../img/imgProdutos/Afiador-2.png' },
+                { marca: 'Guia de Lâmina Lectra', modelo: 'Q50 IX6', nome: 'Guia de Lâminas compatível com Máquina Lectra', img: '../img/imgProdutos/Guia de Lamina Lectra' },
+            ],
+            'Bloco de Plastico': [
+                { marca: 'Lectra', modelo: 'IX6 IX9 MX9', nome: 'Bloco de Plastico compatível com Máquina Lectra', img: '../img/imgProdutos/Bloco Plastico Lectra.png' },
             ],
 
         };

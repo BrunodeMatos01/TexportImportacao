@@ -266,6 +266,10 @@ html {
     text-align: center;
   }
 
+  .fundo-dourado h1{
+    font-size: 3rem;
+  }
+
   #Produtos {
     padding: 3rem 1rem 6rem 1rem;
   }
@@ -298,6 +302,10 @@ html {
 
   .fundo-dourado {
     width: 22rem;
+  }
+
+  .fundo-dourado h1{
+    font-size: 2.3rem;
   }
  
 }
