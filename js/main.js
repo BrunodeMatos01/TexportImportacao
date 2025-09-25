@@ -255,8 +255,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'Guia de Lâminas': [
                 { marca: 'Lectra', modelo: 'Q50 IX6', nome: 'Guia de Lâminas compatível com Máquina Lectra', img: '../img/imgProdutos/Guia de Lamina Lectra.png' },
             ],
-            'Bloco de Plastico': [
-                { marca: 'Lectra', modelo: 'IX6 IX9 MX9', nome: 'Bloco de Plastico compatível com Máquina Lectra', img: '../img/imgProdutos/Bloco Plastico Lectra.png' },
+            'Bloco Trava': [
+                { marca: 'Lectra', modelo: 'IX6 IX9 MX9', nome: 'Bloco Trava compatível com Máquina Lectra', img: '../img/imgProdutos/Bloco Trava Lectra.png' },
             ],
 
         };
