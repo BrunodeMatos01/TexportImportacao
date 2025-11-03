@@ -219,6 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { marca: 'Bullmer', modelo: '8001 8002 8003 E80', nome: 'Lâminas de Corte Compatível Bullmer', img: '../img/imgProdutos/Laminas Bullmer 8001 8002.png' },
                 { marca: 'Yin', nome: 'Lâminas de Corte Compatível Yin', img: '../img/imgProdutos/Laminas Yin.png' },
                 { marca: 'Audaces', modelo: 'Cabeça7" 5"', nome: 'Lâminas de Corte Compatível Audaces', img: '../img/imgProdutos/Laminas Audaces.png' },
+                { marca: 'Kuris', nome: 'Lâminas de Corte Compatível Kuris', img: '../img/imgProdutos/Laminas Kuris.png' },
 
             ],
             'Lixas': [
@@ -228,7 +229,10 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             'Cerdas': [
                 { marca: 'Lectra', nome: 'Cerdas Compatível com Máquina Lectra', img: '../img/imgProdutos/Cerdas Lectra.png' },
+                { marca: 'Lectra', nome: 'Cerdas Compatível com Máquina Lectra', img: '../img/imgProdutos/Cerdas Lectra Vector.png' },
                 { marca: 'Bullmer', nome: 'Cerdas Compatível com Máquina Bullmer', img: '../img/imgProdutos/Cerdas Bullmer.png' },
+                { marca: 'Kuris', nome: 'Cerdas Compatível com Máquina Kuris', img: '../img/imgProdutos/Cerdas Kuris.png' },
+                { marca: 'Yin', nome: 'Cerdas Compatível com Máquina Yin', img: '../img/imgProdutos/Cerdas Yin.png' },
             ],
             'Cartuchos': [
                 { marca: 'Alys INK', modelo: '703730', nome: 'Cartuchos compatível com ploter Lectra', img: '../img/imgProdutos/Cartuchos Alys INK.png' },
@@ -248,12 +252,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 { marca: 'Bullmer', modelo: '012424', nome: 'Correia dentada compatível com Máquina Bullmer', img: '../img/imgProdutos/Correias dentada Bullmer3.png' },
                 { marca: 'Bullmer', modelo: '063429', nome: 'Correia dentada compatível com Máquina Bullmer', img: '../img/imgProdutos/Correias dentada Bullmer2.png' },
                 { marca: 'Bullmer', modelo: '053759', nome: 'Correia dentada compatível com Máquina Bullmer', img: '../img/imgProdutos/Correias dentada Bullmer4.png' },
+                { marca: 'Kuris', modelo: '67477', nome: 'Correia dentada compatível com Máquina Kuris', img: '../img/imgProdutos/Correias dentada Kuris.png' },
             ],
             'Teclados': [
                 { marca: 'Lectra', modelo: 'Teclado Bolha NGC', nome: 'Teclado compatível com Máquina Lectra', img: '../img/imgProdutos/Teclado Bolha Lectra.png' },
             ],
             'Guia de Lâminas': [
                 { marca: 'Lectra', modelo: 'Q50 IX6', nome: 'Guia de Lâminas compatível com Máquina Lectra', img: '../img/imgProdutos/Guia de Lamina Lectra.png' },
+                { marca: 'Lectra', nome: 'Guia de Lâminas compatível com Máquina Lectra', img: '../img/imgProdutos/Guia de 3 Lixas Lectra.png' },
             ],
             'Bloco Trava': [
                 { marca: 'Lectra', modelo: 'IX6 IX9 MX9', nome: 'Bloco Trava compatível com Máquina Lectra', img: '../img/imgProdutos/Bloco Trava Lectra.png' },
