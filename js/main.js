@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             'Guia de Ferramentas': [
                 { marca: 'YIN', modelo: '2.0 | 2.5', nome: 'Guia de Ferramenta compatível com Máquina YIN', img: '../img/imgProdutos/Guia de Ferramentas 2.0 YIN.png' },
-                { marca: 'YIN', modelo: '2.0 | 2.5', nome: 'Guia de Ferramenta compatível com Máquina YIN', img: '../img/imgProdutos/GUia de Ferramentas 2.5 YIN.png' },
+                { marca: 'YIN', modelo: '2.0 | 2.5', nome: 'Guia de Ferramenta compatível com Máquina YIN', img: '../img/imgProdutos/Guia de Ferramentas 2.5 YIN.png' },
                 { marca: 'YIN', modelo: '2.0 | 2.5', nome: 'Guia de Ferramenta compatível com Máquina YIN', img: '../img/imgProdutos/Guia de Ferramentas 3 Furos.png' },
             ],
 
