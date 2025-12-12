@@ -264,6 +264,14 @@ document.addEventListener('DOMContentLoaded', () => {
             'Bloco Trava': [
                 { marca: 'Lectra', modelo: 'IX6 IX9 MX9', nome: 'Bloco Trava compatível com Máquina Lectra', img: '../img/imgProdutos/Bloco Trava Lectra.png' },
             ],
+            'Bloco Deslizante': [
+                { marca: 'YIN', modelo: '2.0 | 2.5', nome: 'Bloco Deslizante compatível com Máquina YIN', img: '../img/imgProdutos/Bloco Deslizante YIN.png' },
+            ],
+            'Guia de Ferramentas': [
+                { marca: 'YIN', modelo: '2.0 | 2.5', nome: 'Guia de Ferramenta compatível com Máquina YIN', img: '../img/imgProdutos/Guia de Ferramentas 2.0 YIN.png' },
+                { marca: 'YIN', modelo: '2.0 | 2.5', nome: 'Guia de Ferramenta compatível com Máquina YIN', img: '../img/imgProdutos/GUia de Ferramentas 2.5 YIN.png' },
+                { marca: 'YIN', modelo: '2.0 | 2.5', nome: 'Guia de Ferramenta compatível com Máquina YIN', img: '../img/imgProdutos/Guia de Ferramentas 3 Furos.png' },
+            ],
 
         };
         let currentIndex = 0, totalItems = 0, itemsVisiveis = 3, currentSnappedPosition = 0;
