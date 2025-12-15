@@ -211,21 +211,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Dados e variáveis de estado
         const produtosPorCategoria = {
              'Laminas': [
-                { marca: 'Lectra', modelo: 'Q50 IX6', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Laminas Lectra Q50 IX6.png' },
-                { marca: 'Lectra', modelo: 'MH8 MH9 MH88', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Laminas Lectra MH8 MH9 MH88.png' },
-                { marca: 'Lectra', modelo: 'Q80', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Laminas Lectra Q80.png' },
-                { marca: 'Lectra', modelo: 'IX-100', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Laminas Lectra IX 100.png' },
-                { marca: 'Gerber', modelo: 'GT7250 XLC7000 Z7 S91', nome: 'Lâminas de Corte Compatível Gerber', img: '../img/imgProdutos/Laminas Gerber GT7250 Z7 S91.png' },
-                { marca: 'Bullmer', modelo: '8001 8002 8003 E80', nome: 'Lâminas de Corte Compatível Bullmer', img: '../img/imgProdutos/Laminas Bullmer 8001 8002.png' },
-                { marca: 'Yin', nome: 'Lâminas de Corte Compatível Yin', img: '../img/imgProdutos/Laminas Yin.png' },
-                { marca: 'Audaces', modelo: 'Cabeça7" 5"', nome: 'Lâminas de Corte Compatível Audaces', img: '../img/imgProdutos/Laminas Audaces.png' },
-                { marca: 'Kuris', nome: 'Lâminas de Corte Compatível Kuris', img: '../img/imgProdutos/Laminas Kuris.png' },
+                { marca: 'Lectra', modelo: 'Q50 IX6', nome: 'Lâminas de Corte Compatível com Máquina Lectra', img: '../img/imgProdutos/Laminas Lectra Q50 IX6.png' },
+                { marca: 'Lectra', modelo: 'MH8 MH9 MH88', nome: 'Lâminas de Corte Compatível com Máquina Lectra', img: '../img/imgProdutos/Laminas Lectra MH8 MH9 MH88.png' },
+                { marca: 'Lectra', modelo: 'Q80', nome: 'Lâminas de Corte Compatível com Máquina Lectra', img: '../img/imgProdutos/Laminas Lectra Q80.png' },
+                { marca: 'Lectra', modelo: 'IX-100', nome: 'Lâminas de Corte Compatível com Máquina Lectra', img: '../img/imgProdutos/Laminas Lectra IX 100.png' },
+                { marca: 'Gerber', modelo: 'GT7250 XLC7000 Z7 S91', nome: 'Lâminas de Corte Compatível com Máquina Gerber', img: '../img/imgProdutos/Laminas Gerber GT7250 Z7 S91.png' },
+                { marca: 'Bullmer', modelo: '8001 8002 8003 E80', nome: 'Lâminas de Corte Compatível com Máquina Bullmer', img: '../img/imgProdutos/Laminas Bullmer 8001 8002.png' },
+                { marca: 'Yin', nome: 'Lâminas de Corte Compatível com Máquina Yin', img: '../img/imgProdutos/Laminas Yin.png' },
+                { marca: 'Audaces', modelo: 'Cabeça7" 5"', nome: 'Lâminas de Corte Compatível com Máquina Audaces', img: '../img/imgProdutos/Laminas Audaces.png' },
+                { marca: 'Kuris', nome: 'Lâminas de Corte Compatível com Máquina Kuris', img: '../img/imgProdutos/Laminas Kuris.png' },
 
             ],
             'Lixas': [
-                { marca: 'Lectra', modelo: '260*19MM P150', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Lixas P150 Lectra.png' },
-                { marca: 'Lectra', modelo: '295*12MM P150', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Lixas P150 IX100.png' },
-                { marca: 'Lectra', modelo: '260*19MM P80', nome: 'Lâminas de Corte Compatível Lectra', img: '../img/imgProdutos/Lixas Lectra P80.png' },
+                { marca: 'Lectra', modelo: '260*19MM P150', nome: 'Lixas Compatível com Máquina Lectra', img: '../img/imgProdutos/Lixas P150 Lectra.png' },
+                { marca: 'Lectra', modelo: '295*12MM P150', nome: 'Lixas Compatível com Máquina Lectra', img: '../img/imgProdutos/Lixas P150 IX100.png' },
+                { marca: 'Lectra', modelo: '260*19MM P80', nome: 'Lixas Compatível com Máquina Lectra', img: '../img/imgProdutos/Lixas Lectra P80.png' },
             ],
             'Cerdas': [
                 { marca: 'Lectra', nome: 'Cerdas Compatível com Máquina Lectra', img: '../img/imgProdutos/Cerdas Lectra.png' },
