@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const produtosPorCategoria = {
             'Kits': [
                 { marca: 'Lectra', modelo: '500h 1000h 2000h 4000h', nome: 'Kits de manutenção Compatível com Máquina Lectra', img: '../img/imgProdutos/Kit Lectra 4000h Pesado.webp' },
-                { marca: 'Lectra', modelo: '500h 1000h 2000h 4000h', nome: 'Kits de manutenção Compatível com Máquina Lectra', img: '../img/imgProdutos/Kit Lectra 4000h intermediario.webp' },
+                { marca: 'Lectra', modelo: '500h 1000h 2000h 4000h', nome: 'Kits de manutenção Compatível com Máquina Lectra', img: '../img/imgProdutos/Kit Lectra 4000h Intermediario.webp' },
             ],
              'Laminas': [
                 { marca: 'Lectra', modelo: 'Q50 IX6', nome: 'Lâminas de Corte Compatível com Máquina Lectra', img: '../img/imgProdutos/Laminas Lectra Q50 IX6.png' },
