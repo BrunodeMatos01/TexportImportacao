@@ -281,6 +281,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'Yoke': [
                 { marca: 'Gerber', modelo: 'z7', nome: 'Yoke z7 compatível com Máquina Gerber', img: '../img/imgProdutos/Yoke Gerber z7.webp' },
             ],
+            'Papeis': [
+                { marca: 'Plotag', modelo: '1,20*250M', nome: 'Papel Branco Plotag', img: '../img/imgProdutos/Papel Branco Plotag 1 20 250M.webp' },
+                { marca: 'Plotag', modelo: '1*250M', nome: 'Papel Branco Plotag', img: '../img/imgProdutos/Papel Branco Plotag 1M 250M.webp' },
+                { marca: 'Plotag', modelo: '2*200M', nome: 'Papel Pardo Plotag', img: '../img/imgProdutos/Papel Pardo Plotag 2M 200M.webp' },
+            ],
 
         };
         let currentIndex = 0, totalItems = 0, itemsVisiveis = 3, currentSnappedPosition = 0;
