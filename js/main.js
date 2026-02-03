@@ -210,6 +210,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Dados e variáveis de estado
         const produtosPorCategoria = {
+            'Kits': [
+                { marca: 'Lectra', modelo: '500h 1000h 2000h 4000h', nome: 'Kits de manutenção Compatível com Máquina Lectra', img: '../img/imgProdutos/Kit Lectra 4000h Pesado.webp' },
+                { marca: 'Lectra', modelo: '500h 1000h 2000h 4000h', nome: 'Kits de manutenção Compatível com Máquina Lectra', img: '../img/imgProdutos/Kit Lectra 4000h intermediario.webp' },
+            ],
              'Laminas': [
                 { marca: 'Lectra', modelo: 'Q50 IX6', nome: 'Lâminas de Corte Compatível com Máquina Lectra', img: '../img/imgProdutos/Laminas Lectra Q50 IX6.png' },
                 { marca: 'Lectra', modelo: 'MH8 MH9 MH88', nome: 'Lâminas de Corte Compatível com Máquina Lectra', img: '../img/imgProdutos/Laminas Lectra MH8 MH9 MH88.png' },
@@ -231,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { marca: 'Lectra', nome: 'Cerdas Compatível com Máquina Lectra', img: '../img/imgProdutos/Cerdas Lectra.png' },
                 { marca: 'Lectra', nome: 'Cerdas Compatível com Máquina Lectra', img: '../img/imgProdutos/Cerdas Lectra Vector.png' },
                 { marca: 'Bullmer', nome: 'Cerdas Compatível com Máquina Bullmer', img: '../img/imgProdutos/Cerdas Bullmer.png' },
+                { marca: 'Audaces', modelo: 'Bristle',  nome: 'Cerdas Compatível com Máquina Audaces', img: '../img/imgProdutos/Cerdas Audaces Bristle.webp' },
                 { marca: 'Kuris', nome: 'Cerdas Compatível com Máquina Kuris', img: '../img/imgProdutos/Cerdas Kuris.png' },
                 { marca: 'Yin', nome: 'Cerdas Compatível com Máquina Yin', img: '../img/imgProdutos/Cerdas Yin.png' },
             ],
@@ -239,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             'Afiadores': [
                 { marca: 'Yin', nome: 'Afiador compatível com Máquina Yin', img: '../img/imgProdutos/Afiador Yin.png' },
+                { marca: 'Lectra', modelo: 'vt 5000/7000', nome: 'Afiador compatível com Máquina Lectra', img: '../img/imgProdutos/Esmeril Lecta vt 5000_7000.webp' },
                 { marca: 'Gerber', modelo: 'GT', nome: 'Afiador compatível com Máquina Gerber', img: '../img/imgProdutos/Afiador rebolo Gerber.png' },
                 { marca: 'Bullmer', nome: 'Afiador compatível com Máquina Bullmer', img: '../img/imgProdutos/Afiador rebolo Bullmer.png' },
             ],
@@ -271,6 +277,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 { marca: 'YIN', modelo: '2.0 | 2.5', nome: 'Guia de Ferramenta compatível com Máquina YIN', img: '../img/imgProdutos/Guia de Ferramentas 2.0 YIN.png' },
                 { marca: 'YIN', modelo: '2.0 | 2.5', nome: 'Guia de Ferramenta compatível com Máquina YIN', img: '../img/imgProdutos/Guia de Ferramentas 2.5 YIN.png' },
                 { marca: 'YIN', modelo: '2.0 | 2.5', nome: 'Guia de Ferramenta compatível com Máquina YIN', img: '../img/imgProdutos/Guia de Ferramentas 3 Furos.png' },
+            ],
+            'Yoke': [
+                { marca: 'Gerber', modelo: 'z7', nome: 'Yoke z7 compatível com Máquina Gerber', img: '../img/imgProdutos/Yoke Gerber z7.webp' },
             ],
 
         };
