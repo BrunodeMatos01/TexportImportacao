@@ -457,8 +457,59 @@ document.addEventListener('DOMContentLoaded', () => {
     } // Fim da verificação if (modal)
 
     // --- CHAMADA DAS OUTRAS FUNÇÕES DE INICIALIZAÇÃO ---
-    // Agora centralizamos tudo aqui.
     iniciarObservadoresDeAnimacao();
     inicializarPagina();
+
+    // --- EFEITO SCROLLED NO HEADER ---
+    const navBranca = document.getElementById('navBranca');
+    if (navBranca) {
+        window.addEventListener('scroll', () => {
+            navBranca.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+    }
+
+    // --- LINK ATIVO NA NAVEGAÇÃO ---
+    const navLinks = document.querySelectorAll('#navegacao a');
+    if (navLinks.length > 0) {
+        const path = window.location.pathname;
+        const isHome = path === '/' || path.endsWith('index.html') || path === '';
+        const isOrcamento = path.endsWith('orcamento.html');
+
+        // Marca o botão Orçamento como ativo quando na página de orçamento
+        if (isOrcamento) {
+            const orcamentoSection = document.getElementById('Orcamento');
+            if (orcamentoSection) orcamentoSection.classList.add('ativo');
+        }
+
+        function setActiveLink(href) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            navLinks.forEach(l => {
+                if (l.getAttribute('href') === href) l.classList.add('active');
+            });
+        }
+
+        if (isHome) {
+            const sections = [
+                { id: 'contatoFooter', href: '#contatoFooter' },
+                { id: 'sobreNosSec',   href: '#sobreNosSec'   },
+                { id: 'telaProdutos',  href: '#telaProdutos'  },
+            ];
+
+            function updateActiveOnScroll() {
+                let activeHref = '/';
+                for (const s of sections) {
+                    const el = document.getElementById(s.id);
+                    if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.5) {
+                        activeHref = s.href;
+                        break;
+                    }
+                }
+                setActiveLink(activeHref);
+            }
+
+            window.addEventListener('scroll', updateActiveOnScroll, { passive: true });
+            updateActiveOnScroll();
+        }
+    }
 
 }); // Fim do addEventListener DOMContentLoaded

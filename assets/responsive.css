@@ -63,14 +63,45 @@ html {
   font-size: 1.1rem;
 }
 
-/* Header*/
-#navBranca {
-  padding: 0.8rem 2rem;
+/* Header — Ilha Flutuante */
+@media (max-width: 900px) {
+  #cabecalho {
+    width: calc(100% - 2rem);
+  }
+
+  #navBranca {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 1rem;
+  }
+
+  #LogoTexport {
+    flex: 1;
+    width: auto;
+    justify-content: center;
+  }
+
+  #LogoTexport .logo {
+    width: 7rem;
+  }
 }
 
-@media (max-width: 900px) {
-  #LogoTexport {
-    padding-left: 3.4rem;
+@media (max-width: 480px) {
+  #cabecalho {
+    width: calc(100% - 1rem);
+    top: 0.5rem;
+  }
+
+  #LogoTexport .logo {
+    width: 5.5rem;
+  }
+
+  .btn-orcamento-link span {
+    display: none;
+  }
+
+  .btn-orcamento-link {
+    padding: 0.5rem 0.6rem;
   }
 }
 
@@ -131,37 +162,6 @@ html {
     text-align: center;
     color: #555;
     margin-bottom: 15px;
-  }
-
-  /*Btn Orcamento*/
-
-  .btn-orcamento-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.3rem 0.3rem;
-    background-color: #a47e43;
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 0.625rem;
-    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-
-  .btn-orcamento-link img {
-    height: 1.3rem;
-    width: auto;
-  }
-
-  #LogoTexport {
-    width: 10.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
   }
 
 }

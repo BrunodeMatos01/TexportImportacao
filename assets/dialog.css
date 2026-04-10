@@ -231,3 +231,49 @@
   outline: 3px solid #c0a068;
   outline-offset: 3px;
 }
+
+/* ===== RESPONSIVIDADE MOBILE — PAGINAÇÃO SEMPRE VISÍVEL ===== */
+
+@media (max-width: 768px) {
+  .modal-carrossel {
+    max-height: 90vh;
+    max-height: 90svh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+  }
+
+  .modal-carrossel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .modal-header {
+    margin-bottom: 1.2rem;
+  }
+
+  .carrossel-paginacao {
+    margin-top: 1.5rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .modal-header {
+    margin-bottom: 0.75rem;
+  }
+
+  .carrossel-paginacao {
+    margin-top: 1rem;
+    gap: 12px;
+    padding-bottom: 0.5rem;
+  }
+
+  .paginacao-dot {
+    width: 14px;
+    height: 14px;
+  }
+}
