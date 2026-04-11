@@ -1,87 +1,214 @@
 /* ======================================= */
-/* CSS DA SEÇÃO SEGMENTO - VERSÃO CORRIGIDA */
+/* CSS DA SEÇÃO SEGMENTO - VERSÃO MODERNA  */
 /* ======================================= */
 
-/* ESTADO INICIAL: Perfeito, continua igual. */
-.segmento-texto-imagem img,
-.segmento-texto-imagem .automacao,
-.segmento-texto-imagem p {
-    opacity: 0;
-}
-
-/* QUANDO #segmento TIVER A CLASSE .is-visible, AS ANIMAÇÕES COMEÇAM. Perfeito, continua igual. */
-
-#segmento.is-visible .segmento-texto-imagem img {
-    opacity: 1; 
-    animation: slideInFromLeft 1s ease-out forwards;
-}
-
-#segmento.is-visible .segmento-texto-imagem .automacao { 
-    opacity: 1;
-    animation: slideInFromRight 1s ease-out forwards;
-}
-
-#segmento.is-visible .segmento-texto-imagem p {
-    opacity: 1;
-    animation: revealTextUp 1s ease-out forwards;
-}
-
+/* ---- SEÇÃO PRINCIPAL ---- */
 #segmento {
+    position: relative;
     width: 100%;
-    height: auto;
-    padding: 3rem 2rem; 
-    background-color: #ffffff; 
+    padding: 5rem 2rem;
+    background-color: #0d1117;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
 }
 
-.segmento-texto-imagem {
-    width: 80%; 
-    border-radius: 12px; 
-    padding: 1rem;
+/* Canvas de partículas animadas */
+.segmento-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ---- LAYOUT DUAS COLUNAS ---- */
+.segmento-conteudo {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* ---- IMAGEM: frame com glow dourado pulsante ---- */
+.segmento-imagem-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(60px);
+}
+
+.segmento-imagem-frame {
+    position: relative;
+    border-radius: 14px;
+    padding: 3px;
+    background: linear-gradient(135deg, #6b4f10, #c9a227, #f5d77e, #c9a227, #6b4f10);
+    background-size: 300% 300%;
+    animation: glowGradient 4s ease-in-out infinite;
+}
+
+@keyframes glowGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+        box-shadow:
+            0 0 22px rgba(139, 105, 20, 0.4),
+            0 0 55px rgba(139, 105, 20, 0.15);
+    }
+    50% {
+        background-position: 100% 50%;
+        box-shadow:
+            0 0 45px rgba(201, 162, 39, 0.7),
+            0 0 90px rgba(201, 162, 39, 0.28);
+    }
+}
+
+.segmento-imagem-frame img {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ---- TEXTO ---- */
+.segmento-texto {
+    color: #e0e0e0;
+    opacity: 0;
+    transform: translateX(-60px);
+}
+
+/* Título com shimmer dourado animado */
+.segmento-texto .automacao {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(
+        90deg,
+        #8B6914 0%,
+        #c9a227 30%,
+        #f5d77e 50%,
+        #c9a227 70%,
+        #8B6914 100%
+    );
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmerText 3.5s linear infinite;
+}
+
+@keyframes shimmerText {
+    0%   { background-position: 200% center; }
+    100% { background-position: -200% center; }
+}
+
+/* ---- MÉTRICAS / DIFERENCIAIS ---- */
+.segmento-metricas {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.8rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.segmento-metricas li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.4rem; 
-    text-align: center;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+    color: #9a8860;
+    padding-left: 0.65rem;
+    border-left: 2px solid #8B6914;
 }
 
-.segmento-texto-imagem img {
-    width: 22rem;
-    height: 17rem;
-    border-radius: 5px; 
-    object-fit: cover; 
-    margin-bottom: 1rem; 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); 
-    /* A linha 'animation' foi REMOVIDA daqui. */
+.segmento-metricas li span {
+    color: #d4b96a;
+    font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
-figcaption {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+/* ---- PARÁGRAFO ---- */
+.segmento-texto p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #a8a8a8;
+    margin: 0;
 }
 
-
-.segmento-texto-imagem .automacao { 
-    color: #a47e43;
-    font-size: 2rem;
-    font-weight: 700; 
-    letter-spacing: -0.5px; 
-    margin-bottom: 1.7rem; 
-    /* A linha 'animation' foi REMOVIDA daqui. */
+/* ---- ANIMAÇÕES DE ENTRADA (ativadas via .is-visible no #segmento) ---- */
+#segmento.is-visible .segmento-imagem-wrapper {
+    animation: entradaDireita 0.9s ease-out forwards;
 }
 
-
-.segmento-texto-imagem p {
-    font-size: 1.2rem;
-    color: #555; 
-    line-height: 1.7; 
-    max-width: 90%;
-    /* A linha 'animation' foi REMOVIDA daqui. */
+#segmento.is-visible .segmento-texto {
+    animation: entradaEsquerda 0.9s ease-out 0.2s forwards;
 }
 
+@keyframes entradaDireita {
+    from { opacity: 0; transform: translateX(60px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes entradaEsquerda {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes entradaBaixo {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- RESPONSIVO MOBILE ---- */
+@media (max-width: 768px) {
+    #segmento {
+        padding: 4rem 1.5rem;
+    }
+
+    .segmento-conteudo {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .segmento-imagem-wrapper {
+        transform: translateY(40px);
+        order: 1;
+    }
+
+    .segmento-texto {
+        transform: translateY(40px);
+        text-align: center;
+        order: 2;
+    }
+
+    .segmento-texto .automacao {
+        font-size: 1.9rem;
+    }
+
+    .segmento-metricas {
+        align-items: center;
+    }
+
+    .segmento-imagem-frame img {
+        max-width: 100%;
+        height: 220px;
+    }
+
+    #segmento.is-visible .segmento-imagem-wrapper {
+        animation: entradaBaixo 0.9s ease-out forwards;
+    }
+
+    #segmento.is-visible .segmento-texto {
+        animation: entradaBaixo 0.9s ease-out 0.2s forwards;
+    }
+}

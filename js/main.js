@@ -138,6 +138,9 @@ let slideshowInterval = null; // Variável global para o timer
 function inicializarPagina() {
     console.log("Executando inicialização de componentes específicos...");
 
+    // --- CANVAS DE PARTÍCULAS — SEÇÃO SEGMENTO ---
+    inicializarSegmentoCanvas();
+
     // --- INICIALIZADOR DO SLIDESHOW DE FUNDO (SÓ RODA NA HOME) ---
     // Esta parte já estava segura com a verificação if (containerSlide).
     const containerSlide = document.getElementById('Container-inicialHome');
@@ -181,6 +184,77 @@ function inicializarPagina() {
             console.warn("Aviso: O navegador impediu a tentativa de autoplay do vídeo.", error);
         });
     }
+}
+
+
+/* ========================================================
+    ANIMAÇÃO DE PARTÍCULAS — FUNDO DA SEÇÃO SEGMENTO
+    ======================================================== */
+function inicializarSegmentoCanvas() {
+    const canvas = document.getElementById('segmentoCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const section = document.getElementById('segmento');
+
+    function resize() {
+        canvas.width  = section.offsetWidth;
+        canvas.height = section.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    const NUM      = 38;
+    const MAX_DIST = 155;
+    const particles = [];
+
+    for (let i = 0; i < NUM; i++) {
+        particles.push({
+            x:  Math.random() * canvas.width,
+            y:  Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.45,
+            vy: (Math.random() - 0.5) * 0.45,
+            r:  Math.random() * 1.8 + 0.8
+        });
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Linhas de conexão
+        for (let i = 0; i < NUM; i++) {
+            for (let j = i + 1; j < NUM; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const d  = Math.sqrt(dx * dx + dy * dy);
+                if (d < MAX_DIST) {
+                    const alpha = (1 - d / MAX_DIST) * 0.28;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(139, 105, 20, ${alpha})`;
+                    ctx.lineWidth   = 0.7;
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Partículas (nós)
+        particles.forEach(p => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(180, 140, 40, 0.4)';
+            ctx.fill();
+
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > canvas.width)  p.vx *= -1;
+            if (p.y < 0 || p.y > canvas.height)  p.vy *= -1;
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
 }
 
 
