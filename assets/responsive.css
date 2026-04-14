@@ -69,9 +69,22 @@ html {
 /* Desktop grande (>1300px): 60% — definido no header.css */
 
 /* Desktop médio (1151-1300px): mantém 60% */
+
+@media (max-width: 1940px) {
+  #cabecalho {
+    width: calc(45% - 3rem);
+  }
+}
+
+@media (max-width: 1740px) {
+  #cabecalho {
+    width: calc(55% - 3rem);
+  }
+}
+
 @media (max-width: 1300px) {
   #cabecalho {
-    width: calc(60% - 3rem);
+    width: calc(70% - 3rem);
   }
 }
 

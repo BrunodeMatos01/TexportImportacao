@@ -12,7 +12,7 @@ p {
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(60% - 3rem);
+  width: calc(40% - 3rem);
   max-width: 1200px;
   z-index: 1000;
 }
