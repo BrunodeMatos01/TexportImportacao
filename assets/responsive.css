@@ -134,7 +134,7 @@ html {
 /* Mobile (≤800px): hamburger + ilha 90% */
 @media (max-width: 800px) {
   #cabecalho {
-    width: calc(90% - 2rem);
+    width: calc(60% - 2rem);
   }
 
   #navBranca {
@@ -167,7 +167,7 @@ html {
 /* Mobile pequeno (≤480px): ilha 92%, botão só ícone */
 @media (max-width: 480px) {
   #cabecalho {
-    width: calc(92% - 1rem);
+    width: calc(85% - 1rem);
     top: 0.5rem;
   }
 
