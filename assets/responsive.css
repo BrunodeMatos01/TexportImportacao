@@ -40,13 +40,13 @@ html {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   #navegacao {
     display: none;
   }
 }
 
-@media (min-width: 901px) {
+@media (min-width: 801px) {
   #navegacaoMobile {
     display: none;
   }
@@ -63,10 +63,78 @@ html {
   font-size: 1.1rem;
 }
 
+
 /* Header — Ilha Flutuante */
-@media (max-width: 900px) {
+
+/* Desktop grande (>1300px): 60% — definido no header.css */
+
+/* Desktop médio (1151-1300px): mantém 60% */
+@media (max-width: 1300px) {
   #cabecalho {
-    width: calc(100% - 2rem);
+    width: calc(60% - 3rem);
+  }
+}
+
+/* Desktop justo (1025-1150px): 60% com itens compactos */
+@media (min-width: 1025px) and (max-width: 1150px) {
+  #navBranca {
+    padding: 0.55rem 1rem;
+  }
+
+  #LogoTexport {
+    width: 7rem;
+  }
+
+  #navegacao a {
+    font-size: 0.88rem;
+    padding: 0.45rem 0.55rem;
+  }
+
+  .btn-orcamento-link {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.8rem;
+    gap: 0.3rem;
+  }
+
+  .btn-orcamento-link img {
+    height: 0.95rem;
+  }
+}
+
+/* Desktop compacto (801-1024px): nav desktop + ilha 70% */
+@media (min-width: 801px) and (max-width: 1024px) {
+  #cabecalho {
+    width: calc(70% - 2rem);
+  }
+
+  #navBranca {
+    padding: 0.5rem 0.9rem;
+  }
+
+  #LogoTexport {
+    width: 6.5rem;
+  }
+
+  #navegacao a {
+    font-size: 0.85rem;
+    padding: 0.42rem 0.5rem;
+  }
+
+  .btn-orcamento-link {
+    font-size: 0.8rem;
+    padding: 0.38rem 0.75rem;
+    gap: 0.28rem;
+  }
+
+  .btn-orcamento-link img {
+    height: 0.9rem;
+  }
+}
+
+/* Mobile (≤800px): hamburger + ilha 90% */
+@media (max-width: 800px) {
+  #cabecalho {
+    width: calc(90% - 2rem);
   }
 
   #navBranca {
@@ -82,18 +150,29 @@ html {
   }
 
   #LogoTexport .logo {
-    width: 7rem;
+    width: 7.5rem;
+  }
+
+  .btn-orcamento-link {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.85rem;
+    gap: 0.35rem;
+  }
+
+  .btn-orcamento-link img {
+    height: 1rem;
   }
 }
 
+/* Mobile pequeno (≤480px): ilha 92%, botão só ícone */
 @media (max-width: 480px) {
   #cabecalho {
-    width: calc(100% - 1rem);
+    width: calc(92% - 1rem);
     top: 0.5rem;
   }
 
   #LogoTexport .logo {
-    width: 5.5rem;
+    width: 6.2rem;
   }
 
   .btn-orcamento-link span {
